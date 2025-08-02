@@ -64,6 +64,7 @@ const page = () => {
             src={Place1}
             alt="Place1"
             quality={80} 
+            priority={false}
           />
         </div>
         <Link
