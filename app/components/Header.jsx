@@ -29,7 +29,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link className="navigation_text" href="/projects">
+            <Link className="navigation_text !text-[var(--primary)] pt-[10px] pb-3 px-4 bg-[#fff] rounded-[8px]" href="/projects">
               Download CV
             </Link>
           </li>
