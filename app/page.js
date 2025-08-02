@@ -57,7 +57,14 @@ const page = () => {
         </motion.div>
       </div>
       <div className="">
-        <Image src={Place1} alt="Place1" className="" />
+        <div className="w-[196px] lg:w-[280px] h-[192px] lg:h-[240px] rounded-[3px] overflow-hidden">
+          <Image
+            className="w-full h-full"
+            src={Place1}
+            alt="Place1"
+            className=""
+          />
+        </div>
       </div>
     </Container>
   );
