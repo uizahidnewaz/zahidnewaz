@@ -22,7 +22,7 @@ const page = () => {
             hidden: {},
             show: {
               transition: {
-                staggerChildren: 0.3,
+                staggerChildren: 0.1,
               },
             },
           }}
