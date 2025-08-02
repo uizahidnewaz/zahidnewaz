@@ -13,7 +13,6 @@ const page = () => {
         </div>
         <div className="mt-[12px]">
           <h1 className="hero_heading">Zahid</h1>
-          <br />
           <div className="flex items-end">
             <h1 className="hero_heading">Newaz</h1>
             <Image
