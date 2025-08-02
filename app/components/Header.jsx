@@ -42,6 +42,15 @@ const Header = () => {
             </li>
           </ul>
 
+          {/* Menu Toggle - Mobile Only */}
+          <button
+            className="md:hidden cursor-pointer"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
           {/* Download CV - Always Visible */}
           <Link
             className="navigation_text uppercase !text-[var(--primary)] pt-[10px] pb-3 px-4 bg-[#fff] rounded-[8px]"
@@ -49,15 +58,6 @@ const Header = () => {
           >
             Download CV
           </Link>
-
-          {/* Menu Toggle - Mobile Only */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
         </div>
 
         {/* Mobile Dropdown Menu */}
@@ -70,7 +70,7 @@ const Header = () => {
             <ul className="space-y-4 text-center">
               <li>
                 <Link
-                  className="navigation_text uppercase block"
+                  className="navigation_text uppercase block !text-[var(--primary)]"
                   href="/about"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -79,7 +79,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  className="navigation_text uppercase block"
+                  className="navigation_text uppercase block !text-[var(--primary)]"
                   href="/projects"
                   onClick={() => setIsMenuOpen(false)}
                 >
