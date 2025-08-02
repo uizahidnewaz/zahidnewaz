@@ -8,7 +8,7 @@ const page = () => {
   <h3>
     <Image src={Hi} alt="Hi" />
     Hi, I am</h3>
-  <h1>Zahid Newaz</h1>
+  <h1 className="hero_heading">Zahid <br /> Newaz</h1>
 </div>
 <div className="">aa</div>
   </Container>;
