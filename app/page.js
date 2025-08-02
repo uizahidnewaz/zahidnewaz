@@ -8,9 +8,10 @@ const page = () => {
     <Container className="py-[96px] flex justify-between items-start">
       <div className="mt-[218px]">
         <div className="flex items-center gap-x-2">
+          <Image className="h-[30px] w-[30px]" src={Hi} alt="Hi" />
           <h3 className="hero_title">Hi, I am</h3>
-          <Image className="h-[26px] w-[26px]" src={Hi} alt="Hi" />
-        </div>        <div className="">
+        </div>
+        <div className="mt-[12px]">
           <h1 className="hero_heading">Zahid</h1>
           <br />
           <div className="flex items-end">
