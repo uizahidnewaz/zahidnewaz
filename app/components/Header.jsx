@@ -4,7 +4,7 @@ import Container from "./Container";
 const Header = () => {
   return (
     <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-      <Container className="flex justify-between items-center py-4">
+      <Container className="flex justify-between items-center py-5">
         <ul className="flex space-x-[56px]">
           <li>
             <Link className="navigation_text uppercase" href="/about">
