@@ -47,7 +47,7 @@ const Page = () => {
             transition={{
               duration: 0.7,
               ease: [0.25, 0.8, 0.25, 1],
-              delay: 0,
+              delay: 0.2,
             }}
             className="flex items-end justify-center lg:justify-start gap-x-2"
           >
