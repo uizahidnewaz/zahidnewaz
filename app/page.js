@@ -1,7 +1,7 @@
 "use client";
+import Place1 from "@/public/allwork.gif";
 import Hi from "@/public/hi.svg";
 import Newazls from "@/public/newazls.svg";
-import Place1 from "@/public/allwork.gif";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -63,9 +63,13 @@ const page = () => {
             className="w-full h-full bg-cover"
             src={Place1}
             alt="Place1"
+            quality={80} 
           />
         </div>
-        <Link href="/" className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-[3px] mt-6">
+        <Link
+          href="/"
+          className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-[3px] mt-6"
+        >
           SEE ALL PROJECTS
         </Link>
       </div>
