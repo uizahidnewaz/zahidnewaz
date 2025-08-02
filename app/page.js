@@ -8,7 +8,7 @@ const page = () => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <h1>Hello, Zahid Newaz!</h1>
+        <h1 className="navigation_text">Hello, Zahid Newaz!</h1>
         <p>Welcome to my portfolio website.</p>
       </motion.div>
     </Container>
