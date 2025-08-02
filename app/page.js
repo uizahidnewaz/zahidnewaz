@@ -4,6 +4,7 @@ import Newazls from "@/public/newazls.svg";
 import Place1 from "@/public/place1.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./components/Container";
 const page = () => {
   return (
@@ -59,12 +60,15 @@ const page = () => {
       <div className="">
         <div className="w-[196px] lg:w-[280px] h-[192px] lg:h-[240px] rounded-[3px] overflow-hidden">
           <Image
-            className="w-full h-full"
+            className="w-full h-full bg-cover"
             src={Place1}
             alt="Place1"
             className=""
           />
         </div>
+        <Link href="/" className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-[3px]">
+          SEE ALL PROJECTS
+        </Link>
       </div>
     </Container>
   );
