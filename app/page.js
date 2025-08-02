@@ -76,7 +76,7 @@ const Page = () => {
         </div>
         <Link
           href="/"
-          className="hero_click inline-block py-3 px-6 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full"
+          className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full"
         >
           SEE ALL PROJECTS
         </Link>

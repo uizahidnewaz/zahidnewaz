@@ -40,7 +40,7 @@ html {
   color: #ffffff;
 }
 .navigation_text {
-  @apply font-semibold text-base text-[var(--color-white-solid)] leading-[16px] tracking-[0%];
+  @apply font-medium text-base text-[var(--color-white-solid)] leading-[16px] tracking-[0%];
 }
 .hero_title{
   @apply font-semibold text-[18px] leading-[100%] tracking-[0.02em] uppercase text-[var(--color-white-solid)];
