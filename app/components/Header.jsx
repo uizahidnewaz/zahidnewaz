@@ -14,13 +14,13 @@ const Header = () => {
     <motion.div
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1], delay: 0.2 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.8, 0.25, 1], delay: 0.2 }}
     >
       <Container className="flex justify-between items-center py-5 relative">
         {/* Left Side */}
         <ul className="flex space-x-[56px] items-center">
           <li>
-            <Link className="navigation_text uppercase" href="/about">
+            <Link className="navigation_text uppercase" href="/">
               ZAHID NEWAZ
             </Link>
           </li>
