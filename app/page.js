@@ -22,7 +22,7 @@ const page = () => {
             hidden: {},
             show: {
               transition: {
-                staggerChildren: 0.1,
+                staggerChildren: 0.3,
               },
             },
           }}
@@ -32,7 +32,7 @@ const page = () => {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              duration: 0.4,
+              duration: 0.7,
               ease: [0.25, 0.8, 0.25, 1],
             }}
             className="hero_heading"
@@ -43,7 +43,7 @@ const page = () => {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              duration: 0.4,
+              duration: 0.7,
               ease: [0.25, 0.8, 0.25, 1],
               delay: 0, // delay for stagger
             }}
