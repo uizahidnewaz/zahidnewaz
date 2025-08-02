@@ -62,7 +62,7 @@ const page = () => {
         <div className="w-[296px] h-[192px] rounded-[3px] overflow-hidden">
           <video
             src="/works.mp4"
-            poster={Place1}
+            poster="/place1.png"
             autoPlay
             muted
             loop
