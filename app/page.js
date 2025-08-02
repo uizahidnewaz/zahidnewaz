@@ -1,5 +1,6 @@
 import Hi from "@/public/hi.svg";
 import Newazls from "@/public/newazls.svg";
+import Place1 from "@/public/place1.png";
 import Image from "next/image";
 import Container from "./components/Container";
 
@@ -23,7 +24,13 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="">aa</div>
+      <div className="">
+      <Image
+      src={Place1}
+      alt="Place1"
+      className=""
+    />
+      </div>
     </Container>
   );
 };
