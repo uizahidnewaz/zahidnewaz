@@ -1,9 +1,10 @@
 "use client";
-import Place1 from "@/public/c.png";
 import Hi from "@/public/hi.svg";
+import Place1 from "@/public/c.png";
 import Newazls from "@/public/newazls.svg";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 import Link from "next/link";
 import Container from "./components/Container";
 const page = () => {
@@ -59,12 +60,14 @@ const page = () => {
       </div>
       <div className="">
         <div className="w-[296px] h-[192px] rounded-[3px] overflow-hidden">
-          <Image
-            className="w-full h-full bg-cover"
-            src={Place1}
-            alt="Place1"
-            quality={80} 
-            // priority={false}
+          <video
+            src="/works.mp4"
+            poster={Place1}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
           />
         </div>
         <Link
