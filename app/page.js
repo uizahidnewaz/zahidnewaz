@@ -45,7 +45,7 @@ const page = () => {
             transition={{
               duration: 0.7,
               ease: [0.25, 0.8, 0.25, 1],
-              delay: 0.3, // delay for stagger
+              delay: 0, // delay for stagger
             }}
             className="flex items-end"
           >
