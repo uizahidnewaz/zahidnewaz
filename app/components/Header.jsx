@@ -1,16 +1,21 @@
- "use client";
+"use client";
 
-import * as motion from "motion/react-client";
+import { Menu, X } from "lucide-react";
+// import * as motion from "motion/react-client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import Container from "./Container";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1], delay: 0.2 }}
+    >
       <Container className="flex justify-between items-center py-5 relative">
         {/* Left Side */}
         <ul className="flex space-x-[56px] items-center">
@@ -63,8 +68,8 @@ const Header = () => {
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 200000 } }}
             className="absolute top-full right-0 w-full bg-white px-6 py-5 shadow-lg rounded-md z-40 md:hidden"
           >
             <ul className="space-y-4 text-center">
