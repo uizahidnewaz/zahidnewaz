@@ -1,7 +1,7 @@
 "use client";
 import Hi from "@/public/hi.svg";
 import Newazls from "@/public/newazls.svg";
-import Place1 from "@/public/place1.png";
+import Place1 from "@/public/allwork.gif";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
