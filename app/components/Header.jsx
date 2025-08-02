@@ -7,25 +7,30 @@ const Header = () => {
       <Container className="flex justify-between items-center py-4">
         <ul className="flex space-x-[56px]">
           <li>
-            <Link className="navigation_text" href="/about">
+            <Link className="navigation_text uppercase" href="/about">
               ZAHID NEWAZ
             </Link>
           </li>
           <li>
-            <Link className="navigation_text" href="/projects">
+            <Link className="navigation_text uppercase" href="/projects">
               DHAKA, BANGLADESH
             </Link>
           </li>
         </ul>
         <ul className="flex space-x-[56px]">
           <li>
-            <Link className="navigation_text" href="/about">
+            <Link className="navigation_text uppercase" href="/about">
               About
             </Link>
           </li>
           <li>
-            <Link className="navigation_text" href="/projects">
+            <Link className="navigation_text uppercase" href="/projects">
               Projects
+            </Link>
+          </li>
+          <li>
+            <Link className="navigation_text" href="/projects">
+              Download CV
             </Link>
           </li>
         </ul>
