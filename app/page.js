@@ -58,15 +58,14 @@ const page = () => {
         </motion.div>
       </div>
       <div className="">
-        <div className="w-[196px] lg:w-[280px] h-[192px] lg:h-[240px] rounded-[3px] overflow-hidden">
+        <div className="w-[296px] h-[192px] rounded-[3px] overflow-hidden">
           <Image
             className="w-full h-full bg-cover"
             src={Place1}
             alt="Place1"
-            className=""
           />
         </div>
-        <Link href="/" className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-[3px]">
+        <Link href="/" className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-[3px] mt-6">
           SEE ALL PROJECTS
         </Link>
       </div>
