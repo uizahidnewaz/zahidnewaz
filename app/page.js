@@ -1,8 +1,9 @@
-"use client";
+// "use client";
 import Place1 from "@/public/allwork.gif";
 import Hi from "@/public/hi.svg";
 import Newazls from "@/public/newazls.svg";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+import * as motion from "motion/react-client"
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./components/Container";

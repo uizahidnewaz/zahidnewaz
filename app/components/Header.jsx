@@ -69,7 +69,7 @@ const Header = () => {
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 200000 } }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
             className="absolute top-full right-0 w-full bg-white px-6 py-5 shadow-lg rounded-md z-40 md:hidden"
           >
             <ul className="space-y-4 text-center">
