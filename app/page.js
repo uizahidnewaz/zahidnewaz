@@ -1,5 +1,5 @@
 "use client";
-import Place1 from "@/public/allwork.gif";
+import Place1 from "@/public/c.png";
 import Hi from "@/public/hi.svg";
 import Newazls from "@/public/newazls.svg";
 import { motion } from "framer-motion";
@@ -64,7 +64,7 @@ const page = () => {
             src={Place1}
             alt="Place1"
             quality={80} 
-            priority={false}
+            // priority={false}
           />
         </div>
         <Link
