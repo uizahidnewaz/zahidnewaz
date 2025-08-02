@@ -5,3 +5,9 @@
   --foreground: #171717;
 }
 
+body,html{
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  color: #ffffff;
+}
