@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./components/Container";
+import Motivation from "./layers/Motivation";
 
 const Page = () => {
   return (
@@ -171,6 +172,7 @@ const Page = () => {
         <div className="makeit py-18 h-[736px]">
           <Image className="w-full h-full bg-cover" src={Makeit} alt="makeit" />
         </div>
+        <Motivation />
     </>
   );
 };
