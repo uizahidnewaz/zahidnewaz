@@ -85,9 +85,33 @@ const Page = () => {
           </Link>
         </div>
       </Container>
-      <div className="h-[736px] w-full py-8">
-        <Image src={Newaz} alt="" />
+      <div className="h-[736px] w-full py-8 block">
+        <Image className="bg-cover" src={Newaz} alt="ccc" />
       </div>
+      <Container>
+        <div className="pt-[120px] pb-[96px] flex items-start justify-between gap-[58px]">
+          <div className="">
+            <h2>aaa</h2>
+            <div className="w-[580px] h-[398px] overflow-hidden">
+              <Image className="w-full h-full bg-cover" src={Newaz} alt="aa" />
+            </div>
+            <div className="flex justify-between items-center">
+              <p>a</p>
+              <p>a</p>
+            </div>
+          </div>
+          <div className="">
+            <h2>aaa</h2>
+            <div className="w-[580px] h-[398px] overflow-hidden">
+              <Image className="w-full h-full bg-cover" src={Newaz} alt="aa" />
+            </div>
+            <div className="flex justify-between items-center">
+              <p>a</p>
+              <p>a</p>
+            </div>
+          </div>
+        </div>
+      </Container>
     </>
   );
 };
