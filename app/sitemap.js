@@ -18,7 +18,7 @@ export default function sitemap() {
       url: 'https://zahidnewaz.vercel.app/projects',
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.5,
+      priority: 1,
     },
   ];
 }
