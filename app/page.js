@@ -158,12 +158,9 @@ const Page = () => {
               <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]"></div>
               <h3 className="story_title flex-shrink-0">My mission</h3>
             </div>
-            <div className="">
-
             <p className="story_pragraph">
              My mission is to make people’s lives easier through thoughtful design and to create experiences that users genuinely enjoy
             </p>
-            </div>
           </div>
 
 
