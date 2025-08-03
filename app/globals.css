@@ -75,6 +75,9 @@ html {
 .story_heading{
   @apply font-semibold text-[80px] leading-[109%] tracking-[-0.05em] uppercase text-[var(--color-white-solid)];
 }
-.work_title{
+.story_title{
   @apply font-semibold text-[15px] leading-[133%] tracking-[0.2em] uppercase text-[var(--color-chartreuse-green-60)];
+}
+.story_pragraph{
+  @apply font-normal text-[20px] leading-[150%] text-[#FFFFFFE0] max-w-[1013px];
 }
