@@ -63,3 +63,6 @@ html {
 .work_subtitle{
   @apply font-semibold text-[18px] leading-[100%] tracking-[0.02em] uppercase text-[var(--color-white-solid)]
 }
+.work_number{
+  @apply font-semibold text-[18px] leading-[100%] tracking-[0.02em] uppercase text-[#a6ff00]
+}
