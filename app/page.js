@@ -98,26 +98,21 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="flex items-start justify-between gap-[58px]"></div>
-
-          <div className="">
-            <div className="w-[580px] h-[398px] overflow-hidden">
-              <Image className="w-full h-full bg-cover" src={Newaz} alt="aa" />
+          <div className="mt-[80px] flex items-start justify-between gap-[58px]">
+            <div className="">
+              <div className="w-[580px] h-[398px] overflow-hidden">
+                <Image
+                  className="w-full h-full bg-cover"
+                  src={Newaz}
+                  alt="aa"
+                />
+              </div>
+              <div className="flex justify-between items-center">
+                <p>a</p>
+                <p>a</p>
+              </div>
             </div>
-            <div className="flex justify-between items-center">
-              <p>a</p>
-              <p>a</p>
-            </div>
-          </div>
-          <div className="">
-            <h2>aaa</h2>
-            <div className="w-[580px] h-[398px] overflow-hidden">
-              <Image className="w-full h-full bg-cover" src={Newaz} alt="aa" />
-            </div>
-            <div className="flex justify-between items-center">
-              <p>a</p>
-              <p>a</p>
-            </div>
+            <div className="">a</div>
           </div>
         </div>
       </Container>
