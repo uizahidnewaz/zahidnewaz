@@ -3,6 +3,7 @@ import Hi from "@/public/hi.svg";
 import Newaz from "@/public/newaz.webp";
 import Newazls from "@/public/newazls.svg";
 import Work1 from "@/public/work1.webp";
+import Makeit from "@/public/makeit.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -168,7 +169,7 @@ const Page = () => {
         </div>
       </Container>
         <div className="makeit py-18 h-[736px]">
-          <Image className="w-full h-full bg-cover" src={Newaz} alt="makeit" />
+          <Image className="w-full h-full bg-cover" src={Makeit} alt="makeit" />
         </div>
     </>
   );
