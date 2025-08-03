@@ -122,7 +122,7 @@ const Page = () => {
                 />
               </div>
               <div className="mt-4 flex justify-between items-center">
-                <h3 className="work_subtitle">Wholesale business software</h3>
+                <h3 className="work_subtitle">in progress</h3>
                 <p className="work_number">01</p>
               </div>
             </div>
