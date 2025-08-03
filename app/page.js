@@ -2,6 +2,7 @@
 import Hi from "@/public/hi.svg";
 import Newaz from "@/public/newaz.webp";
 import Newazls from "@/public/newazls.svg";
+import Work1 from "@/public/work1.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -100,19 +101,31 @@ const Page = () => {
 
           <div className="mt-[80px] flex items-start justify-between gap-[58px]">
             <div className="">
-              <div className="w-[580px] h-[398px] overflow-hidden">
+              <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
                 <Image
                   className="w-full h-full bg-cover"
-                  src={Newaz}
+                  src={Work1}
                   alt="aa"
                 />
               </div>
-              <div className="flex justify-between items-center">
-                <p>a</p>
-                <p>a</p>
+              <div className="mt-4 flex justify-between items-center">
+                <h3 className="work_subtitle">Wholesale business software</h3>
+                <p className="work_number">01</p>
               </div>
             </div>
-            <div className="">a</div>
+            <div className="">
+              <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
+                <Image
+                  className="w-full h-full bg-cover"
+                  src={Work1}
+                  alt="aa"
+                />
+              </div>
+              <div className="mt-4 flex justify-between items-center">
+                <h3 className="work_subtitle">Wholesale business software</h3>
+                <p className="work_number">01</p>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
