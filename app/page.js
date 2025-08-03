@@ -123,7 +123,7 @@ const Page = () => {
               </div>
               <div className="mt-4 flex justify-between items-center">
                 <h3 className="work_subtitle">in progress</h3>
-                <p className="work_number">01</p>
+                <p className="work_number">02</p>
               </div>
             </div>
           </div>
