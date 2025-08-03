@@ -91,7 +91,7 @@ const Page = () => {
       <Container>
         <div className="pt-[120px] pb-[96px] flex items-start justify-between gap-[58px]">
           <div className="">
-            <h2>aaa</h2>
+            <h2 className="work_heading">Selected  WORK</h2>
             <div className="w-[580px] h-[398px] overflow-hidden">
               <Image className="w-full h-full bg-cover" src={Newaz} alt="aa" />
             </div>
