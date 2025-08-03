@@ -61,7 +61,7 @@ html {
   @apply font-semibold text-[80px] leading-[109%] tracking-[-0.05em] uppercase text-[var(--color-white-solid)];
 } 
 .work_pragraph{
-  @apply font-normal text-[20px] leading-[150%] text-[red];
+  @apply font-normal text-[20px] leading-[150%] text-white max-w-[576px];
 }
 .work_subtitle{
   @apply font-semibold text-[18px] leading-[100%] tracking-[0.02em] uppercase text-[var(--color-white-solid)];

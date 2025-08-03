@@ -89,9 +89,18 @@ const Page = () => {
         <Image className="bg-cover" src={Newaz} alt="ccc" />
       </div>
       <Container>
-        <div className="pt-[120px] pb-[96px] flex items-start justify-between gap-[58px]">
+        <div className="pt-[120px] pb-[96px]">
+          <div className="flex items-start justify-between gap-[58px]">
+            <h2 className="work_heading">Selected WORK</h2>
+            <p className="work_pragraph">
+              A few highlights from my recent work. Each one helped me grow and
+              brought new insights into creating meaningful design.
+            </p>
+          </div>
+
+          <div className="flex items-start justify-between gap-[58px]"></div>
+
           <div className="">
-            <h2 className="work_heading">Selected  WORK</h2>
             <div className="w-[580px] h-[398px] overflow-hidden">
               <Image className="w-full h-full bg-cover" src={Newaz} alt="aa" />
             </div>
