@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <Container className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
       {/* Left Text Content */}
-      <div className="mt-10 lg:mt-[218px] text-center lg:text-left">
+      <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
         <div className="flex items-center justify-center lg:justify-start gap-x-2">
           <Image className="h-[30px] w-[30px]" src={Hi} alt="Hi" />
           <h3 className="hero_title text-xl sm:text-2xl">Hi, I am</h3>
@@ -63,7 +63,7 @@ const Page = () => {
 
       {/* Right Video Content */}
       <div className="w-full max-w-sm">
-        <div className="w-full aspect-video rounded-md overflow-hidden">
+        <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
           <video
             src="/works.mp4"
             poster="/place1.png"
