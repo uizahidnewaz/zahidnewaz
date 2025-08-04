@@ -1,4 +1,3 @@
-// "use client";
 import Hi from "@/public/hi.svg";
 import Makeit from "@/public/makeit.webp";
 import Newaz from "@/public/newaz.webp";
@@ -172,7 +171,7 @@ const Page = () => {
           </div>
         </div>
       </Container>
-      <div className="makeit py-18 h-[736px]">
+      <div className="makeit py-18 h-[800px]">
         <Image className="w-full h-full bg-cover" src={Makeit} alt="makeit" />
       </div>
       <Motivation />
