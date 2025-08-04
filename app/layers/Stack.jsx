@@ -1,4 +1,4 @@
-import Blinto from "@/public/blinto.webp";
+import Figma from "@/public/figma.webp";
 import Image from "next/image";
 import Container from "../components/Container";
 const Stack = () => {
@@ -7,11 +7,11 @@ const Stack = () => {
       <h2 className="motivation_heading">Favourite stack</h2>
       <div className="mt-[290px] flex flex-col gap-y-[64px]">
         <div className="flex items-start gap-x-8">
-          <div className="flex-shrink-0 w-[44px] h-[44px] overflow-hidden">
+          <div className="flex-shrink-0 w-[35px] h-[50px] overflow-hidden">
             <Image
               className="w-full h-full bg-cover"
-              src={Blinto}
-              alt="blinto"
+              src={Figma}
+              alt="figma"
             />
           </div>
           <div className="">
