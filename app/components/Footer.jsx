@@ -36,7 +36,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="py-8 flex items-center justify-between">
-        <div className="footer_copyright">design</div>
+        <div className="footer_copyright">©2025 design</div>
         <div className="flex items-center gap-x-2">
           <div className="">a</div>
           <p className="footer_copyright">BACK TO TOP</p>
