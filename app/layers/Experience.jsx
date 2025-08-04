@@ -9,7 +9,11 @@ const Experience = () => {
         <div className="w-[44px] h-[44px] overflow-hidden">
           <Image src={Blinto} alt='blinto' />
         </div>
-        <div className="">x</div>
+        <div className="">
+          <h3 className='experience_heading'>Blinto llc | March 2025 - July 2025</h3>
+          <h4 className='experience_subheading'>UI/UX Designer</h4>
+          <p className='story_pragraph'>I worked closely with developers and directly communicated with clients to design both websites and software. Beyond UI/UX, I also contributed by creating blog graphics that aligned with the company’s content strategy</p>
+        </div>
       </div>
     </Container>
   )

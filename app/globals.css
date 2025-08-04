@@ -104,3 +104,6 @@ html {
 .experience_date {
   @apply font-light text-[23px] tracking-[-0.02em] capitalize text-[#FFFFFFE0];
 }
+.experience_subheading {
+  @apply font-medium text-[22px] leading-[91%] tracking-[-0.01em] capitalize text-[#fcfcfc];
+}
