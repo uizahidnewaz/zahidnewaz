@@ -9,6 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "./components/Container";
 import Motivation from "./layers/Motivation";
+import Experience from "./layers/Experience";
+import Stack from "./layers/Stack";
 
 const Page = () => {
   return (
@@ -173,6 +175,8 @@ const Page = () => {
           <Image className="w-full h-full bg-cover" src={Makeit} alt="makeit" />
         </div>
         <Motivation />
+        <Experience />
+        <Stack />
     </>
   );
 };
