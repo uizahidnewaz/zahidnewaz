@@ -1,47 +1,36 @@
-"use client";
-import { motion } from "framer-motion";
+import React from 'react'
+export async function generateMetadata() {
+  const brand = "Zahid Newaz";
+  const mainurl = "https://zahidnewaz.vercel.app";
+  const keywords = ["zahidnewaz", "zahid newaz"];
+  const description = `
+I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College, then went on to complete my BSc in Computer Science and Engineering from North South University...
+
+(My full story and experience...)
+`;
+
+  return {
+    title: brand,
+    description,
+    keywords,
+    openGraph: {
+      type: "website",
+      url: mainurl,
+      title: brand,
+      description,
+      site_name: "zahidnewaz",
+      locale: "en_US",
+    },
+  };
+}
+
+
 const page = () => {
   return (
     <div>
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={{
-          hidden: {},
-          show: {
-            transition: {
-              staggerChildren: 0.3,
-            },
-          },
-        }}
-      >
-        <motion.span
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 0.7,
-            ease: [0.25, 0.8, 0.25, 1],
-          }}
-          className="block overflow-hidden"
-        >
-          Top part of text
-        </motion.span>
-
-        <motion.span
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 0.7,
-            ease: [0.25, 0.8, 0.25, 1],
-            delay: 0.3, // delay for stagger
-          }}
-          className="block overflow-hidden"
-        >
-          Bottom part of text
-        </motion.span>
-      </motion.div>
+      about page
     </div>
-  );
-};
+  )
+}
 
-export default page;
+export default page
