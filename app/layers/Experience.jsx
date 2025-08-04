@@ -6,8 +6,8 @@ const Experience = () => {
     <Container className="pt-[120px] pb-[96px] flex items-start gap-x-[15px]">
       <h2 className='motivation_heading'>experience</h2>
       <div className="mt-[202px] flex items-start gap-x-8">
-        <div className="w-[44px] h-[44px] overflow-hidden">
-          <Image src={Blinto} alt='blinto' />
+        <div className="flex-shrink-0 w-[44px] h-[44px] overflow-hidden">
+          <Image className='w-full h-full bg-cover' src={Blinto} alt='blinto' />
         </div>
         <div className="">
           <h3 className='experience_heading'>Blinto llc<span className='experience_date'> | March 2025 - July 2025</span></h3>
