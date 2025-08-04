@@ -1,4 +1,5 @@
 import Arrow from "@/public/arrow.png";
+import Newazls from "@/public/newazls.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
@@ -38,7 +39,9 @@ const Footer = () => {
       <div className="py-8 flex items-center justify-between">
         <div className="footer_copyright">©2025 design</div>
         <div className="flex items-center gap-x-2">
-          <div className="">a</div>
+          <div className="">
+            <Image src={Newazls} alt="Newazls" />
+          </div>
           <p className="footer_copyright">BACK TO TOP</p>
         </div>
       </div>
