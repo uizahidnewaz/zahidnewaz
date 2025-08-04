@@ -99,7 +99,7 @@ const Page = () => {
         <div className="pt-[120px] pb-[96px]">
           <div className="flex items-start justify-between gap-[58px]">
             <h2 className="work_heading">Selected WORK</h2>
-            <p className="work_pragraph">
+            <p className="work_pragraph mt-2">
               A few highlights from my recent work. Each one helped me grow and
               brought new insights into creating meaningful design.
             </p>
