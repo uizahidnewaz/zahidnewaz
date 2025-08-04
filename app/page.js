@@ -16,7 +16,7 @@ import Stack from "./layers/Stack";
 const Page = () => {
   return (
     <>
-      <Container className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
+      <Container id="top" className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
         {/* Left Text Content */}
         <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-x-2">
