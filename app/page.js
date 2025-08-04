@@ -3,6 +3,7 @@ import Makeit from "@/public/makeit.webp";
 import Newaz from "@/public/newaz.webp";
 import Newazls from "@/public/newazls.svg";
 import Work1 from "@/public/work1.webp";
+import Work2 from "@/public/work2.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -122,12 +123,12 @@ const Page = () => {
               <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
                 <Image
                   className="w-full h-full bg-cover"
-                  src={Work1}
+                  src={Work2}
                   alt="aa"
                 />
               </div>
               <div className="mt-4 flex justify-between items-center">
-                <h3 className="work_subtitle">in progress</h3>
+                <h3 className="work_subtitle">Hospital management system</h3>
                 <p className="work_number">02</p>
               </div>
             </div>
