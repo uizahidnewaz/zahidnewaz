@@ -13,7 +13,7 @@ export const metadata = {
   description: "UI/UX Designer",
 };
 
-export async function generateMetadata() {
+export const metadata = {
   let brand = "Zahid Newaz";
   let mainurl = "https://zahidnewaz.vercel.app";
   let keywords = ["zahidnewaz", "zahid newaz"];
