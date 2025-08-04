@@ -8,7 +8,7 @@ const Experience = () => {
       <h2 className="motivation_heading">experience</h2>
       <div className="mt-[202px] flex flex-col gap-y-[64px]">
         <div className="flex items-start gap-x-8">
-          <div className="flex-shrink-0 w-[44px] h-[44px] overflow-hidden">
+          <div className="flex-shrink-0 w-[44px] h-[41px] overflow-hidden">
             <Image
               className="w-full h-full bg-cover"
               src={Blinto}
