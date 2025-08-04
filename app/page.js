@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Hi from "@/public/hi.svg";
 import Makeit from "@/public/makeit.webp";
 import Newaz from "@/public/newaz.webp";
@@ -11,13 +11,14 @@ import Container from "./components/Container";
 import Experience from "./layers/Experience";
 import Motivation from "./layers/Motivation";
 import Stack from "./layers/Stack";
+import Hero from "./layers/Hero";
 
 
 const Page = () => {
   return (
     <>
-      <Container id="top" className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
-        {/* Left Text Content */}
+    <Hero />
+      {/* <Container id="top" className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
         <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-x-2">
             <Image className="h-[30px] w-[30px]" src={Hi} alt="Hi" />
@@ -70,7 +71,6 @@ const Page = () => {
           </motion.div>
         </div>
 
-        {/* Right Video Content */}
         <div className="w-full max-w-sm">
           <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
             <video
@@ -90,7 +90,7 @@ const Page = () => {
             SEE ALL PROJECTS
           </Link>
         </div>
-      </Container>
+      </Container> */}
       <div className="h-[736px] w-full py-8 block">
         <Image className="bg-cover" src={Newaz} alt="ccc" />
       </div>
