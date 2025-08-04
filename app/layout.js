@@ -8,10 +8,6 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Zahid Newaz",
-  description: "UI/UX Designer",
-};
 
 export const metadata = {
   let brand = "Zahid Newaz";
