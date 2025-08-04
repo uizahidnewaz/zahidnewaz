@@ -6,7 +6,7 @@ const Stack = () => {
   return (
     <Container className="pt-[120px] pb-[96px] flex items-start gap-x-[15px]">
       <h2 className="motivation_heading">Favourite stack</h2>
-      <div className="mt-[202px] flex flex-col gap-y-[64px]">
+      <div className="mt-[290px] flex flex-col gap-y-[64px]">
         <div className="flex items-start gap-x-8">
           <div className="flex-shrink-0 w-[44px] h-[41px] overflow-hidden">
             <Image
