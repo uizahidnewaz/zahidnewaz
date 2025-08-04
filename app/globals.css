@@ -119,7 +119,7 @@ html {
   @apply font-semibold text-[20px] leading-[150%] uppercase text-center text-[#fcfcfc];
 }
 .footer_link{
-  @apply font-semibold text-[18px] leading-[111%] uppercase text-[#fcfcfc];
+  @apply font-semibold text-[18px] leading-[111%] uppercase text-[#fcfcfc] inline-block;
 }
 .footer_copyright{
   @apply font-semibold text-[20px] leading-[100%] uppercase text-[#fcfcfc];

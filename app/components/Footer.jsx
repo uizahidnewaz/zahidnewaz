@@ -1,3 +1,5 @@
+import Arrow from "@/public/arrow.png";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
 
@@ -10,18 +12,26 @@ const Footer = () => {
         always open to new opportunities, creative collaborations, or simply
         chatting about design, tech, or ideas
       </p>
-      <div className="mb-[72px] flex items-center justify-center gap-x-[20px]">
-        <Link className="footer_link" href="/" className="">
-          a
+      <div className="mb-[72px] flex items-center justify-center gap-x-[30px]">
+        <Link href="/" className="flex item items-center gap-x-2">
+          <h3 className="footer_link">Linkedin</h3>
+          <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link className="footer_link" href="/" className="">
-          a
+        <Link href="/" className="flex item items-center gap-x-2">
+          <h3 className="footer_link">Behance</h3>
+          <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link className="footer_link" href="/" className="">
-          a
+        <Link href="/" className="flex item items-center gap-x-2">
+          <h3 className="footer_link">Dribbble</h3>
+          <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link className="footer_link" href="/" className="">
-          a
+        <Link href="/" className="flex item items-center gap-x-2">
+          <h3 className="footer_link">Instagram</h3>
+          <Image src={Arrow} alt="arrow" />
+        </Link>
+        <Link href="/" className="flex item items-center gap-x-2">
+          <h3 className="footer_link">Facebook</h3>
+          <Image src={Arrow} alt="arrow" />
         </Link>
       </div>
       <hr />
