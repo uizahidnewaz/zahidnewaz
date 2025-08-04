@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="">
             <Image src={Newazls} alt="Newazls" />
           </div>
-          <p className="footer_copyright">BACK TO TOP</p>
+          <Link href="#top" className="footer_copyright">BACK TO TOP</Link>
         </div>
       </div>
     </Container>
