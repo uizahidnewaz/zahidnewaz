@@ -38,7 +38,7 @@ const Stack = () => {
           </div>
         </div>
         <div className="flex items-start gap-x-8">
-          <div className="flex-shrink-0 w-[35px] h-[50px] overflow-hidden">
+          <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden">
             <Image className="w-full h-full bg-cover" src={Figma} alt="figma" />
           </div>
           <div className="">
