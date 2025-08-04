@@ -1,6 +1,8 @@
 import Canva from "@/public/canva.webp";
 import Figma from "@/public/figma.webp";
 import Notion from "@/public/notion.webp";
+import Framer from "@/public/framer.webp";
+import Jira from "@/public/jira.webp";
 import Image from "next/image";
 import Container from "../components/Container";
 const Stack = () => {
@@ -59,8 +61,8 @@ const Stack = () => {
         <div className="flex items-start gap-x-8">
           <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden">
             <Image
-              className="w-full h-full bg-cover"
-              src={Notion}
+              className="w-[60%] h-full bg-cover"
+              src={Framer}
               alt="figma"
             />
           </div>
@@ -76,17 +78,18 @@ const Stack = () => {
           <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden">
             <Image
               className="w-full h-full bg-cover"
-              src={Notion}
+              src={Jira}
               alt="figma"
             />
           </div>
           <div className="">
-            <h3 className="stack_heading">Notion</h3>
+            <h3 className="stack_heading">Jira</h3>
             <h4 className="stack_subheading mt-[10px] mb-6">
-              For Note-taking and Documentation
+              Project Management
             </h4>
             <p className="story_pragraph">
-              I rely on it for note-taking, and documenting design systems
+              I use it for project management, tracking tasks and time, and
+              organizing notes
             </p>
           </div>
         </div>
