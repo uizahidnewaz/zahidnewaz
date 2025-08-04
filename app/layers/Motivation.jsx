@@ -22,7 +22,7 @@ const Motivation = () => {
         {/* RIGHT SIDE */}
         <div className="w-full md:w-[60%] flex flex-col justify-between">
           <div className="space-y-[20px]">
-            <p className="motivation_pagaraph">
+            <p className="motivation_pagaraph mt-2">
               As a CSE student, I loved solving logical problems and writing
               code. But deep down, I felt something was missing. I wanted to
               create things people could see, feel, and connect with.
