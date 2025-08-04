@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Container from "./Container";
 
 const Footer = () => {
   return (
-    <div className="pt-[180px]">
+    <Container className="pt-[180px]">
       <h2 className="footer_heading">Let’s connect</h2>
-      <p className="footer_pagaraph">
+      <p className="footer_pagaraph mt-6 mb-10">
         Thank you for exploring my work and learning a bit about my journey. I’m
         always open to new opportunities, creative collaborations, or simply
         chatting about design, tech, or ideas
@@ -31,7 +32,7 @@ const Footer = () => {
           <p className="footer_copyright">BACK TO TOP</p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
