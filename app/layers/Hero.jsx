@@ -48,7 +48,10 @@ const Hero = () => {
           variants={containerVariants}
           className="mt-3"
         >
-          <motion.div variants={childVariants} className="hero_heading text-4xl sm:text-5xl font-bold">
+          <motion.div
+            variants={childVariants}
+            className="hero_heading text-4xl sm:text-5xl font-bold"
+          >
             Zahid
           </motion.div>
 
@@ -69,24 +72,26 @@ const Hero = () => {
       </div>
 
       {/* Right Video Content */}
-      <div className="w-full max-w-sm">
-        <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
-          <video
-            src="/works.mp4"
-            poster="/place1.png"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          />
+      <div className="w-full flex justify-end max-w-sm">
+        <div className="">
+          <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
+            <video
+              src="/works.mp4"
+              poster="/place1.png"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <Link
+            href="/"
+            className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto"
+          >
+            SEE ALL PROJECTS
+          </Link>
         </div>
-        <Link
-          href="/"
-          className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto"
-        >
-          SEE ALL PROJECTS
-        </Link>
       </div>
     </Container>
   );
