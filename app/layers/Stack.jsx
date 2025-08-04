@@ -1,5 +1,6 @@
 import Canva from "@/public/canva.webp";
 import Figma from "@/public/figma.webp";
+import Notion from "@/public/notion.webp";
 import Image from "next/image";
 import Container from "../components/Container";
 const Stack = () => {
@@ -39,7 +40,45 @@ const Stack = () => {
         </div>
         <div className="flex items-start gap-x-8">
           <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden">
-            <Image className="w-full h-full bg-cover" src={Figma} alt="figma" />
+            <Image
+              className="w-full h-full bg-cover"
+              src={Notion}
+              alt="figma"
+            />
+          </div>
+          <div className="">
+            <h3 className="stack_heading">Notion</h3>
+            <h4 className="stack_subheading mt-[10px] mb-6">
+              For Note-taking and Documentation
+            </h4>
+            <p className="story_pragraph">
+              I rely on it for note-taking, and documenting design systems
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-x-8">
+          <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden">
+            <Image
+              className="w-full h-full bg-cover"
+              src={Notion}
+              alt="figma"
+            />
+          </div>
+          <div className="">
+            <h3 className="stack_heading">framer</h3>
+            <h4 className="stack_subheading mt-[10px] mb-6">Visual Design</h4>
+            <p className="story_pragraph">
+              Currently learning it for no-code web development
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-x-8">
+          <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden">
+            <Image
+              className="w-full h-full bg-cover"
+              src={Notion}
+              alt="figma"
+            />
           </div>
           <div className="">
             <h3 className="stack_heading">Notion</h3>
