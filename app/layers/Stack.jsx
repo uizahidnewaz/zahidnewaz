@@ -3,6 +3,7 @@ import Figma from "@/public/figma.webp";
 import Framer from "@/public/framer.webp";
 import Jira from "@/public/jira.webp";
 import Notion from "@/public/notion.webp";
+import StackImage from "@/public/stack.webp";
 import Image from "next/image";
 import Container from "../components/Container";
 const Stack = () => {
@@ -101,7 +102,7 @@ const Stack = () => {
         </div>
       </Container>
       <div className="py-8 h-[736px]">
-        <Image className="w-full h-full bg-cover" src={Notion} alt="stack" />
+        <Image className="w-full h-full bg-cover" src={StackImage} alt="stack" />
       </div>
     </>
   );
