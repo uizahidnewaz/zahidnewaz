@@ -11,6 +11,7 @@ import Experience from "./layers/Experience";
 import Motivation from "./layers/Motivation";
 import Stack from "./layers/Stack";
 import Hero from "./layers/Hero";
+// import Makeit from "./assets/Makeit";
 
 
 const Page = () => {
@@ -172,6 +173,7 @@ const Page = () => {
         </div>
       </Container>
       <div className="makeit py-18 h-[800px]">
+        {/* <Makeit /> */}
         <Image className="w-full h-full bg-cover" src={Makeit} alt="makeit" />
       </div>
       <Motivation />
