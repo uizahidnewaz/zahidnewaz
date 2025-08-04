@@ -65,7 +65,7 @@ const Hero = () => {
             <Image
               src={Newazls}
               alt="Newazls"
-              className="inline-block w-[80px] h-[40px] sm:w-[100px] sm:h-[50px]"
+              className="inline-block w-[50px] h-[40px] sm:w-[100px] sm:h-[50px]"
             />
           </motion.div>
         </motion.div>
