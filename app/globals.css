@@ -93,3 +93,14 @@ html {
 .motivation_italic {
   @apply italic font-normal text-[20px] leading-[150%] text-[#fcfcfc];
 }
+
+.experience_heading {
+  @apply font-bold text-[24px] leading-[125%] tracking-[-0.03em] uppercase text-[#fcfcfc];
+}
+.experience_headingsaprator {
+  @apply font-light text-[30px] tracking-[-0.02em] text-[#FFFFFFE0
+];
+}
+.experience_date {
+  @apply font-light text-[23px] tracking-[-0.02em] capitalize text-[#FFFFFFE0];
+}
