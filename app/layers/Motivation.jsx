@@ -13,7 +13,7 @@ const Motivation = () => {
             </h3>
           </div>
 
-          <div className="mb-[30px] flex items-center gap-x-[8px] mt-10 md:mt-0">
+          <div className="mb-[30px] flex items-center gap-x-[12px] mt-10 md:mt-0">
             <div className="w-[18px] h-[18px] rounded-full bg-white flex-shrink-0"></div>
             <h3 className="story_title flex-shrink-0">My motto</h3>
           </div>

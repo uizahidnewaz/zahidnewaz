@@ -137,7 +137,7 @@ const Page = () => {
         <div className="story pt-[120px] pb-[96px]">
           <h2 className="story_heading">My Side of the Story</h2>
           <div className="mt-[84px] flex justify-between items-start gap-x-[80px]">
-            <div className="flex items-center gap-x-[8px]">
+            <div className="flex items-center gap-x-[12px]">
               <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]"></div>
               <h3 className="story_title flex-shrink-0">About me</h3>
             </div>
@@ -162,7 +162,7 @@ const Page = () => {
             </div>
           </div>
           <div className="mt-[84px] flex justify-between items-start gap-x-[80px]">
-            <div className="flex items-center gap-x-[8px]">
+            <div className="flex items-center gap-x-[12px]">
               <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]"></div>
               <h3 className="story_title flex-shrink-0">My mission</h3>
             </div>
