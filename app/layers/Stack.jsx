@@ -1,5 +1,4 @@
 import Blinto from "@/public/blinto.webp";
-import Btrac from "@/public/btrac.webp";
 import Image from "next/image";
 import Container from "../components/Container";
 const Stack = () => {
@@ -8,7 +7,7 @@ const Stack = () => {
       <h2 className="motivation_heading">Favourite stack</h2>
       <div className="mt-[290px] flex flex-col gap-y-[64px]">
         <div className="flex items-start gap-x-8">
-          <div className="flex-shrink-0 w-[44px] h-[41px] overflow-hidden">
+          <div className="flex-shrink-0 w-[44px] h-[44px] overflow-hidden">
             <Image
               className="w-full h-full bg-cover"
               src={Blinto}
@@ -16,13 +15,11 @@ const Stack = () => {
             />
           </div>
           <div className="">
-            <h3 className="stack_heading">Blinto llc</h3>
-            <h4 className="stack_subheading mt-[10px] mb-6">UI/UX Designer</h4>
+            <h3 className="stack_heading">Figma</h3>
+            <h4 className="stack_subheading mt-[10px] mb-6">Design Tool</h4>
             <p className="story_pragraph">
-              I worked closely with developers and directly communicated with
-              clients to design both websites and software. Beyond UI/UX, I also
-              contributed by creating blog graphics that aligned with the
-              company’s content strategy
+              My go-to tool for UI/UX design, from wireframes to high-fidelity
+              prototypes and also for graphic designing
             </p>
           </div>
         </div>
