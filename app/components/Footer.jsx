@@ -10,7 +10,7 @@ const Footer = () => {
         always open to new opportunities, creative collaborations, or simply
         chatting about design, tech, or ideas
       </p>
-      <div className="flex items-center justify-center gap-x-[20px]">
+      <div className="mb-[72px] flex items-center justify-center gap-x-[20px]">
         <Link className="footer_link" href="/" className="">
           a
         </Link>
@@ -25,7 +25,7 @@ const Footer = () => {
         </Link>
       </div>
       <hr />
-      <div className="flex items-center justify-between">
+      <div className="py-8 flex items-center justify-between">
         <div className="footer_copyright">design</div>
         <div className="flex items-center gap-x-2">
           <div className="">a</div>
