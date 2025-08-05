@@ -1,12 +1,30 @@
 "use client";
 import Work1 from "@/public/work1.webp";
 import Work2 from "@/public/work2.webp";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import Container from "../components/Container";
 
 const SellectedWork = () => {
+  const sellectedref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sellectedref,
+    offset: ["start end", "end start"],
+  });
+
+  const scale = useSpring(useTransform(scrollYProgress, [0, 1], [1.2, 1]), {
+    stiffness: 200,
+    damping: 30,
+  });
+
+  const opacity = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]),
+    { stiffness: 200, damping: 30 }
+  );
   return (
-    <Container>
+    <Container ref={sellectedref}>
       <div className="pt-[120px] pb-[96px]">
         <div className="flex items-start justify-between gap-[58px]">
           <h2 className="work_heading">Selected WORK</h2>
@@ -16,7 +34,10 @@ const SellectedWork = () => {
           </p>
         </div>
 
-        <div className="mt-[80px] flex items-start justify-between gap-[58px]">
+        <motion.div
+          style={{ scale, opacity }}
+          className="mt-[80px] flex items-start justify-between gap-[58px]"
+        >
           <div className="">
             <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
               <Image className="w-full h-full bg-cover" src={Work1} alt="aa" />
@@ -35,7 +56,7 @@ const SellectedWork = () => {
               <p className="work_number">02</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </Container>
   );
