@@ -2,7 +2,7 @@
 import Hi from "@/public/hi.svg";
 import Newaz from "@/public/newaz.webp";
 import Newazls from "@/public/newazls.svg";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -38,8 +38,12 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
   // Transform scroll progress to scale
-  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
-  console.log(scale);
+  const rawScale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  const scale = useSpring(rawScale, {
+    stiffness: 200, // responsiveness
+    damping: 30, // bounce/resistance
+    mass: 0.5, // weight
+  });
 
   return (
     <>
