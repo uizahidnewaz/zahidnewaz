@@ -1,48 +1,99 @@
 "use client";
+
 import Container from "../components/Container";
-// import Makeit from "./assets/Makeit";
-import "lenis/dist/lenis.css";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+// Variants
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const Story = () => {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  
+  // Track visibility every time it enters or leaves
+  const inView = useInView(ref, { margin: "-30% 0% -30% 0%", once: false });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
   return (
     <Container>
-      <div className="story pt-[120px] pb-[96px]">
-        <h2 className="story_heading">My Side of the Story</h2>
-        <div className="mt-[84px] flex justify-between items-start gap-x-[80px]">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
+        className="story pt-[120px] pb-[96px]"
+        viewport={{ once: false, amount: 0.3 }} // animate every time, no once
+      >
+        <motion.h2 variants={childVariants} className="story_heading">
+          My Side of the Story
+        </motion.h2>
+
+        {/* About Me */}
+        <motion.div
+          variants={childVariants}
+          className="mt-[84px] flex justify-between items-start gap-x-[80px]"
+        >
           <div className="flex items-center gap-x-[12px]">
-            <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]"></div>
+            <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]" />
             <h3 className="story_title flex-shrink-0">About me</h3>
           </div>
-          <div className="">
+          <div>
             <p className="story_pragraph">
               I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College,
-              then went on to complete my BSc in Computer Science and
-              Engineering from North South University. For a long time, I
-              thought my path was already set, lines of code, system design,
-              maybe software development.
+              then went on to complete my BSc in Computer Science and Engineering from
+              North South University. For a long time, I thought my path was already
+              set—lines of code, system design, maybe software development.
             </p>
             <p className="story_pragraph mt-[30px]">
-              {" "}
               My journey into design began at the end of 2023, when I discovered
-              a deep interest in creating user-friendly and visually engaging
-              digital experiences. Since then, I’ve been learning and growing
-              every day, exploring UI/UX principles, studying real-world
-              products, and building designs that solve real problems. I believe
-              in continuous learning, and thoughtful design.
+              a deep interest in creating user-friendly and visually engaging digital
+              experiences. Since then, I’ve been learning and growing every day,
+              exploring UI/UX principles, studying real-world products, and building
+              designs that solve real problems. I believe in continuous learning,
+              and thoughtful design.
             </p>
           </div>
-        </div>
-        <div className="mt-[84px] flex justify-between items-start gap-x-[80px]">
+        </motion.div>
+
+        {/* My Mission */}
+        <motion.div
+          variants={childVariants}
+          className="mt-[84px] flex justify-between items-start gap-x-[80px]"
+        >
           <div className="flex items-center gap-x-[12px]">
-            <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]"></div>
+            <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]" />
             <h3 className="story_title flex-shrink-0">My mission</h3>
           </div>
           <p className="story_pragraph">
-            My mission is to make people’s lives easier through thoughtful
-            design and to create experiences that users genuinely enjoy
+            My mission is to make people’s lives easier through thoughtful design
+            and to create experiences that users genuinely enjoy.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Container>
   );
 };
