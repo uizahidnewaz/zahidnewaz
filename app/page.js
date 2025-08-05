@@ -1,24 +1,34 @@
-import Hi from "@/public/hi.svg";
+"use client"
 import Makeit from "@/public/makeit.webp";
 import Newaz from "@/public/newaz.webp";
-import Newazls from "@/public/newazls.svg";
 import Work1 from "@/public/work1.webp";
 import Work2 from "@/public/work2.webp";
-import { motion } from "framer-motion";
+import Lenis from "lenis";
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect } from "react";
 import Container from "./components/Container";
 import Experience from "./layers/Experience";
+import Hero from "./layers/Hero";
 import Motivation from "./layers/Motivation";
 import Stack from "./layers/Stack";
-import Hero from "./layers/Hero";
 // import Makeit from "./assets/Makeit";
-
+import 'lenis/dist/lenis.css'
 
 const Page = () => {
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+
+    // Listen for the scroll event and log the event data
+    // lenis.on("scroll", (e) => {
+    //   console.log(e);
+    // });
+  });
   return (
     <>
-    <Hero />
+      <Hero />
       {/* <Container id="top" className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
         <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-x-2">
