@@ -1,7 +1,6 @@
 "use client";
-import Makeit from "@/public/makeit.webp";
+
 import Lenis from "lenis";
-import Image from "next/image";
 import { useEffect } from "react";
 import Experience from "./layers/Experience";
 import Hero from "./layers/Hero";
@@ -9,6 +8,7 @@ import Motivation from "./layers/Motivation";
 import Stack from "./layers/Stack";
 // import Makeit from "./assets/Makeit";
 import "lenis/dist/lenis.css";
+import Makeit from "./layers/Makeit";
 import SellectedWork from "./layers/SellectedWork";
 import Story from "./layers/Story";
 
@@ -102,10 +102,7 @@ const Page = () => {
       </Container> */}
       <SellectedWork />
       <Story />
-      <div className="makeit py-18 h-[800px]">
-        {/* <Makeit /> */}
-        <Image className="w-full h-full bg-cover" src={Makeit} alt="makeit" />
-      </div>
+      <Makeit />
       <Motivation />
       <Experience />
       <Stack />
