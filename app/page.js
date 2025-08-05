@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import Makeit from "@/public/makeit.webp";
-import Newaz from "@/public/newaz.webp";
 import Work1 from "@/public/work1.webp";
 import Work2 from "@/public/work2.webp";
 import Lenis from "lenis";
@@ -12,7 +11,8 @@ import Hero from "./layers/Hero";
 import Motivation from "./layers/Motivation";
 import Stack from "./layers/Stack";
 // import Makeit from "./assets/Makeit";
-import 'lenis/dist/lenis.css'
+import { useScroll } from "framer-motion";
+import "lenis/dist/lenis.css";
 
 const Page = () => {
   useEffect(() => {
@@ -102,9 +102,7 @@ const Page = () => {
           </Link>
         </div>
       </Container> */}
-      <div className="h-[736px] w-full py-8 block">
-        <Image className="bg-cover" src={Newaz} alt="ccc" />
-      </div>
+
       <Container>
         <div className="pt-[120px] pb-[96px]">
           <div className="flex items-start justify-between gap-[58px]">

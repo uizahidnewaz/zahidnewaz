@@ -1,10 +1,11 @@
 "use client";
-
 import Hi from "@/public/hi.svg";
+import Newaz from "@/public/newaz.webp";
 import Newazls from "@/public/newazls.svg";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import Container from "../components/Container";
 
 // Motion variants for staggering effect
@@ -30,70 +31,86 @@ const childVariants = {
 };
 
 const Hero = () => {
+  const heroref = useRef(null);
+  // Track scroll for this element
+  const { scrollYProgress } = useScroll({
+    target: heroref,
+    offset: ["start start", "end start"],
+  });
+  // Transform scroll progress to scale
+  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  console.log(scale);
+
   return (
-    <Container
-      id="top"
-      className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0"
-    >
-      {/* Left Text Content */}
-      <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
-        <div className="flex items-center justify-center lg:justify-start gap-x-2">
-          <Image className="h-[30px] w-[30px]" src={Hi} alt="Hi" />
-          <h3 className="hero_title text-xl sm:text-2xl">Hi, I am</h3>
-        </div>
-
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={containerVariants}
-          className="mt-3"
-        >
-          <motion.div
-            variants={childVariants}
-            className="hero_heading text-4xl sm:text-5xl font-bold"
-          >
-            Zahid
-          </motion.div>
-
-          <motion.div
-            variants={childVariants}
-            className="flex items-end justify-center lg:justify-start gap-x-2"
-          >
-            <h1 className="hero_heading text-4xl sm:text-5xl font-bold">
-              Newaz
-            </h1>
-            <Image
-              src={Newazls}
-              alt="Newazls"
-              className="inline-block w-[80px] h-[40px] md:w-[70px] sm:h-[50px]"
-            />
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Right Video Content */}
-      <div className="w-full flex justify-end max-w-sm">
-        <div className="">
-          <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
-            <video
-              src="/works.mp4"
-              poster="/place1.png"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
+    <>
+      <Container
+        id="top"
+        ref={heroref}
+        className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0"
+      >
+        {/* Left Text Content */}
+        <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
+          <div className="flex items-center justify-center lg:justify-start gap-x-2">
+            <Image className="h-[30px] w-[30px]" src={Hi} alt="Hi" />
+            <h3 className="hero_title text-xl sm:text-2xl">Hi, I am</h3>
           </div>
-          <Link
-            href="/"
-            className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto"
+
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={containerVariants}
+            className="mt-3"
           >
-            SEE ALL PROJECTS
-          </Link>
+            <motion.div
+              variants={childVariants}
+              className="hero_heading text-4xl sm:text-5xl font-bold"
+            >
+              Zahid
+            </motion.div>
+
+            <motion.div
+              variants={childVariants}
+              className="flex items-end justify-center lg:justify-start gap-x-2"
+            >
+              <h1 className="hero_heading text-4xl sm:text-5xl font-bold">
+                Newaz
+              </h1>
+              <Image
+                src={Newazls}
+                alt="Newazls"
+                className="inline-block w-[80px] h-[40px] md:w-[70px] sm:h-[50px]"
+              />
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
-    </Container>
+
+        {/* Right Video Content */}
+        <div className="w-full flex justify-end max-w-sm">
+          <div className="">
+            <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
+              <video
+                src="/works.mp4"
+                poster="/place1.png"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <Link
+              href="/"
+              className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto"
+            >
+              SEE ALL PROJECTS
+            </Link>
+          </div>
+        </div>
+      </Container>
+      <motion.div style={{ scale }} className="h-[736px] w-full py-8 block">
+        <Image className="bg-cover" src={Newaz} alt="ccc" />
+      </motion.div>
+    </>
   );
 };
 
