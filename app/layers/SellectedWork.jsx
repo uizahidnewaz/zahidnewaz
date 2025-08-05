@@ -23,6 +23,15 @@ const SellectedWork = () => {
     useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]),
     { stiffness: 200, damping: 30 }
   );
+  const containerVariants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.2 } },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
   return (
     <Container ref={sellectedref}>
       <div className="pt-[120px] pb-[96px]">

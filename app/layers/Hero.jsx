@@ -1,14 +1,22 @@
 "use client";
+
 import Hi from "@/public/hi.svg";
 import Newaz from "@/public/newaz.webp";
 import Newazls from "@/public/newazls.svg";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Container from "../components/Container";
 
-// Motion variants for staggering effect
+// Container animation (for staggering children)
 const containerVariants = {
   hidden: {},
   show: {
@@ -18,6 +26,7 @@ const containerVariants = {
   },
 };
 
+// Children animation variant
 const childVariants = {
   hidden: { y: 40, opacity: 0 },
   show: {
@@ -31,19 +40,38 @@ const childVariants = {
 };
 
 const Hero = () => {
-  const heroref = useRef(null);
-  // Track scroll for this element
+  const heroref = useRef(null); // Main container ref (for scrollYProgress)
+  const herotextRef = useRef(null); // Text container ref (for inView)
+
+  // Scroll-based image scale animation
   const { scrollYProgress } = useScroll({
     target: heroref,
     offset: ["start start", "end start"],
   });
-  // Transform scroll progress to scale
-  const rawScale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
-  const scale = useSpring(rawScale, {
-    stiffness: 200, // responsiveness
-    damping: 30, // bounce/resistance
-    mass: 0.5, // weight
+
+  const scale = useSpring(
+    useTransform(scrollYProgress, [0, 1], [1.2, 1]),
+    {
+      stiffness: 200,
+      damping: 30,
+      mass: 0.5,
+    }
+  );
+
+  // Text animation on in-view
+  const controls = useAnimation();
+  const isInView = useInView(herotextRef, {
+    margin: "-100px",
+    once: false,
   });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("show");
+    } else {
+      controls.start("hidden"); // Reset if out of view (optional)
+    }
+  }, [isInView, controls]);
 
   return (
     <>
@@ -59,9 +87,11 @@ const Hero = () => {
             <h3 className="hero_title text-xl sm:text-2xl">Hi, I am</h3>
           </div>
 
+          {/* Animated Text Block */}
           <motion.div
+            ref={herotextRef}
             initial="hidden"
-            animate="show"
+            animate={controls}
             variants={containerVariants}
             className="mt-3"
           >
@@ -90,7 +120,7 @@ const Hero = () => {
 
         {/* Right Video Content */}
         <div className="w-full flex justify-end max-w-sm">
-          <div className="">
+          <div>
             <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
               <video
                 src="/works.mp4"
@@ -111,6 +141,8 @@ const Hero = () => {
           </div>
         </div>
       </Container>
+
+      {/* Scroll-based Image Animation */}
       <motion.div style={{ scale }} className="h-[736px] w-full py-8 block">
         <Image className="bg-cover" src={Newaz} alt="ccc" />
       </motion.div>
