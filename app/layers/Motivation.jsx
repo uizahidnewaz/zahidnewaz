@@ -1,11 +1,56 @@
+"use client";
+
 import Container from "../components/Container";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+// Variants for container and children
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const Motivation = () => {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  // Detect if component is in view; triggers every time it enters/leaves
+  const inView = useInView(ref, { margin: "-30% 0% -30% 0%" });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
   return (
     <Container className="pt-[120px] pb-[96px]">
-      <div className="flex flex-col md:flex-row items-stretch gap-x-[80px]">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
+        className="flex flex-col md:flex-row items-stretch gap-x-[80px]"
+      >
         {/* LEFT SIDE */}
-        <div className="flex flex-col justify-between w-full md:w-[40%]">
+        <motion.div
+          variants={childVariants}
+          className="flex flex-col justify-between w-full md:w-[40%]"
+        >
           <div>
             <h2 className="motivation_heading">motivation</h2>
             <h3 className="motivation_subheading">
@@ -17,44 +62,32 @@ const Motivation = () => {
             <div className="w-[18px] h-[18px] rounded-full bg-white flex-shrink-0"></div>
             <h3 className="story_title flex-shrink-0">My motto</h3>
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT SIDE */}
-        <div className="w-full md:w-[60%] flex flex-col justify-between">
+        <motion.div
+          variants={childVariants}
+          className="w-full md:w-[60%] flex flex-col justify-between"
+        >
           <div className="space-y-[20px]">
             <p className="motivation_pagaraph mt-2">
-              As a CSE student, I loved solving logical problems and writing
-              code. But deep down, I felt something was missing. I wanted to
-              create things people could see, feel, and connect with.
+              As a CSE student, I loved solving logical problems and writing code. But deep down, I felt something was missing. I wanted to create things people could see, feel, and connect with.
             </p>
 
             <p className="motivation_pagaraph">
-              Then one day, a friend introduced me to Figma. At first, it seemed
-              like just another tool. But once I started experimenting, moving
-              shapes, playing with colors, aligning elements, something clicked.
-              I didn’t realize how much time had passed. Designing felt natural,
-              exciting, even therapeutic. I could sit for hours without noticing
-              the clock, fully lost in the process.
+              Then one day, a friend introduced me to Figma. At first, it seemed like just another tool. But once I started experimenting, moving shapes, playing with colors, aligning elements, something clicked. I didn’t realize how much time had passed. Designing felt natural, exciting, even therapeutic. I could sit for hours without noticing the clock, fully lost in the process.
             </p>
 
             <p className="motivation_pagaraph">
-              That small spark of curiosity turned into something much bigger. I
-              began learning everything I could about UI/UX. No formal classes.
-              Just pure drive. I read articles, watched tutorials, downloaded
-              design eBooks, followed designers I admired, and practiced almost
-              daily. What started as an interest quickly grew into a passion,
-              and that passion became my path. I’m still learning, still
-              exploring, and still just as excited as I was that very first day
-              I opened Figma.
+              That small spark of curiosity turned into something much bigger. I began learning everything I could about UI/UX. No formal classes. Just pure drive. I read articles, watched tutorials, downloaded design eBooks, followed designers I admired, and practiced almost daily. What started as an interest quickly grew into a passion, and that passion became my path. I’m still learning, still exploring, and still just as excited as I was that very first day I opened Figma.
             </p>
           </div>
 
           <p className="motivation_italic mt-[48px] self-end">
-            “Design is not just what it looks like and feels like. Design is how
-            it works."
+            “Design is not just what it looks like and feels like. Design is how it works."
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Container>
   );
 };
