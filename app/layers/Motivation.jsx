@@ -1,8 +1,8 @@
 "use client";
 
-import Container from "../components/Container";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Container from "../components/Container";
 
 // Variants for container and children
 const containerVariants = {
@@ -71,20 +71,35 @@ const Motivation = () => {
         >
           <div className="space-y-[20px]">
             <p className="motivation_pagaraph mt-2">
-              As a CSE student, I loved solving logical problems and writing code. But deep down, I felt something was missing. I wanted to create things people could see, feel, and connect with.
+              As a CSE student, I loved solving logical problems and writing
+              code. But deep down, I felt something was missing. I wanted to
+              create things people could see, feel, and connect with.
             </p>
 
             <p className="motivation_pagaraph">
-              Then one day, a friend introduced me to Figma. At first, it seemed like just another tool. But once I started experimenting, moving shapes, playing with colors, aligning elements, something clicked. I didn’t realize how much time had passed. Designing felt natural, exciting, even therapeutic. I could sit for hours without noticing the clock, fully lost in the process.
+              Then one day, a friend introduced me to Figma. At first, it seemed
+              like just another tool. But once I started experimenting, moving
+              shapes, playing with colors, aligning elements, something clicked.
+              I didn’t realize how much time had passed. Designing felt natural,
+              exciting, even therapeutic. I could sit for hours without noticing
+              the clock, fully lost in the process.
             </p>
 
             <p className="motivation_pagaraph">
-              That small spark of curiosity turned into something much bigger. I began learning everything I could about UI/UX. No formal classes. Just pure drive. I read articles, watched tutorials, downloaded design eBooks, followed designers I admired, and practiced almost daily. What started as an interest quickly grew into a passion, and that passion became my path. I’m still learning, still exploring, and still just as excited as I was that very first day I opened Figma.
+              That small spark of curiosity turned into something much bigger. I
+              began learning everything I could about UI/UX. No formal classes.
+              Just pure drive. I read articles, watched tutorials, downloaded
+              design eBooks, followed designers I admired, and practiced almost
+              daily. What started as an interest quickly grew into a passion,
+              and that passion became my path. I’m still learning, still
+              exploring, and still just as excited as I was that very first day
+              I opened Figma.
             </p>
           </div>
 
           <p className="motivation_italic mt-[48px] self-end">
-            “Design is not just what it looks like and feels like. Design is how it works."
+            “Design is not just what it looks like and feels like. Design is how
+            it works."
           </p>
         </motion.div>
       </motion.div>
