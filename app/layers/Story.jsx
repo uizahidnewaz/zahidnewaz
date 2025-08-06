@@ -6,7 +6,7 @@ import Container from "../components/Container";
 
 // Variants
 const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0.4, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
@@ -19,7 +19,7 @@ const containerVariants = {
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0.3, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
@@ -27,7 +27,7 @@ const Story = () => {
   const ref = useRef(null);
   const controls = useAnimation();
 
-  // Track visibility every time it enters or leaves
+  // Track visibility every time it enters or leaves with smoother fade
   const inView = useInView(ref, { margin: "-30% 0% -30% 0%", once: false });
 
   useEffect(() => {
@@ -46,7 +46,6 @@ const Story = () => {
         animate={controls}
         variants={containerVariants}
         className="story pt-[120px] pb-[96px]"
-        viewport={{ once: false, amount: 0.3 }} // animate every time, no once
       >
         <motion.h2 variants={childVariants} className="story_heading">
           In A Few Words{" "}
