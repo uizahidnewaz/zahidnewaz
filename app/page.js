@@ -26,7 +26,7 @@ const Page = () => {
     // });
   });
   return (
-    <>
+    <div className="overflow-hidden">
       <Hero />
       {/* <Container id="top" className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0">
         <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
@@ -108,7 +108,7 @@ const Page = () => {
       <Experience />
       <ExperienceGallery />
       <Stack />
-    </>
+    </div>
   );
 };
 
