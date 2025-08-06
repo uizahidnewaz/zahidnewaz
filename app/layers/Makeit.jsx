@@ -24,7 +24,7 @@ const Makeit = () => {
     <motion.div
       ref={makeitRef}
       style={{ scale }}
-      className="makeit py-18 h-[736px] lg:h-[820px]"
+      className="makeit py-18 h-[736px] lg:h-[800px]"
     >
       {/* <Makeit /> */}
       <Image className="w-full h-full bg-cover" src={MakeitImg} alt="makeit" />
