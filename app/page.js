@@ -12,6 +12,7 @@ import ExperienceGallery from "./layers/ExperienceGallery";
 import Makeit from "./layers/Makeit";
 import SellectedWork from "./layers/SellectedWork";
 import Story from "./layers/Story";
+import StackImage from "./layers/StackImage";
 
 const Page = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const Page = () => {
       <Experience />
       <ExperienceGallery />
       <Stack />
+      <StackImage />
     </>
   );
 };

@@ -5,7 +5,6 @@ import Figma from "@/public/figma.webp";
 import Framer from "@/public/framer.webp";
 import Jira from "@/public/jira.webp";
 import Notion from "@/public/notion.webp";
-import StackImage from "@/public/stack.webp";
 import Image from "next/image";
 import Container from "../components/Container";
 
@@ -91,7 +90,11 @@ const Stack = () => {
                 className="flex items-start gap-x-8"
               >
                 <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden flex items-center justify-center">
-                  <Image className={item.imgClass} src={item.src} alt={item.alt} />
+                  <Image
+                    className={item.imgClass}
+                    src={item.src}
+                    alt={item.alt}
+                  />
                 </div>
                 <div>
                   <h3 className="stack_heading">{item.title}</h3>
@@ -105,22 +108,6 @@ const Stack = () => {
           })}
         </div>
       </Container>
-
-      {/* Final image section */}
-      <motion.div
-        className="py-8 h-[736px]"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-      >
-        <Image
-          className="w-full h-full bg-cover"
-          src={StackImage}
-          alt="stack"
-          priority
-        />
-      </motion.div>
     </>
   );
 };
