@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import Container from "./Container";
 import AnimatedLink from "../layers/AnimatedLink";
+import Container from "./Container";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity:1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: [0.25, 0.8, 0.25, 1], delay: 0 }}
     >
       <Container className="flex justify-between items-center py-5 relative">
@@ -26,7 +26,10 @@ const Header = () => {
             </Link>
           </li>
           <li className="hidden md:block">
-            <Link className="navigation_text uppercase cursor-default" href="/projects">
+            <Link
+              className="navigation_text uppercase cursor-default"
+              href="/projects"
+            >
               DHAKA, BANGLADESH
             </Link>
           </li>
@@ -46,7 +49,9 @@ const Header = () => {
                 Projects
               </Link>
             </li>
-            <AnimatedLink href="#about">About 2</AnimatedLink>
+            <li>
+              <AnimatedLink href="#about">About 2</AnimatedLink>
+            </li>
           </ul>
 
           {/* Menu Toggle - Mobile Only */}

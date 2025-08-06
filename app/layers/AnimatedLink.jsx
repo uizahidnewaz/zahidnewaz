@@ -1,7 +1,7 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const swipeVariants = {
@@ -40,7 +40,7 @@ const AnimatedLink = ({ href, children }) => {
       <a
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative inline-block overflow-hidden h-[24px]" // Adjust height based on your font size
+        className="relative overflow-hidden" // Adjust height based on your font size
         style={{ display: "inline-block" }}
       >
         <AnimatePresence mode="wait" custom={direction}>
@@ -51,7 +51,7 @@ const AnimatedLink = ({ href, children }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="block"
+            className="block navigation_text uppercase"
           >
             {children}
           </motion.span>
