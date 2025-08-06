@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 
 // Variants for container and children
 const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0.3, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
@@ -19,7 +19,7 @@ const containerVariants = {
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0.3, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
