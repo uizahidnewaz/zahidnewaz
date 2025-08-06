@@ -143,7 +143,7 @@ const Hero = () => {
       </Container>
 
       {/* Scroll-based Image Animation */}
-      <motion.div style={{ scale }} className="h-[736px] w-full py-8 block">
+      <motion.div style={{ scale }} className="h-[736px] lg:h-[850px] w-full py-8 block">
         <Image className="bg-cover" src={Newaz} alt="ccc" />
       </motion.div>
     </>
