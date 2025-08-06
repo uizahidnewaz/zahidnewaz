@@ -26,12 +26,9 @@ const Header = () => {
             </Link>
           </li>
           <li className="hidden md:block">
-            <Link
-              className="navigation_text uppercase cursor-default"
-              href="/projects"
-            >
+            <p className="navigation_text uppercase cursor-default">
               DHAKA, BANGLADESH
-            </Link>
+            </p>
           </li>
         </ul>
 
