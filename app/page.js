@@ -11,6 +11,7 @@ import "lenis/dist/lenis.css";
 import Makeit from "./layers/Makeit";
 import SellectedWork from "./layers/SellectedWork";
 import Story from "./layers/Story";
+import ExperienceGallery from "./layers/ExperienceGallery";
 
 const Page = () => {
   useEffect(() => {
@@ -105,6 +106,7 @@ const Page = () => {
       <Makeit />
       <Motivation />
       <Experience />
+      <ExperienceGallery />
       <Stack />
     </>
   );
