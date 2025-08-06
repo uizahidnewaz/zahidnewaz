@@ -44,10 +44,14 @@ const SellectedWork = () => {
         </div>
 
         <motion.div
-          style={{ scale, opacity }}
+          style={{ opacity }}
           className="mt-[80px] flex items-start justify-between gap-[58px]"
         >
-          <div className="">
+          <motion.div
+            className="work_item cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
             <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
               <Image className="w-full h-full bg-cover" src={Work1} alt="aa" />
             </div>
@@ -55,8 +59,12 @@ const SellectedWork = () => {
               <h3 className="work_subtitle">Wholesale business software</h3>
               <p className="work_number">01</p>
             </div>
-          </div>
-          <div className="">
+          </motion.div>
+          <motion.div
+            className="work_item cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
             <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
               <Image className="w-full h-full bg-cover" src={Work2} alt="aa" />
             </div>
@@ -64,7 +72,7 @@ const SellectedWork = () => {
               <h3 className="work_subtitle">Hospital management system</h3>
               <p className="work_number">02</p>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </Container>
