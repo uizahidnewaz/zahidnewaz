@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import Container from "./Container";
+import AnimatedLink from "../layers/AnimatedLink";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,6 +46,7 @@ const Header = () => {
                 Projects
               </Link>
             </li>
+            <AnimatedLink href="#about">About 2</AnimatedLink>
           </ul>
 
           {/* Menu Toggle - Mobile Only */}
