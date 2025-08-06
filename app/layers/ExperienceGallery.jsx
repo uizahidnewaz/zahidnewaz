@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const images = [
   "/img1.webp",
@@ -40,7 +40,10 @@ const ScrollTriggeredDoubleSlider = () => {
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div id="projects" className="w-full overflow-hidden pt-[120px] pb-[96px] space-y-[48px]">
+    <div
+      id="projects"
+      className="w-full overflow-hidden pt-[120px] pb-[96px] space-y-[48px]"
+    >
       {/* Top Slider: Right to Left */}
       <div ref={topRef}>
         <motion.div
@@ -53,6 +56,7 @@ const ScrollTriggeredDoubleSlider = () => {
                     duration: 30,
                     ease: "linear",
                     repeat: Infinity,
+                    repeatType: "loop",
                   },
                 }
               : {}
@@ -88,6 +92,7 @@ const ScrollTriggeredDoubleSlider = () => {
                     duration: 30,
                     ease: "linear",
                     repeat: Infinity,
+                    repeatType: "loop",
                   },
                 }
               : {}
