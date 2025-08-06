@@ -1,8 +1,8 @@
 "use client";
 
-import Container from "../components/Container";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Container from "../components/Container";
 
 // Variants
 const containerVariants = {
@@ -26,7 +26,7 @@ const childVariants = {
 const Story = () => {
   const ref = useRef(null);
   const controls = useAnimation();
-  
+
   // Track visibility every time it enters or leaves
   const inView = useInView(ref, { margin: "-30% 0% -30% 0%", once: false });
 
@@ -49,7 +49,7 @@ const Story = () => {
         viewport={{ once: false, amount: 0.3 }} // animate every time, no once
       >
         <motion.h2 variants={childVariants} className="story_heading">
-          My Side of the Story
+          In A Few Words{" "}
         </motion.h2>
 
         {/* About Me */}
@@ -64,17 +64,18 @@ const Story = () => {
           <div>
             <p className="story_pragraph">
               I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College,
-              then went on to complete my BSc in Computer Science and Engineering from
-              North South University. For a long time, I thought my path was already
-              set—lines of code, system design, maybe software development.
+              then went on to complete my BSc in Computer Science and
+              Engineering from North South University. For a long time, I
+              thought my path was already set—lines of code, system design,
+              maybe software development.
             </p>
             <p className="story_pragraph mt-[30px]">
               My journey into design began at the end of 2023, when I discovered
-              a deep interest in creating user-friendly and visually engaging digital
-              experiences. Since then, I’ve been learning and growing every day,
-              exploring UI/UX principles, studying real-world products, and building
-              designs that solve real problems. I believe in continuous learning,
-              and thoughtful design.
+              a deep interest in creating user-friendly and visually engaging
+              digital experiences. Since then, I’ve been learning and growing
+              every day, exploring UI/UX principles, studying real-world
+              products, and building designs that solve real problems. I believe
+              in continuous learning, and thoughtful design.
             </p>
           </div>
         </motion.div>
@@ -89,8 +90,8 @@ const Story = () => {
             <h3 className="story_title flex-shrink-0">My mission</h3>
           </div>
           <p className="story_pragraph">
-            My mission is to make people’s lives easier through thoughtful design
-            and to create experiences that users genuinely enjoy.
+            My mission is to make people’s lives easier through thoughtful
+            design and to create experiences that users genuinely enjoy.
           </p>
         </motion.div>
       </motion.div>
