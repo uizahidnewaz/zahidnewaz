@@ -29,7 +29,7 @@ const ScrollTriggeredDoubleSlider = () => {
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div className="w-full overflow-hidden bg-white py-16 space-y-24">
+    <div className="w-full overflow-hidden bg-white pt-[120px] pb-[96px] space-y-[48px]">
       {/* Top Slider: Right to Left */}
       <div ref={topRef}>
         <motion.div
@@ -46,18 +46,18 @@ const ScrollTriggeredDoubleSlider = () => {
                 }
               : {}
           }
-          className="flex gap-6 w-max"
+          className="flex gap-x-[56px] w-max"
         >
           {[...images, ...images].map((src, index) => (
             <div
               key={`top-${index}`}
-              className="w-[300px] h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
+              className="w-[600px] h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
             >
               <Image
                 src={src}
                 alt={`Top Image ${index}`}
-                width={300}
-                height={200}
+                width={600}
+                height={385}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -81,18 +81,18 @@ const ScrollTriggeredDoubleSlider = () => {
                 }
               : {}
           }
-          className="flex gap-6 w-max"
+          className="flex gap-x-[56px] w-max"
         >
           {[...images, ...images].map((src, index) => (
             <div
               key={`bottom-${index}`}
-              className="w-[300px] h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
+              className="w-[600px] h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
             >
               <Image
                 src={src}
                 alt={`Bottom Image ${index}`}
-                width={300}
-                height={200}
+                width={600}
+                height={385}
                 className="w-full h-full object-cover"
               />
             </div>
