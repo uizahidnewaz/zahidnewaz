@@ -14,6 +14,16 @@ const images = [
   "/img7.webp",
 ];
 
+const images2 = [
+  "/img8.webp",
+  "/img9.webp",
+  "/img10.webp",
+  "/img11.webp",
+  "/img12.webp",
+  "/img13.webp",
+  "/img14.webp",
+];
+
 const ScrollTriggeredDoubleSlider = () => {
   const topRef = useRef(null);
   const bottomRef = useRef(null);
@@ -84,7 +94,7 @@ const ScrollTriggeredDoubleSlider = () => {
           }
           className="flex gap-x-[56px] w-max"
         >
-          {[...images, ...images].map((src, index) => (
+          {[...images2, ...images2].map((src, index) => (
             <div
               key={`bottom-${index}`}
               className="w-[600px] h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
