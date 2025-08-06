@@ -26,7 +26,7 @@ const StackImage = () => {
       <motion.div
         ref={stackRef}
         style={{ scale }}
-        className="py-8 h-[736px] lg:h-[800px]"
+        className="py-8 h-[736px] lg:h-[870px]"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}

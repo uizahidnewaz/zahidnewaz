@@ -80,6 +80,10 @@ html.lenis body {
   box-shadow: 0 1px 12px 0 rgba(184, 255, 52, 0.42);
   @apply font-semibold text-base leading-[100%] text-[var(--color-black-solid)];
 }
+.hero_click:hover {
+  box-shadow: 0 1px 12px 0 rgba(184, 255, 52, 0.42);
+  @apply bg-[#a6ff00] text-[#121212];
+}
 
 .work_heading {
   @apply font-semibold text-[80px] leading-[109%] tracking-[-0.05em] uppercase text-[var(--color-white-solid)];

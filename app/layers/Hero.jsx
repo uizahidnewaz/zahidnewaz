@@ -134,7 +134,7 @@ const Hero = () => {
             </div>
             <Link
               href="/"
-              className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto"
+              className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto !hover:bg-[#A6FF00]"
             >
               SEE ALL PROJECTS
             </Link>
