@@ -62,12 +62,13 @@ const Header = () => {
           </button>
 
           {/* Download CV - Always Visible */}
-          <Link
-            className="navigation_text uppercase !text-[var(--primary)] pt-[10px] pb-3 px-4 bg-[#fff] hover:bg-[#B8FF34] rounded-[8px]"
-            href="#"
+          <a
+            className="navigation_text uppercase !text-[var(--primary)] pt-[10px] pb-3 px-4 bg-[#fff] hover:bg-[#B8FF34] rounded-[8px] inline-block"
+            href="/zahidnewaz.pdf"
+            download="Zahid_Newaz_CV.pdf"
           >
             Download CV
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Dropdown Menu */}
