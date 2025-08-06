@@ -60,7 +60,7 @@ const Experience = () => {
               style={{ opacity }}
               className="flex items-start gap-x-8"
             >
-              <div className="flex-shrink-0 w-[44px] h-[44px] overflow-hidden">
+              <div className="flex-shrink-0 w-[48px] h-[44px] overflow-hidden">
                 <Image
                   className="w-full h-full object-cover"
                   src={exp.logo}
