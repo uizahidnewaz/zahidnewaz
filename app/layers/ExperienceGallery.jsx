@@ -62,7 +62,7 @@ const ScrollTriggeredDoubleSlider = () => {
           {[...images, ...images].map((src, index) => (
             <div
               key={`top-${index}`}
-              className="w-[600px] h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
+              className="w-auto h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
             >
               <Image
                 src={src}
@@ -97,7 +97,7 @@ const ScrollTriggeredDoubleSlider = () => {
           {[...images2, ...images2].map((src, index) => (
             <div
               key={`bottom-${index}`}
-              className="w-[600px] h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
+              className="w-auto h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
             >
               <Image
                 src={src}
