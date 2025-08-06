@@ -29,7 +29,7 @@ const ScrollTriggeredDoubleSlider = () => {
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div className="w-full overflow-hidden bg-white pt-[120px] pb-[96px] space-y-[48px]">
+    <div className="w-full overflow-hidden border pt-[120px] pb-[96px] space-y-[48px]">
       {/* Top Slider: Right to Left */}
       <div ref={topRef}>
         <motion.div
