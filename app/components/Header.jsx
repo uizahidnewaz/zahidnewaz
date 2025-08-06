@@ -39,18 +39,16 @@ const Header = () => {
         <div className="flex items-center space-x-4 md:space-x-[56px]">
           {/* Desktop Nav Links */}
           <ul className="hidden md:flex items-center space-x-[56px]">
-            <li>
+            {/* <li>
               <Link className="navigation_text uppercase" href="#about">
                 About
               </Link>
+            </li> */}
+            <li>
+              <AnimatedLink href="#about">About</AnimatedLink>
             </li>
             <li>
-              <Link className="navigation_text uppercase" href="/projects">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <AnimatedLink href="#about">About 2</AnimatedLink>
+              <AnimatedLink href="#projects">Projects</AnimatedLink>
             </li>
           </ul>
 

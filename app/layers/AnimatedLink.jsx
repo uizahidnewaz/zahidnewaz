@@ -4,9 +4,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+// Faster and snappier swipe animation variants
 const swipeVariants = {
   initial: (direction) => ({
-    y: direction > 0 ? 25 : -25,
+    y: direction > 0 ? 20 : -20,
     opacity: 0,
     scale: 0.98,
   }),
@@ -15,19 +16,16 @@ const swipeVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
-      ease: [0.16, 1, 0.3, 1],
-      type: "spring",
-      stiffness: 300,
-      damping: 30,
+      duration: 0.3, // faster
+      ease: [0.33, 1, 0.68, 1], // standard ease-out
     },
   },
   exit: (direction) => ({
-    y: direction > 0 ? -25 : 25,
+    y: direction > 0 ? -20 : 20,
     opacity: 0,
     scale: 0.98,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
       ease: [0.7, 0, 0.84, 0],
     },
   }),
@@ -71,23 +69,6 @@ const AnimatedLink = ({ href, children }) => {
           {children}
         </motion.span>
       </AnimatePresence>
-
-      <motion.div
-        className="absolute bottom-0 left-0 h-[1px] bg-current"
-        initial={{ scaleX: 0, opacity: 0 }}
-        animate={{
-          scaleX: hovered ? 1 : 0,
-          opacity: hovered ? 0.6 : 0,
-          transition: {
-            duration: hovered ? 0.4 : 0.2,
-            ease: hovered ? [0.16, 1, 0.3, 1] : [0.7, 0, 0.84, 0],
-          },
-        }}
-        style={{
-          width: "100%",
-          transformOrigin: hovered ? "left" : "right",
-        }}
-      />
     </Link>
   );
 };
