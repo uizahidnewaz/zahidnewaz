@@ -39,7 +39,7 @@ const Story = () => {
   }, [inView, controls]);
 
   return (
-    <Container>
+    <Container id="about">
       <motion.div
         ref={ref}
         initial="hidden"

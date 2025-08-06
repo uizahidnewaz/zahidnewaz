@@ -36,7 +36,7 @@ const Header = () => {
           {/* Desktop Nav Links */}
           <ul className="hidden md:flex items-center space-x-[56px]">
             <li>
-              <Link className="navigation_text uppercase" href="/about">
+              <Link className="navigation_text uppercase" href="#about">
                 About
               </Link>
             </li>
