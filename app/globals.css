@@ -3,7 +3,7 @@
 :root {
   --primary: #121212;
   --color-chartreuse-green-60: #b8ff34;
-  --color-white-solid: #F0F0F0;
+  --color-white-solid: #f0f0f0;
   --color-black-solid: #121212;
   --color-grey-14: #212326;
   --color-blue-24: #2a2e4e;
@@ -42,6 +42,7 @@ html {
   color: #ffffff;
   width: 100%;
   height: 100%;
+  scroll-behavior: smooth;
 }
 /* lenis */
 html.lenis,
@@ -129,21 +130,21 @@ html.lenis body {
 .experience_subheading {
   @apply font-medium text-[22px] leading-[91%] tracking-[-0.01em] capitalize text-[#fcfcfc];
 }
-.stack_heading{
-  @apply font-bold text-[30px] leading-[100%] tracking-[-0.02em] uppercase text-[#fcfcfc]
+.stack_heading {
+  @apply font-bold text-[30px] leading-[100%] tracking-[-0.02em] uppercase text-[#fcfcfc];
 }
-.stack_subheading{
-  @apply font-medium text-[22px] leading-[91%] tracking-[-0.01em] text-[#fcfcfc]
+.stack_subheading {
+  @apply font-medium text-[22px] leading-[91%] tracking-[-0.01em] text-[#fcfcfc];
 }
-.footer_heading{
+.footer_heading {
   @apply font-bold text-[100px] leading-[118%] tracking-[-0.05em] uppercase text-center text-[#fcfcfc];
 }
-.footer_pagaraph{
+.footer_pagaraph {
   @apply font-semibold text-[20px] leading-[150%] uppercase text-center text-[#fcfcfc];
 }
-.footer_link{
+.footer_link {
   @apply font-semibold text-[18px] leading-[111%] uppercase text-[#fcfcfc] inline-block;
 }
-.footer_copyright{
+.footer_copyright {
   @apply font-semibold text-[20px] leading-[100%] uppercase text-[#fcfcfc];
 }
