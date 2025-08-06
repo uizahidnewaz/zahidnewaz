@@ -11,8 +11,8 @@ import "lenis/dist/lenis.css";
 import ExperienceGallery from "./layers/ExperienceGallery";
 import Makeit from "./layers/Makeit";
 import SellectedWork from "./layers/SellectedWork";
-import Story from "./layers/Story";
 import StackImage from "./layers/StackImage";
+import Story from "./layers/Story";
 
 const Page = () => {
   useEffect(() => {
@@ -33,12 +33,16 @@ const Page = () => {
       </div>
       <SellectedWork />
       <Story />
-      <Makeit />
+      <div className="overflow-hidden">
+        <Makeit />
+      </div>
       <Motivation />
       <Experience />
       <ExperienceGallery />
       <Stack />
-      <StackImage />
+      <div className="overflow-hidden">
+        <StackImage />
+      </div>
     </>
   );
 };
