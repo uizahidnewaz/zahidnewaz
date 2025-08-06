@@ -6,18 +6,30 @@ import { useState } from "react";
 
 const swipeVariants = {
   initial: (direction) => ({
-    y: direction > 0 ? 20 : -20,
+    y: direction > 0 ? 25 : -25,
     opacity: 0,
+    scale: 0.98,
   }),
   animate: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
+    scale: 1,
+    transition: { 
+      duration: 0.5, 
+      ease: [0.16, 1, 0.3, 1], // More dramatic easing
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+    },
   },
   exit: (direction) => ({
-    y: direction > 0 ? -20 : 20,
+    y: direction > 0 ? -25 : 25,
     opacity: 0,
-    transition: { duration: 0.25, ease: [0.55, 0.06, 0.68, 0.19] },
+    scale: 0.98,
+    transition: { 
+      duration: 0.3, 
+      ease: [0.7, 0, 0.84, 0],
+    },
   }),
 };
 
@@ -36,12 +48,20 @@ const AnimatedLink = ({ href, children }) => {
   };
 
   return (
-    <Link href={href} passHref legacyBehavior>
-      <a
+    <Link href={href} >
+      <motion.a
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative overflow-hidden"
+        className="relative overflow-hidden cursor-pointer"
         style={{ display: "inline-block" }}
+        whileHover={{ 
+          scale: 1.01,
+          transition: { duration: 0.2, ease: "easeOut" }
+        }}
+        whileTap={{ 
+          scale: 0.99,
+          transition: { duration: 0.1, ease: "easeInOut" }
+        }}
       >
         <AnimatePresence mode="wait" custom={direction}>
           <motion.span
@@ -52,11 +72,33 @@ const AnimatedLink = ({ href, children }) => {
             animate="animate"
             exit="exit"
             className="block navigation_text uppercase"
+            style={{ 
+              transformOrigin: "center",
+              willChange: "transform, opacity"
+            }}
           >
             {children}
           </motion.span>
         </AnimatePresence>
-      </a>
+        
+        {/* Subtle underline effect */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-[1px] bg-current"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ 
+            scaleX: hovered ? 1 : 0,
+            opacity: hovered ? 0.6 : 0,
+            transition: { 
+              duration: hovered ? 0.4 : 0.2,
+              ease: hovered ? [0.16, 1, 0.3, 1] : [0.7, 0, 0.84, 0],
+            }
+          }}
+          style={{ 
+            width: "100%",
+            transformOrigin: hovered ? "left" : "right"
+          }}
+        />
+      </motion.a>
     </Link>
   );
 };
