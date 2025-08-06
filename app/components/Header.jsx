@@ -63,8 +63,8 @@ const Header = () => {
 
           {/* Download CV - Always Visible */}
           <Link
-            className="navigation_text uppercase !text-[var(--primary)] pt-[10px] pb-3 px-4 bg-[#fff] rounded-[8px]"
-            href="/projects"
+            className="navigation_text uppercase !text-[var(--primary)] pt-[10px] pb-3 px-4 bg-[#fff] hover:bg-[#B8FF34] rounded-[8px]"
+            href="#"
           >
             Download CV
           </Link>
