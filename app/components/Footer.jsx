@@ -14,23 +14,48 @@ const Footer = () => {
         chatting about design, tech, or ideas
       </p>
       <div className="mb-[72px] flex items-center justify-center gap-x-[30px]">
-        <Link href="/" className="flex item items-center gap-x-2">
+        <Link
+          href="https://www.linkedin.com/in/shah-md-zahid-newaz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex item items-center gap-x-2"
+        >
           <h3 className="footer_link">Linkedin</h3>
           <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link href="/" className="flex item items-center gap-x-2">
+        <Link
+          href="https://www.behance.net/shahzahidnewaz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex item items-center gap-x-2"
+        >
           <h3 className="footer_link">Behance</h3>
           <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link href="/" className="flex item items-center gap-x-2">
+        <Link
+          href="https://dribbble.com/Zahid_Newaz_25"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex item items-center gap-x-2"
+        >
           <h3 className="footer_link">Dribbble</h3>
           <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link href="/" className="flex item items-center gap-x-2">
+        <Link
+          href="https://www.instagram.com/zahid_newaz?igsh=MTF0Y3Uyc2VwcWN4NA=="
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex item items-center gap-x-2"
+        >
           <h3 className="footer_link">Instagram</h3>
           <Image src={Arrow} alt="arrow" />
         </Link>
-        <Link href="/" className="flex item items-center gap-x-2">
+        <Link
+          href="https://www.facebook.com/shah.zahid.newaz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex item items-center gap-x-2"
+        >
           <h3 className="footer_link">Facebook</h3>
           <Image src={Arrow} alt="arrow" />
         </Link>
@@ -42,7 +67,9 @@ const Footer = () => {
           <div className="">
             <Image src={Newazls} alt="Newazls" />
           </div>
-          <Link href="#top" className="footer_copyright">BACK TO TOP</Link>
+          <Link href="#top" className="footer_copyright">
+            BACK TO TOP
+          </Link>
         </div>
       </div>
     </Container>
