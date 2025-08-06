@@ -50,7 +50,7 @@ const ScrollTriggeredDoubleSlider = () => {
               ? {
                   x: ["0%", "-50%"],
                   transition: {
-                    duration: 20,
+                    duration: 30,
                     ease: "linear",
                     repeat: Infinity,
                   },
@@ -85,7 +85,7 @@ const ScrollTriggeredDoubleSlider = () => {
               ? {
                   x: ["-50%", "0%"],
                   transition: {
-                    duration: 20,
+                    duration: 30,
                     ease: "linear",
                     repeat: Infinity,
                   },
