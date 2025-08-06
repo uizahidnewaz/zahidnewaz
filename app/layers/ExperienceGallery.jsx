@@ -69,7 +69,7 @@ const ScrollTriggeredDoubleSlider = () => {
                 alt={`Top Image ${index}`}
                 width={600}
                 height={385}
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
             </div>
           ))}
@@ -104,7 +104,7 @@ const ScrollTriggeredDoubleSlider = () => {
                 alt={`Bottom Image ${index}`}
                 width={600}
                 height={385}
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
             </div>
           ))}
