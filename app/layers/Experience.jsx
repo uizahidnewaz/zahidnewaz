@@ -12,7 +12,7 @@ const experiences = [
     logo: Blinto,
     alt: "blinto",
     company: "Blinto llc",
-    date: "March 2025 - July 2025",
+    date: "Mar 2025 - Jul 2025",
     position: "UI/UX Designer",
     description:
       "I worked closely with developers and directly communicated with clients to design both websites and software. Beyond UI/UX, I also contributed by creating blog graphics that aligned with the company’s content strategy.",
@@ -21,7 +21,7 @@ const experiences = [
     logo: Btrac,
     alt: "btrac",
     company: "b-trac solutions ltd",
-    date: "November 2024 - January 2025",
+    date: "Nov 2024 - Jan 2025",
     position: "Graphic & UI/UX Designer Intern",
     description:
       "I collaborated with the Business Development team to support product promotion through graphic design for social media and marketing materials. I also contributed to the UI/UX team, where I worked on improving digital interfaces.",
