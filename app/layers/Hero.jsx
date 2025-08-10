@@ -49,14 +49,11 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
 
-  const scale = useSpring(
-    useTransform(scrollYProgress, [0, 1], [1.2, 1]),
-    {
-      stiffness: 200,
-      damping: 30,
-      mass: 0.5,
-    }
-  );
+  const scale = useSpring(useTransform(scrollYProgress, [0, 1], [1.2, 1]), {
+    stiffness: 200,
+    damping: 30,
+    mass: 0.5,
+  });
 
   // Text animation on in-view
   const controls = useAnimation();
@@ -78,13 +75,19 @@ const Hero = () => {
       <Container
         id="top"
         ref={heroref}
-        className="py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-0"
+        className="py-12 md:py-24 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 md:gap-12 lg:gap-0"
       >
         {/* Left Text Content */}
-        <div className="mt-10 lg:mt-[235px] text-center lg:text-left">
+        <div className="mt-6 md:mt-10 lg:mt-[235px] text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-x-2">
-            <Image className="h-[30px] w-[30px]" src={Hi} alt="Hi" />
-            <h3 className="hero_title text-xl sm:text-2xl">Hi, I am</h3>
+            <Image
+              className="h-[24px] w-[24px] md:h-[30px] md:w-[30px]"
+              src={Hi}
+              alt="Hi"
+            />
+            <h3 className="hero_title text-lg sm:text-xl md:text-2xl">
+              Hi, I am
+            </h3>
           </div>
 
           {/* Animated Text Block */}
@@ -93,11 +96,11 @@ const Hero = () => {
             initial="hidden"
             animate={controls}
             variants={containerVariants}
-            className="mt-3"
+            className="mt-2 md:mt-3"
           >
             <motion.div
               variants={childVariants}
-              className="hero_heading text-4xl sm:text-5xl font-bold"
+              className="hero_heading text-[50px] xs:text-[60px] sm:text-[70px] md:text-[100px] lg:text-[150px] font-bold leading-[0.9]"
             >
               Zahid
             </motion.div>
@@ -106,22 +109,22 @@ const Hero = () => {
               variants={childVariants}
               className="flex items-end justify-center lg:justify-start gap-x-2"
             >
-              <h1 className="hero_heading text-4xl sm:text-5xl font-bold">
+              <h1 className="hero_heading text-[50px] xs:text-[60px] sm:text-[70px] md:text-[100px] lg:text-[150px] font-bold leading-[0.9]">
                 Newaz
               </h1>
               <Image
                 src={Newazls}
                 alt="Newazls"
-                className="inline-block w-[80px] h-[40px] md:w-[70px] sm:h-[50px]"
+                className="inline-block w-[60px] h-[30px] sm:w-[70px] sm:h-[35px] md:w-[80px] md:h-[40px]"
               />
             </motion.div>
           </motion.div>
         </div>
 
         {/* Right Video Content */}
-        <div className="w-full flex justify-end max-w-sm">
+        <div className="w-full flex justify-center lg:justify-end max-w-[280px] sm:max-w-sm mt-6 md:mt-0">
           <div>
-            <div className="w-[296px] h-[192px] aspect-video rounded-md overflow-hidden">
+            <div className="w-full sm:w-[296px] h-[160px] sm:h-[192px] aspect-video rounded-md overflow-hidden">
               <video
                 src="/works.mp4"
                 poster="/place1.png"
@@ -134,7 +137,7 @@ const Hero = () => {
             </div>
             <Link
               href="/"
-              className="hero_click inline-block py-3 px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-6 text-center w-full lg:w-auto !hover:bg-[#A6FF00]"
+              className="hero_click inline-block py-2 md:py-3 px-3 md:px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-4 md:mt-6 text-center w-full lg:w-auto !hover:bg-[#A6FF00]"
             >
               SEE ALL PROJECTS
             </Link>
@@ -143,8 +146,11 @@ const Hero = () => {
       </Container>
 
       {/* Scroll-based Image Animation */}
-      <motion.div style={{ scale }} className="h-[736px] lg:h-[840px] w-full py-8 block">
-        <Image className="bg-cover" src={Newaz} alt="ccc" />
+      <motion.div
+        style={{ scale }}
+        className="h-[400px] xs:h-[500px] sm:h-[600px] md:h-[736px] lg:h-[840px] w-full py-4 md:py-8 block"
+      >
+        <Image className="bg-cover" src={Newaz} alt="Zahid Newaz" />
       </motion.div>
     </>
   );

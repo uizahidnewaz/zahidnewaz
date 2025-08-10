@@ -24,10 +24,27 @@ const Makeit = () => {
     <motion.div
       ref={makeitRef}
       style={{ scale }}
-      className="makeit py-18 h-[736px] lg:h-[970px]"
+      className="makeit relative w-full"
     >
-      {/* <Makeit /> */}
-      <Image className="w-full h-full bg-cover" src={MakeitImg} alt="makeit" />
+      {/* For screens below lg */}
+      <div className="block lg:hidden w-full">
+        <Image
+          className="w-full h-auto"
+          src={MakeitImg}
+          alt="makeit"
+          priority
+        />
+      </div>
+
+      {/* For lg screens and above */}
+      <div className="hidden lg:block h-[970px]">
+        <Image
+          className="w-full h-full object-cover"
+          src={MakeitImg}
+          alt="makeit"
+          priority
+        />
+      </div>
     </motion.div>
   );
 };

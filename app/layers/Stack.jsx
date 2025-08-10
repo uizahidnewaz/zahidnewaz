@@ -62,16 +62,16 @@ const Stack = () => {
 
   return (
     <>
-      <Container className="pt-[120px] pb-[96px] flex items-start gap-x-[15px] relative z-0">
-        {/* Sticky heading */}
+      <Container className="pt-[60px] xs:pt-[70px] sm:pt-[90px] md:pt-[100px] lg:pt-[120px] pb-[60px] xs:pb-[70px] sm:pb-[80px] md:pb-[90px] lg:pb-[96px] flex flex-col md:flex-row items-start gap-x-[15px] sm:gap-x-[20px] md:gap-x-[25px] lg:gap-x-[30px] relative z-0">
+        {/* Heading - sticky on md and above, normal on smaller screens */}
         <h2
           ref={headingRef}
-          className="motivation_heading sticky top-[80px] z-20"
+          className="motivation_heading text-[45px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px] md:sticky md:top-[100px] lg:top-[120px] z-20 mb-[40px] xs:mb-[50px] sm:mb-[60px] md:mb-0"
         >
           Favourite stack
         </h2>
 
-        <div className="mt-[290px] flex flex-col gap-y-[64px]">
+        <div className="mt-0 md:mt-[200px] lg:mt-[290px] flex flex-col gap-y-[40px] xs:gap-y-[45px] sm:gap-y-[50px] md:gap-y-[56px] lg:gap-y-[64px] w-full md:w-auto">
           {stackItems.map((item, index) => {
             const itemRef = useRef(null);
 
@@ -87,21 +87,22 @@ const Stack = () => {
                 key={item.title}
                 ref={itemRef}
                 style={{ opacity }}
-                className="flex items-start gap-x-8"
+                className="flex flex-col xs:flex-row items-start gap-x-4 xs:gap-x-5 sm:gap-x-6 md:gap-x-8 lg:gap-x-10"
               >
-                <div className="flex-shrink-0 w-[50px] h-[50px] overflow-hidden flex items-center justify-center">
+                <div className="flex-shrink-0 w-[40px] h-[40px] xs:w-[45px] xs:h-[45px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px] lg:w-[60px] lg:h-[60px] overflow-hidden flex items-center justify-center mb-3 xs:mb-0">
                   <Image
                     className={item.imgClass}
                     src={item.src}
                     alt={item.alt}
+                    priority
                   />
                 </div>
                 <div>
-                  <h3 className="stack_heading">{item.title}</h3>
-                  <h4 className="stack_subheading mt-[10px] mb-6">
+                  <h3 className="stack_heading text-[22px] xs:text-[24px] sm:text-[26px] md:text-[28px] lg:text-[30px]">{item.title}</h3>
+                  <h4 className="stack_subheading mt-[6px] xs:mt-[8px] sm:mt-[10px] mb-3 xs:mb-4 sm:mb-5 md:mb-6">
                     {item.subtitle}
                   </h4>
-                  <p className="story_pragraph">{item.description}</p>
+                  <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%]">{item.description}</p>
                 </div>
               </motion.div>
             );

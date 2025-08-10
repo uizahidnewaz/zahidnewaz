@@ -45,22 +45,25 @@ const Story = () => {
         initial="hidden"
         animate={controls}
         variants={containerVariants}
-        className="story pt-[120px] pb-[96px]"
+        className="story pt-[40px] sm:pt-[60px] md:pt-[120px] pb-[30px] sm:pb-[50px] md:pb-[96px]"
       >
-        <motion.h2 variants={childVariants} className="story_heading">
+        <motion.h2
+          variants={childVariants}
+          className="story_heading text-center md:text-left"
+        >
           In A Few Words{" "}
         </motion.h2>
 
         {/* About Me */}
         <motion.div
           variants={childVariants}
-          className="mt-[84px] flex justify-between items-start gap-x-[80px]"
+          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-center md:items-start gap-y-6 md:gap-x-[80px]"
         >
-          <div className="flex items-center gap-x-[12px]">
+          <div className="flex items-center gap-x-[12px] mb-4 md:mb-0">
             <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]" />
             <h3 className="story_title flex-shrink-0">About me</h3>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <p className="story_pragraph">
               I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College,
               then went on to complete my BSc in Computer Science and
@@ -68,10 +71,10 @@ const Story = () => {
               thought my path was already set—lines of code, system design,
               maybe software development.
             </p>
-            <p className="story_pragraph mt-[30px]">
+            <p className="story_pragraph mt-[20px] md:mt-[30px]">
               My journey into design began at the end of 2023, when I discovered
               a deep interest in creating user-friendly and visually engaging
-              digital experiences. Since then, I’ve been learning and growing
+              digital experiences. Since then, I've been learning and growing
               every day, exploring UI/UX principles, studying real-world
               products, and building designs that solve real problems. I believe
               in continuous learning, and thoughtful design.
@@ -82,14 +85,14 @@ const Story = () => {
         {/* My Mission */}
         <motion.div
           variants={childVariants}
-          className="mt-[84px] flex justify-between items-start gap-x-[80px]"
+          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-center md:items-start gap-y-6 md:gap-x-[80px]"
         >
-          <div className="flex items-center gap-x-[12px]">
+          <div className="flex items-center gap-x-[12px] mb-4 md:mb-0">
             <div className="flex-shrink-0 w-[18px] h-[18px] rounded-full !bg-[#fff]" />
             <h3 className="story_title flex-shrink-0">My mission</h3>
           </div>
-          <p className="story_pragraph">
-            My mission is to make people’s lives easier through thoughtful
+          <p className="story_pragraph text-center md:text-left">
+            My mission is to make people's lives easier through thoughtful
             design and to create experiences that users genuinely enjoy.
           </p>
         </motion.div>

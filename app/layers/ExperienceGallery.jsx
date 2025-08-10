@@ -42,7 +42,7 @@ const ScrollTriggeredDoubleSlider = () => {
   return (
     <div
       id="projects"
-      className="w-full overflow-hidden pt-[120px] pb-[96px] space-y-[48px]"
+      className="w-full overflow-hidden pt-[60px] xs:pt-[70px] sm:pt-[90px] md:pt-[100px] lg:pt-[120px] pb-[60px] xs:pb-[70px] sm:pb-[80px] md:pb-[90px] lg:pb-[96px] space-y-[24px] xs:space-y-[32px] sm:space-y-[40px] md:space-y-[48px]"
     >
       {/* Top Slider: Right to Left */}
       <div ref={topRef}>
@@ -66,14 +66,14 @@ const ScrollTriggeredDoubleSlider = () => {
           {[...images, ...images].map((src, index) => (
             <div
               key={`top-${index}`}
-              className="w-auto h-[385px] rounded-xl overflow-hidden shadow-md flex-shrink-0"
+              className="w-auto h-[150px] xs:h-[200px] sm:h-[250px] md:h-[300px] lg:h-[385px] rounded-lg sm:rounded-xl overflow-hidden shadow-md flex-shrink-0"
             >
               <Image
                 src={src}
                 alt={`Top Image ${index}`}
                 width={600}
                 height={385}
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}

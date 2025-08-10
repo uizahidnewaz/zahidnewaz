@@ -34,10 +34,12 @@ const SellectedWork = () => {
   };
   return (
     <Container ref={sellectedref}>
-      <div className="pt-[120px] pb-[96px]">
-        <div className="flex items-start justify-between gap-[58px]">
-          <h2 className="work_heading">Selected WORK</h2>
-          <p className="work_pragraph mt-2">
+      <div className="pt-[40px] xs:pt-[50px] sm:pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[30px] xs:pb-[40px] sm:pb-[50px] md:pb-[70px] lg:pb-[96px]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left justify-between lg:gap-[58px]">
+          <h2 className="work_heading mb-4 xs:mb-5 sm:mb-6 lg:mb-0">
+            Selected WORK
+          </h2>
+          <p className="work_pragraph max-w-[95%] xs:max-w-[90%] sm:max-w-[80%] md:max-w-[75%] lg:max-w-[576px]">
             A few highlights from my recent work. Each one helped me grow and
             brought new insights into creating meaningful design.
           </p>
@@ -45,30 +47,38 @@ const SellectedWork = () => {
 
         <motion.div
           style={{ opacity }}
-          className="mt-[80px] flex items-start justify-between gap-[58px]"
+          className="mt-[24px] xs:mt-[28px] sm:mt-[40px] md:mt-[60px] lg:mt-[80px] flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-[24px] xs:gap-[28px] sm:gap-[30px] md:gap-[35px] lg:gap-[30px] w-full"
         >
           <motion.div
-            className="work_item cursor-pointer"
+            className="work_item cursor-pointer w-full lg:w-[48%]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
-              <Image className="w-full h-full bg-cover" src={Work1} alt="aa" />
+            <div className="w-full aspect-[1.46/1] lg:h-[398px] overflow-hidden rounded-[3px] work_img">
+              <Image
+                className="w-full h-full object-contain lg:object-cover"
+                src={Work1}
+                alt="Wholesale business software"
+              />
             </div>
-            <div className="mt-4 flex justify-between items-center">
+            <div className="mt-2 xs:mt-2.5 sm:mt-3 lg:mt-4 flex justify-between items-center w-full">
               <h3 className="work_subtitle">Wholesale business software</h3>
               <p className="work_number">01</p>
             </div>
           </motion.div>
           <motion.div
-            className="work_item cursor-pointer"
+            className="work_item cursor-pointer w-full lg:w-[48%]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <div className="w-[580px] h-[398px] overflow-hidden rounded-[3px] work_img">
-              <Image className="w-full h-full bg-cover" src={Work2} alt="aa" />
+            <div className="w-full aspect-[1.46/1] lg:h-[398px] overflow-hidden rounded-[3px] work_img">
+              <Image
+                className="w-full h-full object-contain lg:object-cover"
+                src={Work2}
+                alt="Hospital management system"
+              />
             </div>
-            <div className="mt-4 flex justify-between items-center">
+            <div className="mt-2 xs:mt-2.5 sm:mt-3 lg:mt-4 flex justify-between items-center w-full">
               <h3 className="work_subtitle">Hospital management system</h3>
               <p className="work_number">02</p>
             </div>

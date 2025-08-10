@@ -67,6 +67,425 @@ html.lenis body {
   transition-duration: 1ms;
   transition-behavior: allow-discrete;
 }
+
+/* Responsive Typography - For screens below lg breakpoint (1024px) */
+@media (max-width: 1023px) {
+  .navigation_text {
+    font-size: 0.95rem;
+    line-height: 16px;
+  }
+  .hero_title {
+    font-size: 16px;
+    line-height: 100%;
+  }
+  .hero_heading {
+    font-size: 110px;
+    line-height: 95%;
+  }
+  .hero_click {
+    font-size: 0.95rem;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 60px;
+    line-height: 105%;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph,
+  .motivation_italic {
+    font-size: 18px;
+    line-height: 145%;
+  }
+  .work_subtitle,
+  .work_number,
+  .story_title {
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .motivation_subheading {
+    font-size: 19px;
+    line-height: 120%;
+  }
+  .experience_heading {
+    font-size: 22px;
+    line-height: 120%;
+  }
+  .experience_headingsaprator {
+    font-size: 26px;
+  }
+  .experience_date {
+    font-size: 20px;
+  }
+  .experience_subheading,
+  .stack_subheading {
+    font-size: 20px;
+    line-height: 100%;
+  }
+  .stack_heading {
+    font-size: 26px;
+  }
+  .footer_heading {
+    font-size: 70px;
+    line-height: 110%;
+  }
+  .footer_pagaraph,
+  .footer_copyright {
+    font-size: 18px;
+  }
+  .footer_link {
+    font-size: 18px;
+    line-height: 120%;
+  }
+  .popup_heading {
+    font-size: 17px;
+    line-height: 150%;
+  }
+  .popup_paragraph,
+  .popup_link,
+  .popup_thankyou {
+    font-size: 14px;
+    line-height: 140%;
+  }
+  .popup_button {
+    font-size: 15px;
+  }
+}
+
+/* Responsive Typography - Base mobile styles */
+/* These styles will apply to all screens below md breakpoint (768px) as a baseline */
+@media (max-width: 767px) {
+  .navigation_text {
+    font-size: 0.875rem; /* text-sm */
+    line-height: 14px;
+  }
+  .hero_title {
+    font-size: 16px;
+    line-height: 100%;
+  }
+  .hero_heading {
+    font-size: 70px;
+    line-height: 90%;
+  }
+  .hero_click {
+    font-size: 0.875rem; /* text-sm */
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 42px;
+    line-height: 105%;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph,
+  .motivation_italic {
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .work_subtitle,
+  .work_number,
+  .story_title {
+    font-size: 14px;
+    line-height: 100%;
+  }
+  .motivation_subheading {
+    font-size: 18px;
+    line-height: 120%;
+  }
+  .experience_heading {
+    font-size: 20px;
+    line-height: 120%;
+  }
+  .experience_headingsaprator {
+    font-size: 24px;
+  }
+  .experience_date {
+    font-size: 18px;
+  }
+  .experience_subheading,
+  .stack_subheading {
+    font-size: 18px;
+    line-height: 100%;
+  }
+  .stack_heading {
+    font-size: 24px;
+  }
+  .footer_heading {
+    font-size: 50px;
+    line-height: 110%;
+  }
+  .footer_pagaraph,
+  .footer_copyright {
+    font-size: 16px;
+  }
+  .footer_link {
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .popup_heading {
+    font-size: 16px;
+    line-height: 150%;
+  }
+  .popup_paragraph,
+  .popup_link,
+  .popup_thankyou {
+    font-size: 12px;
+    line-height: 140%;
+  }
+  .popup_button {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Responsive Typography - From smallest to largest screens */
+
+/* Extra Extra Small Screens (<320px) */
+@media (max-width: 319px) {
+  .hero_heading {
+    font-size: 36px;
+    letter-spacing: -0.02em;
+  }
+  .hero_title {
+    font-size: 12px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 28px;
+    line-height: 100%;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph {
+    font-size: 13px;
+    line-height: 130%;
+  }
+  .footer_heading {
+    font-size: 32px;
+  }
+  .work_subtitle,
+  .work_number,
+  .story_title {
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Screens (320px - 374px) */
+@media (min-width: 320px) and (max-width: 374px) {
+  .hero_heading {
+    font-size: 42px;
+    letter-spacing: -0.03em;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 32px;
+    line-height: 100%;
+  }
+  .hero_title {
+    font-size: 14px;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph {
+    font-size: 14px;
+    line-height: 135%;
+  }
+  .footer_heading {
+    font-size: 36px;
+  }
+  .footer_pagaraph,
+  .footer_copyright {
+    font-size: 14px;
+  }
+  .footer_link {
+    font-size: 14px;
+  }
+}
+
+/* Small phone screens (max-width: 480px) - Overrides for xs to sm range */
+@media (min-width: 375px) and (max-width: 479px) {
+  .hero_heading {
+    font-size: 50px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 36px;
+  }
+  .footer_heading {
+    font-size: 40px;
+  }
+}
+
+/* Small-Plus Screens (480px - 599px) */
+@media (min-width: 480px) and (max-width: 599px) {
+  .hero_heading {
+    font-size: 56px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 38px;
+  }
+  .footer_heading {
+    font-size: 44px;
+  }
+}
+
+/* Medium-Minus Screens (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  .hero_heading {
+    font-size: 64px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 40px;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph {
+    font-size: 18px;
+  }
+  .footer_heading {
+    font-size: 48px;
+  }
+}
+
+/* Additional Screen Sizes Between MD and LG */
+/* md to md-plus (768px - 849px) */
+@media (min-width: 768px) and (max-width: 849px) {
+  .hero_heading {
+    font-size: 90px;
+    line-height: 95%;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 52px;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph {
+    font-size: 17px;
+  }
+  .footer_heading {
+    font-size: 60px;
+  }
+}
+
+/* md-plus to md-lg (850px - 899px) */
+@media (min-width: 850px) and (max-width: 899px) {
+  .hero_heading {
+    font-size: 95px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 54px;
+  }
+  .footer_heading {
+    font-size: 63px;
+  }
+}
+
+/* md-lg to almost-lg (900px - 949px) */
+@media (min-width: 900px) and (max-width: 949px) {
+  .hero_heading {
+    font-size: 100px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 56px;
+  }
+  .footer_heading {
+    font-size: 65px;
+  }
+}
+
+/* almost-lg to lg (950px - 1023px) */
+@media (min-width: 950px) and (max-width: 1023px) {
+  .hero_heading {
+    font-size: 105px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 58px;
+  }
+  .footer_heading {
+    font-size: 68px;
+  }
+}
+
+/* Additional Screen Sizes */
+/* xxs-plus (350px - 374px) */
+@media (min-width: 350px) and (max-width: 374px) {
+  .hero_heading {
+    font-size: 45px;
+  }
+}
+
+/* xs-plus (400px - 449px) */
+@media (min-width: 400px) and (max-width: 449px) {
+  .hero_heading {
+    font-size: 52px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 37px;
+  }
+}
+
+/* xsm (450px - 479px) */
+@media (min-width: 450px) and (max-width: 479px) {
+  .hero_heading {
+    font-size: 54px;
+  }
+}
+
+/* sm-md (560px - 599px) */
+@media (min-width: 560px) and (max-width: 599px) {
+  .hero_heading {
+    font-size: 60px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 39px;
+  }
+}
+
+/* tablet-xs (600px - 639px) */
+@media (min-width: 600px) and (max-width: 639px) {
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph {
+    font-size: 17px;
+  }
+}
+
+/* tablet-md (720px - 767px) */
+@media (min-width: 720px) and (max-width: 767px) {
+  .hero_heading {
+    font-size: 68px;
+  }
+  .work_heading,
+  .story_heading,
+  .motivation_heading {
+    font-size: 41px;
+  }
+  .work_pragraph,
+  .story_pragraph,
+  .motivation_pagaraph {
+    font-size: 19px;
+  }
+}
 .navigation_text {
   @apply font-medium text-base text-[var(--color-white-solid)] leading-[16px] tracking-[0%];
 }
