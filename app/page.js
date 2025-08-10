@@ -13,6 +13,7 @@ import Makeit from "./layers/Makeit";
 import SellectedWork from "./layers/SellectedWork";
 import StackImage from "./layers/StackImage";
 import Story from "./layers/Story";
+import Popup from "./layers/Popup";
 
 const Page = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const Page = () => {
   });
   return (
     <>
+      <Popup />
       <div className="overflow-hidden">
         <Hero />
       </div>

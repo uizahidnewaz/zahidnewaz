@@ -152,3 +152,23 @@ html.lenis body {
 .footer_copyright {
   @apply font-semibold text-[20px] leading-[100%] uppercase text-[#fcfcfc];
 }
+/* Popup code typography */
+.popup_box {
+  box-shadow: 0 8px 8px -4px rgba(16, 24, 40, 0.03),
+    0 20px 24px -4px rgba(16, 24, 40, 0.08);
+}
+.popup_heading {
+  @apply font-medium text-[18px] leading-[156%] text-[#101828];
+}
+.popup_paragraph {
+  @apply font-normal text-[14px] leading-[143%] text-[#667085];
+}
+.popup_link {
+  @apply font-normal text-[14px] leading-[143%] text-[var(--color-black-solid)];
+}
+.popup_thankyou {
+  @apply font-normal text-[14px] leading-[143%] text-[#667085];
+}
+.popup_button {
+  @apply font-semibold text-[16px] leading-[150%] text-[var(--color-black-solid)];
+}
