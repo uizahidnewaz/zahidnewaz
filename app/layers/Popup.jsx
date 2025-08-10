@@ -13,10 +13,10 @@ const Popup = () => {
     // Show popup after page load
     setIsVisible(true);
 
-    // Set a timer to hide the popup after 10 seconds
+    // Set a timer to hide the popup after 5 seconds
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 10000); // 10 seconds
+    }, 5000); // 5 seconds
 
     // Clean up the timer if the component unmounts
     return () => clearTimeout(timer);
