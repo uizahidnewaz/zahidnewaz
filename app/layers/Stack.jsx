@@ -98,11 +98,15 @@ const Stack = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="stack_heading text-[22px] xs:text-[24px] sm:text-[26px] md:text-[28px] lg:text-[30px]">{item.title}</h3>
+                  <h3 className="stack_heading text-[22px] xs:text-[24px] sm:text-[26px] md:text-[28px] lg:text-[30px]">
+                    {item.title}
+                  </h3>
                   <h4 className="stack_subheading mt-[6px] xs:mt-[8px] sm:mt-[10px] mb-3 xs:mb-4 sm:mb-5 md:mb-6">
                     {item.subtitle}
                   </h4>
-                  <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%]">{item.description}</p>
+                  <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%]">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             );

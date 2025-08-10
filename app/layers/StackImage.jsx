@@ -26,14 +26,14 @@ const StackImage = () => {
       <motion.div
         ref={stackRef}
         style={{ scale }}
-        className="py-8 h-[736px] lg:h-[870px]"
+        className="py-4 xs:py-5 sm:py-6 md:py-7 lg:py-8 h-[300px] xs:h-[400px] sm:h-[500px] md:h-[600px] lg:h-[736px] xl:h-[870px]"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <Image
-          className="w-full h-full bg-cover"
+          className="w-full h-full object-cover bg-cover"
           src={StackImages}
           alt="stack"
           priority

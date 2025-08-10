@@ -85,7 +85,7 @@ const Hero = () => {
               src={Hi}
               alt="Hi"
             />
-            <h3 className="hero_title text-lg sm:text-xl md:text-2xl">
+            <h3 className="hero_title text-[14px] xs:text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
               Hi, I am
             </h3>
           </div>
