@@ -48,6 +48,8 @@ const Popup = () => {
           <Link
             href="https://www.behance.net/shahzahidnewaz"
             className="popup_link mt-6 my-7"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Behance profile: https://www.behance.net/shahzahidnewaz
           </Link>
