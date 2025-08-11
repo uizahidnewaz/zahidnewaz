@@ -24,7 +24,7 @@ const Makeit = () => {
     <motion.div
       ref={makeitRef}
       style={{ scale }}
-      className="makeit relative w-full overflow-hidden"
+      className="makeit relative w-full overflow-hidden py-[20px] sm:py-[30px] md:py-[40px] lg:py-[60px]"
     >
       {/* Responsive image display for all screen sizes */}
       <div className="w-full">

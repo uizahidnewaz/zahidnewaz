@@ -32,7 +32,7 @@ const Experience = () => {
   const containerRef = useRef(null);
 
   return (
-    <Container className="pt-[40px] sm:pt-[60px] md:pt-[120px] pb-[30px] sm:pb-[50px] md:pb-[96px] flex flex-col md:flex-row items-center md:items-start gap-y-8 md:gap-x-[80px]">
+    <Container className="pt-[40px] sm:pt-[60px] md:pt-[90px] lg:pt-[120px] pb-[30px] sm:pb-[40px] md:pb-[70px] lg:pb-[96px] flex flex-col md:flex-row items-center md:items-start gap-y-8 md:gap-x-[80px]">
       {/* Heading - sticky on md and up, normal on mobile */}
       <div className="md:sticky md:top-[120px] z-10 text-center md:text-left mb-8 md:mb-0">
         <h2 className="motivation_heading text-[45px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px]">

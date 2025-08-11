@@ -38,7 +38,7 @@ const Motivation = () => {
   }, [inView, controls]);
 
   return (
-    <Container className="pt-[120px] pb-[96px]">
+    <Container className="pt-[40px] xs:pt-[60px] sm:pt-[80px] md:pt-[100px] lg:pt-[120px] pb-[30px] xs:pb-[40px] sm:pb-[60px] md:pb-[80px] lg:pb-[96px]">
       <motion.div
         ref={ref}
         initial="hidden"
