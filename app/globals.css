@@ -478,10 +478,10 @@ html.lenis body {
   @apply font-bold text-[40px] leading-[118%] tracking-[-0.05em] uppercase text-center text-[#fcfcfc];
 }
 .footer_pagaraph {
-  @apply font-semibold text-[16px] leading-[150%] uppercase text-center text-[#fcfcfc];
+  @apply font-semibold text-[15px] leading-[150%] uppercase text-center text-[#fcfcfc];
 }
 .footer_link {
-  @apply font-semibold text-[16px] leading-[111%] uppercase text-[#fcfcfc] inline-block;
+  @apply font-semibold text-[15px] leading-[111%] uppercase text-[#fcfcfc] inline-block;
 }
 .footer_copyright {
   @apply font-semibold text-[16px] leading-[100%] uppercase text-[#fcfcfc];

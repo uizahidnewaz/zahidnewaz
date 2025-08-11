@@ -39,7 +39,7 @@ const Footer = () => {
         </motion.p>
 
         <motion.div
-          className="mb-[72px] flex items-center justify-center gap-x-[30px]"
+          className="mb-[72px] flex items-center justify-center sm:gap-x-[30px]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}

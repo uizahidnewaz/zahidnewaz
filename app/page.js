@@ -29,7 +29,9 @@ const Page = () => {
   });
   return (
     <>
+      <div className="overflow-hidden">
       <Popup />
+      </div>
       <div className="overflow-hidden">
         <Hero />
       </div>
