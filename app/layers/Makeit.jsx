@@ -24,24 +24,17 @@ const Makeit = () => {
     <motion.div
       ref={makeitRef}
       style={{ scale }}
-      className="makeit relative w-full"
+      className="makeit relative w-full overflow-hidden"
     >
-      {/* For screens below lg */}
-      <div className="block lg:hidden w-full">
+      {/* Responsive image display for all screen sizes */}
+      <div className="w-full">
         <Image
-          className="w-full h-auto"
+          className="w-full h-auto object-contain sm:object-cover"
           src={MakeitImg}
           alt="makeit"
-          priority
-        />
-      </div>
-
-      {/* For lg screens and above */}
-      <div className="hidden lg:block h-[970px]">
-        <Image
-          className="w-full h-full object-cover"
-          src={MakeitImg}
-          alt="makeit"
+          width={2880}
+          height={1472}
+          sizes="100vw"
           priority
         />
       </div>
