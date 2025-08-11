@@ -54,7 +54,7 @@ const Popup = () => {
           <p className="popup_thankyou">Thank you!</p>
           <button
             onClick={handleClose}
-            className="popup_button mt-6 w-full bg-[var(--color-chartreuse-green-60)] py-[10px] rounded-[8px] cursor-pointer border-1 border-transparent hover:border-[black] active:scale-95 transition-all"
+            className="popup_button mt-6 w-full bg-[#ffff] hover:bg-[var(--color-chartreuse-green-60)] py-[10px] rounded-[8px] cursor-pointer active:scale-95 transition-all"
           >
             I Understand
           </button>
