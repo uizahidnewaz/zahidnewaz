@@ -19,7 +19,7 @@ const Header = () => {
     >
       <Container className="flex justify-between items-center py-5 relative">
         {/* Left Side */}
-        <ul className="flex space-x-[56px] items-center">
+        <ul className="flex sm:space-x-[56px] items-center">
           <li>
             <Link className="navigation_text uppercase" href="/">
               ZAHID NEWAZ
