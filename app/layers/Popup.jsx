@@ -27,7 +27,7 @@ const Popup = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="popup_box fixed bottom-10 left-1/2 translate-x-[-50%] w-[677px] bg-[var(--color-white-solid)] text-black rounded-[12px] z-50 p-6 shadow-lg"
+          className="popup_box fixed bottom-10 left-1/2 translate-x-[-50%] w-full md:w-[677px] bg-[var(--color-white-solid)] text-black rounded-[12px] z-50 p-6 shadow-lg"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
