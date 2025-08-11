@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import PopupImg from "@/public/popup.svg";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Popup = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,13 +13,10 @@ const Popup = () => {
     // Show popup after page load
     setIsVisible(true);
 
-    // Set a timer to hide the popup after 5 seconds
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 5000); // 5 seconds
+    // No automatic timeout, only close on click
 
-    // Clean up the timer if the component unmounts
-    return () => clearTimeout(timer);
+    // No timer cleanup needed
+    return () => {};
   }, []);
 
   const handleClose = () => {
@@ -57,7 +54,7 @@ const Popup = () => {
           <p className="popup_thankyou">Thank you!</p>
           <button
             onClick={handleClose}
-            className="popup_button mt-6 w-full bg-[var(--color-chartreuse-green-60)] py-[10px] rounded-[8px] cursor-pointer border-1 border-transparent hover:border-[black] transition-colors"
+            className="popup_button mt-6 w-full bg-[var(--color-chartreuse-green-60)] py-[10px] rounded-[8px] cursor-pointer border-1 border-transparent hover:border-[black] active:scale-95 transition-all"
           >
             I Understand
           </button>
