@@ -132,7 +132,7 @@ const Hero = () => {
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fit-contain"
               />
             </div>
             <Link

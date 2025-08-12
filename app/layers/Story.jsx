@@ -57,9 +57,12 @@ const Story = () => {
         {/* About Me */}
         <motion.div
           variants={childVariants}
-          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-start md:items-start gap-y-6 md:gap-x-[80px]"
+          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-start md:items-start gap-y-1 sm:gap-y-2 md:gap-x-[80px]"
         >
-          <div className="flex items-center gap-x-[8px] xs:gap-x-[10px] sm:gap-x-[12px] mb-4 md:mb-0">
+          <div
+            className="flex items-center gap-x-[8px] xs:gap-x-[10px] sm:gap-x-[12px] mb-1
+           lg:mb-4 md:mb-0"
+          >
             <div className="flex-shrink-0 w-[12px] h-[12px] xs:w-[14px] xs:h-[14px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] rounded-full !bg-[#fff]" />
             <h3 className="story_title text-[12px] xs:text-[13px] sm:text-[14px] md:text-[15px] flex-shrink-0">
               About me
@@ -87,9 +90,13 @@ const Story = () => {
         {/* My Mission */}
         <motion.div
           variants={childVariants}
-          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-start md:items-start gap-y-6 md:gap-x-[80px]"
+          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-start md:items-start gap-y-1 sm:gap-y-2
+           md:gap-x-[80px]"
         >
-          <div className="flex items-center gap-x-[8px] xs:gap-x-[10px] sm:gap-x-[12px] mb-4 md:mb-0">
+          <div
+            className="flex items-center gap-x-[8px] xs:gap-x-[10px] sm:gap-x-[12px] mb-1
+           lg:mb-4 md:mb-0"
+          >
             <div className="flex-shrink-0 w-[12px] h-[12px] xs:w-[14px] xs:h-[14px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] rounded-full !bg-[#fff]" />
             <h3 className="story_title text-[12px] xs:text-[13px] sm:text-[14px] md:text-[15px] flex-shrink-0">
               My mission
