@@ -49,7 +49,7 @@ const Story = () => {
       >
         <motion.h2
           variants={childVariants}
-          className="story_heading text-center md:text-left text-[45px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px]"
+          className="story_heading text-left md:text-left text-[45px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px]"
         >
           In A Few Words{" "}
         </motion.h2>
@@ -57,7 +57,7 @@ const Story = () => {
         {/* About Me */}
         <motion.div
           variants={childVariants}
-          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-center md:items-start gap-y-6 md:gap-x-[80px]"
+          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-start md:items-start gap-y-6 md:gap-x-[80px]"
         >
           <div className="flex items-center gap-x-[8px] xs:gap-x-[10px] sm:gap-x-[12px] mb-4 md:mb-0">
             <div className="flex-shrink-0 w-[12px] h-[12px] xs:w-[14px] xs:h-[14px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] rounded-full !bg-[#fff]" />
@@ -65,7 +65,7 @@ const Story = () => {
               About me
             </h3>
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-left md:text-left">
             <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%]">
               I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College,
               then went on to complete my BSc in Computer Science and
@@ -87,7 +87,7 @@ const Story = () => {
         {/* My Mission */}
         <motion.div
           variants={childVariants}
-          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-center md:items-start gap-y-6 md:gap-x-[80px]"
+          className="mt-[40px] sm:mt-[60px] md:mt-[84px] flex flex-col md:flex-row justify-between items-start md:items-start gap-y-6 md:gap-x-[80px]"
         >
           <div className="flex items-center gap-x-[8px] xs:gap-x-[10px] sm:gap-x-[12px] mb-4 md:mb-0">
             <div className="flex-shrink-0 w-[12px] h-[12px] xs:w-[14px] xs:h-[14px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] rounded-full !bg-[#fff]" />
@@ -95,7 +95,7 @@ const Story = () => {
               My mission
             </h3>
           </div>
-          <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%] text-center md:text-left">
+          <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%] text-left md:text-left">
             My mission is to make people's lives easier through thoughtful
             design and to create experiences that users genuinely enjoy.
           </p>
