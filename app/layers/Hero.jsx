@@ -123,8 +123,8 @@ const Hero = () => {
 
         {/* Right Video Content */}
         <div className="w-full flex justify-center lg:justify-end max-w-[280px] sm:max-w-sm mt-6 md:mt-0">
-          <div>
-            <div className="w-full sm:w-[296px] h-[160px] sm:h-[192px] aspect-video rounded-md overflow-hidden">
+          <div className="flex flex-col items-center w-full">
+            <div className="w-full max-w-[244px] h-[160px] sm:h-[192px] aspect-video rounded-md overflow-hidden">
               <video
                 src="/works.mp4"
                 poster="/place1.png"
@@ -137,7 +137,7 @@ const Hero = () => {
             </div>
             <Link
               href="/"
-              className="hero_click inline-block py-2 md:py-3 px-3 md:px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-4 md:mt-6 text-center w-full lg:w-auto !hover:bg-[#A6FF00]"
+              className="hero_click inline-block py-2 md:py-3 px-3 md:px-4 bg-[var(--color-chartreuse-green-60)] rounded-md mt-4 md:mt-6 text-center max-w-[244px] w-full !hover:bg-[#A6FF00]"
             >
               SEE ALL PROJECTS
             </Link>
