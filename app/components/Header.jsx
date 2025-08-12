@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 // import * as motion from "motion/react-client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import AnimatedLink from "../layers/AnimatedLink";
@@ -69,34 +69,55 @@ const Header = () => {
         </div>
 
         {/* Mobile Dropdown Menu */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
-            className="absolute top-full right-0 w-full bg-white px-6 py-5 shadow-lg rounded-md z-40 md:hidden"
-          >
-            <ul className="space-y-4 text-center">
-              <li>
-                <Link
-                  className="navigation_text uppercase block !text-[var(--primary)]"
-                  href="#about"
-                  onClick={() => setIsMenuOpen(false)}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: -100, scale: 0.95 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+              }}
+              exit={{ opacity: 0, x: -100, scale: 0.95 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                duration: 0.5,
+              }}
+              className="absolute top-full right-0 w-full bg-white px-6 py-5 shadow-lg rounded-md z-40 md:hidden"
+            >
+              <ul className="space-y-4 text-center">
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1, duration: 0.3 }}
                 >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="navigation_text uppercase block !text-[var(--primary)]"
-                  href="#projects"
-                  onClick={() => setIsMenuOpen(false)}
+                  <Link
+                    className="navigation_text uppercase block !text-[var(--primary)]"
+                    href="#about"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
                 >
-                  Projects
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-        )}
+                  <Link
+                    className="navigation_text uppercase block !text-[var(--primary)]"
+                    href="#projects"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Projects
+                  </Link>
+                </motion.li>
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Container>
     </motion.div>
   );
