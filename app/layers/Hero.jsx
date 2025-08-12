@@ -148,7 +148,7 @@ const Hero = () => {
       {/* Scroll-based Image Animation */}
       <motion.div
         style={{ scale }}
-        className="h-[400px] xs:h-[500px] sm:h-[600px] md:h-[736px] lg:h-[840px] w-full py-4 md:py-8 block"
+        className="h-[400px] xs:h-[500px] sm:h-[600px] md:h-[736px] lg:h-[840px] w-full pt-4 md:pt-8 block"
       >
         <Image className="bg-cover" src={Newaz} alt="Zahid Newaz" />
       </motion.div>
