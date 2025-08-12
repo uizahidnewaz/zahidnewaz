@@ -60,7 +60,7 @@ const Experience = () => {
               key={index}
               ref={itemRef}
               style={{ opacity }}
-              className="flex flex-col sm:flex-row items-center sm:items-start text-left sm:text-left gap-y-4 sm:gap-x-6 md:gap-x-8"
+              className="flex flex-col sm:flex-row items-start sm:items-start text-left sm:text-left gap-y-4 sm:gap-x-6 md:gap-x-8"
             >
               <div className="flex-shrink-0 w-[40px] h-[36px] xs:w-[44px] xs:h-[40px] sm:w-[48px] sm:h-[44px] overflow-hidden mb-2 sm:mb-0">
                 <Image
@@ -71,7 +71,7 @@ const Experience = () => {
                 />
               </div>
               <div>
-                <h3 className="experience_heading text-[18px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] flex flex-col sm:flex-row items-center sm:items-baseline">
+                <h3 className="experience_heading text-[18px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] flex flex-col sm:flex-row items-start sm:items-baseline">
                   {exp.company}
                   <span className="experience_date text-[15px] xs:text-[17px] sm:text-[19px] md:text-[21px] lg:text-[23px] block sm:inline mt-1 sm:mt-0">
                     {" "}
