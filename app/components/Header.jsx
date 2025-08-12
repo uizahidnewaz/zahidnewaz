@@ -79,7 +79,7 @@ const Header = () => {
               <li>
                 <Link
                   className="navigation_text uppercase block !text-[var(--primary)]"
-                  href="/about"
+                  href="#about"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About
@@ -88,7 +88,7 @@ const Header = () => {
               <li>
                 <Link
                   className="navigation_text uppercase block !text-[var(--primary)]"
-                  href="/projects"
+                  href="#projects"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Projects
