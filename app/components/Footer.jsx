@@ -2,10 +2,10 @@
 
 import Arrow from "@/public/arrow.png";
 import Newazls from "@/public/newazls.svg";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
-import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -33,13 +33,13 @@ const Footer = () => {
           transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Thank you for exploring my work and learning a bit about my journey. I’m
-          always open to new opportunities, creative collaborations, or simply
-          chatting about design, tech, or ideas
+          Thank you for exploring my work and learning a bit about my journey.
+          I’m always open to new opportunities, creative collaborations, or
+          simply chatting about design, tech, or ideas
         </motion.p>
 
         <motion.div
-          className="mb-[72px] grid grid-cols-3 gap-2 justify-content-center sm:flex sm:flex-row items-center justify-center gap-x-4 sm:gap-x-[30px]"
+          className="mb-[72px] flex flex-wrap justify-center items-center gap-4 sm:gap-x-[30px]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
@@ -49,7 +49,10 @@ const Footer = () => {
             ["Linkedin", "https://www.linkedin.com/in/shah-md-zahid-newaz/"],
             ["Behance", "https://www.behance.net/shahzahidnewaz"],
             ["Dribbble", "https://dribbble.com/Zahid_Newaz_25"],
-            ["Instagram", "https://www.instagram.com/zahid_newaz?igsh=MTF0Y3Uyc2VwcWN4NA=="],
+            [
+              "Instagram",
+              "https://www.instagram.com/zahid_newaz?igsh=MTF0Y3Uyc2VwcWN4NA==",
+            ],
             ["Facebook", "https://www.facebook.com/shah.zahid.newaz"],
           ].map(([name, url]) => (
             <Link
@@ -57,7 +60,7 @@ const Footer = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex item items-center sm:gap-x-2"
+              className="w-[30%] sm:w-auto flex justify-center items-center sm:gap-x-2"
             >
               <h3 className="footer_link">{name}</h3>
               <Image src={Arrow} alt="arrow" />
