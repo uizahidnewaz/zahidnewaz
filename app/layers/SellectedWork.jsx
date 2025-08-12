@@ -34,8 +34,8 @@ const SellectedWork = () => {
   };
   return (
     <Container ref={sellectedref}>
-      <div className="pt-[40px] xs:pt-[50px] sm:pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[30px] xs:pb-[40px] sm:pb-[50px] md:pb-[70px] lg:pb-[96px]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left justify-between lg:gap-[58px]">
+      <div className="pt-[30px] xs:pt-[50px] sm:pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[30px] xs:pb-[40px] sm:pb-[50px] md:pb-[70px] lg:pb-[96px]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-start text-left lg:text-left justify-between lg:gap-[58px]">
           <h2 className="work_heading text-[45px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px] mb-4 xs:mb-5 sm:mb-6 lg:mb-0">
             Selected WORK
           </h2>

@@ -107,7 +107,7 @@ const Hero = () => {
 
             <motion.div
               variants={childVariants}
-              className="flex items-end justify-center lg:justify-start gap-x-2"
+              className="relative flex items-end justify-center lg:justify-start gap-x-2"
             >
               <h1 className="hero_heading text-[50px] xs:text-[60px] sm:text-[70px] md:text-[100px] lg:text-[150px] font-bold leading-[0.9]">
                 Newaz
@@ -115,7 +115,7 @@ const Hero = () => {
               <Image
                 src={Newazls}
                 alt="Newazls"
-                className="inline-block w-[60px] h-[30px] sm:w-[70px] sm:h-[35px] md:w-[80px] md:h-[40px]"
+                className="absolute -right-[60px] sm:left-[320px] md:left-[420px] lg:static inline-block w-[60px] h-[30px] sm:w-[70px] sm:h-[35px] md:w-[80px] md:h-[40px]"
               />
             </motion.div>
           </motion.div>
