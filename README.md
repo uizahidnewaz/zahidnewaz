@@ -196,3 +196,10 @@ sudo nginx -t
 sudo systemctl restart nginx
 sudo certbot --nginx -d api.arakash.com
 https://api.arakash.com
+
+
+1) hero hii 
+2) Download CV and gif alignment
+3) gif slow video
+4) story section padding bottom 8 px
+5) 
