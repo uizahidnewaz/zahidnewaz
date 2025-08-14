@@ -73,7 +73,7 @@ const Story = () => {
               I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College,
               then went on to complete my BSc in Computer Science and
               Engineering from North South University. For a long time, I
-              thought my path was already set,lines of code, system design,
+              thought my path was already set, lines of code, system design,
               maybe software development.
             </p>
             <p className="story_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%] mt-[15px] xs:mt-[18px] sm:mt-[20px] md:mt-[25px] lg:mt-[30px]">
