@@ -39,7 +39,7 @@ const SellectedWork = () => {
           <h2 className="work_heading text-[45px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px] mb-4 xs:mb-5 sm:mb-6 lg:mb-0">
             Selected WORK
           </h2>
-          <p className="work_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%] max-w-[95%] xs:max-w-[90%] sm:max-w-[80%] md:max-w-[75%] lg:max-w-[576px]">
+          <p className="mt-2 work_pragraph text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] leading-[130%] xs:leading-[135%] sm:leading-[140%] md:leading-[145%] lg:leading-[150%] max-w-[95%] xs:max-w-[90%] sm:max-w-[80%] md:max-w-[75%] lg:max-w-[576px]">
             A few highlights from my recent work. Each one helped me grow and
             brought new insights into creating meaningful design.
           </p>
