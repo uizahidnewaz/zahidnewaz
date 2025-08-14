@@ -204,4 +204,5 @@ https://api.arakash.com
 4) story section padding bottom 8 px
 5) story animation (in a few )
 6) motivation scroll problem
-7)
+7) blinto llc space problem
+8) experience gallery glitch
