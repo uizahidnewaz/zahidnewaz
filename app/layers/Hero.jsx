@@ -69,7 +69,13 @@ const Hero = () => {
       controls.start("hidden"); // Reset if out of view (optional)
     }
   }, [isInView, controls]);
+  const videoRef = useRef(null);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.3; // 0.1 = very slow speed
+    }
+  }, []);
   return (
     <>
       <Container
@@ -122,10 +128,11 @@ const Hero = () => {
         </div>
 
         {/* Right Video Content */}
-        <div className="w-full flex bg-red-500 justify-center lg:justify-end max-w-[280px] sm:max-w-sm mt-6 md:mt-0">
+        <div className="w-full flex justify-center lg:justify-end max-w-[280px] sm:max-w-sm mt-6 md:mt-0">
           <div className="flex flex-col items-center lg:items-end w-full">
             <div className="w-full max-w-[244px] h-[160px] sm:h-[192px] aspect-video rounded-md overflow-hidden">
               <video
+                ref={videoRef}
                 src="/works.mp4"
                 poster="/place1.png"
                 autoPlay
