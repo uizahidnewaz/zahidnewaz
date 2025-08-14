@@ -202,4 +202,5 @@ https://api.arakash.com
 2) Download CV and gif alignment
 3) gif slow video
 4) story section padding bottom 8 px
-5) 
+5) story animation (in a few )
+6)

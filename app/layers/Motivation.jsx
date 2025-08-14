@@ -86,7 +86,7 @@ const Motivation = () => {
             </p>
 
             <p className="motivation_pagaraph">
-              That small spark of curiosity turned into something much bigger. I
+              That curiosity turned into something much bigger. I
               began learning everything I could about UI/UX. No formal classes.
               Just pure drive. I read articles, watched tutorials, downloaded
               design eBooks, followed designers I admired, and practiced almost
