@@ -86,14 +86,16 @@ const Hero = () => {
         {/* Left Text Content */}
         <div className="mt-6 md:mt-10 lg:mt-[235px] text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-x-2">
-            <Image
-              className="h-[24px] w-[24px] md:h-[30px] md:w-[30px]"
-              src={Hi}
-              alt="Hi"
-            />
-            <h3 className="hero_title text-[14px] xs:text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
-              Hi, I am
-            </h3>
+            <div className="flex items-center">
+              <Image
+                className="h-[24px] w-[24px] md:h-[30px] md:w-[30px] inline-block"
+                src={Hi}
+                alt="Hi"
+              />
+              <h3 className="hero_title text-[14px] xs:text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] inline-block ml-2">
+                Hi, I am
+              </h3>
+            </div>
           </div>
 
           {/* Animated Text Block */}
