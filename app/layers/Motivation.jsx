@@ -85,7 +85,7 @@ const Motivation = () => {
             </h3>
           </div>
 
-          <div className="mb-1 lg:mb-[30px] flex items-center gap-x-[12px] mt-10 md:mt-0">
+          <div className="hidden md:flex mb-1 lg:mb-[30px] items-center gap-x-[12px] mt-10 md:mt-0">
             <div className="w-[18px] h-[18px] rounded-full bg-white flex-shrink-0"></div>
             <h3 className="story_title flex-shrink-0">My motto</h3>
           </div>
@@ -96,7 +96,7 @@ const Motivation = () => {
           variants={childVariants}
           className="w-full md:w-[60%] flex flex-col justify-between"
         >
-          <div className="space-y-[15px] lg:space-y-[20px]">
+          <div className="mt-4 lg:mt-0 space-y-[15px] lg:space-y-[20px]">
             <p className="motivation_pagaraph mt-2">
               As a CSE student, I loved solving logical problems and writing
               code. But deep down, I felt something was missing. I wanted to
@@ -123,7 +123,12 @@ const Motivation = () => {
             </p>
           </div>
 
-          <p className="motivation_italic mt-5 lg:mt-[48px] self-start">
+          <div className="mb-1 md:hidden lg:mb-[30px] flex items-center gap-x-[12px] mt-10 md:mt-0">
+            <div className="w-[18px] h-[18px] rounded-full bg-white flex-shrink-0"></div>
+            <h3 className="story_title flex-shrink-0">My motto</h3>
+          </div>
+
+          <p className="motivation_italic md:mt-5 lg:mt-[48px] self-start">
             “Design is not just what it looks like and feels like. Design is how
             it works."
           </p>
