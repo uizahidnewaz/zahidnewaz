@@ -115,7 +115,7 @@ html.lenis body {
   @apply font-semibold text-[80px] leading-[109%] tracking-[-0.05em] uppercase text-[#fcfcfc];
 }
 .motivation_subheading {
-  @apply font-semibold text-[20px] leading-[120%] tracking-[-0.02em] uppercase text-[#fcfcfc];
+  @apply font-medium lg:font-semibold text-[20px] leading-[120%] tracking-[-0.02em] uppercase text-[#fcfcfc];
 }
 .motivation_pagaraph {
   @apply font-medium text-[20px] leading-[150%] text-[#FFFFFFE0];
