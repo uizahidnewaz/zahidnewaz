@@ -42,9 +42,9 @@ const ScrollTriggeredDoubleSlider = () => {
     // Adjust animation speed based on screen width
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setAnimationDuration(25); // Faster animation for mobile
+        setAnimationDuration(30); // Adjusted speed for mobile
       } else {
-        setAnimationDuration(40); // Slower animation for desktop
+        setAnimationDuration(50); // Slower, smoother animation for desktop
       }
     };
 
@@ -71,13 +71,18 @@ const ScrollTriggeredDoubleSlider = () => {
                   x: ["0%", "-50%"],
                   transition: {
                     duration: animationDuration,
-                    ease: "linear",
+                    ease: "easeInOut",
                     repeat: Infinity,
                     repeatType: "loop",
+                    repeatDelay: 0,
                   },
                 }
               : {}
           }
+          style={{
+            willChange: "transform",
+            backfaceVisibility: "hidden",
+          }}
           className="flex gap-x-[24px] xs:gap-x-[32px] sm:gap-x-[40px] md:gap-x-[48px] lg:gap-x-[56px] w-max"
         >
           {[...images, ...images].map((src, index) => (
@@ -91,6 +96,8 @@ const ScrollTriggeredDoubleSlider = () => {
                 width={600}
                 height={385}
                 className="w-full h-full object-cover aspect-[16/10] md:aspect-auto"
+                loading="eager"
+                priority={index < 3}
               />
             </div>
           ))}
@@ -107,13 +114,18 @@ const ScrollTriggeredDoubleSlider = () => {
                   x: ["-50%", "0%"],
                   transition: {
                     duration: animationDuration,
-                    ease: "linear",
+                    ease: "easeInOut",
                     repeat: Infinity,
                     repeatType: "loop",
+                    repeatDelay: 0,
                   },
                 }
               : {}
           }
+          style={{
+            willChange: "transform",
+            backfaceVisibility: "hidden",
+          }}
           className="flex gap-x-[24px] xs:gap-x-[32px] sm:gap-x-[40px] md:gap-x-[48px] lg:gap-x-[56px] w-max"
         >
           {[...images2, ...images2].map((src, index) => (
@@ -127,6 +139,8 @@ const ScrollTriggeredDoubleSlider = () => {
                 width={600}
                 height={385}
                 className="w-full h-full object-cover aspect-[16/10] md:aspect-auto"
+                loading="eager"
+                priority={index < 3}
               />
             </div>
           ))}
