@@ -212,21 +212,6 @@ Got it — you want each of these 12 lines with a ✅ at the end.
 
 Here you go:
 
-1. hero hii ✅ 
-2. Download CV and gif alignment ✅
-3. gif slow video ✅
-4. story section padding bottom 8 px ✅
-5. story animation (in a few )  ✅
-6. motivation scroll problem  ✅
-7. blinto llc space problem ✅
-8. experience gallery glitch  ✅
-9. popup desktop middle and mobile bottom ✅
-10. motivation_subheading mobile weight medium ✅
-11. My motto “Design is not just what it looks like and feels like. Design  is how it works." ✅
-12. footer link problem ✅
-13. my motto mobile issue ✅
-
-
 system core check
 grep -c ^processor /proc/cpuinfo
 nproc
