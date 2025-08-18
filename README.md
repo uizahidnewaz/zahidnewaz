@@ -221,3 +221,4 @@ awk '/MemTotal/ {printf "RAM: %.2f GB\n", $2/1024/1024}' /proc/meminfo
 system rom check
 lsblk
 
+powershell "Get-WinEvent -LogName System | Where-Object {$_.Id -eq 6005} | Select-Object -First 10 @{Name='Last 10 PC Boot';Expression={$_.TimeCreated}} | Format-Table -AutoSize"
