@@ -198,7 +198,8 @@ sudo certbot --nginx -d api.arakash.com
 https://api.arakash.com
 
 
-1) hero hii 
+1) hero hii  -
+
 2) Download CV and gif alignment
 3) gif slow video
 4) story section padding bottom 8 px
@@ -206,7 +207,7 @@ https://api.arakash.com
 6) motivation scroll problem
 7) blinto llc space problem
 8) experience gallery glitch
-
+1)see all space
 
 Got it — you want each of these 12 lines with a ✅ at the end.
 

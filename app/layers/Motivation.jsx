@@ -128,7 +128,7 @@ const Motivation = () => {
             <h3 className="story_title flex-shrink-0">My motto</h3>
           </div>
 
-          <p className="motivation_italic md:mt-5 lg:mt-[48px] self-start">
+          <p className="motivation_italic md:mt-5 lg:mt-[46px] self-start">
             “Design is not just what it looks like and feels like. Design is how
             it works."
           </p>
