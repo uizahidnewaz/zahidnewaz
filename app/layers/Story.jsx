@@ -4,37 +4,57 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Container from "../components/Container";
 
-// Variants
+// Variants with smoother transitions
 const containerVariants = {
   hidden: { opacity: 0.4, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      staggerChildren: 0.2,
+      duration: 1.2,
+      ease: [0.43, 0.13, 0.23, 0.96], // Advanced cubic bezier for luxurious motion
+      staggerChildren: 0.12, // Slightly faster staggering for responsive feel
+      delayChildren: 0.05, // Small delay for more natural sequence
     },
   },
 };
 
 const childVariants = {
   hidden: { opacity: 0.3, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.0,
+      ease: [0.43, 0.13, 0.23, 0.96], // Advanced cubic bezier for luxurious motion
+    },
+  },
 };
 
 const Story = () => {
   const ref = useRef(null);
   const controls = useAnimation();
 
-  // Track visibility every time it enters or leaves with smoother fade
-  const inView = useInView(ref, { margin: "-30% 0% -30% 0%", once: false });
+  // Track visibility with a more gentle threshold for smoother animations and better locking
+  const inView = useInView(ref, {
+    margin: "-5% 0% -5% 0%", // Generous margin for earlier detection
+    amount: 0.15, // Trigger when just 15% of element is visible for earlier animation start
+    once: true, // Set to true to lock the animation state after first appearance
+  });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
+      // Start the animation with a small delay for smoother transitions
+      controls
+        .start("visible", {
+          duration: 1.2,
+          ease: [0.43, 0.13, 0.23, 0.96],
+          delay: 0.05, // Small delay for more predictable loading
+        })
+        .then(() => {
+          // This ensures the animation stays in its final state
+          controls.set("visible");
+        });
     }
   }, [inView, controls]);
 
@@ -46,6 +66,13 @@ const Story = () => {
         animate={controls}
         variants={containerVariants}
         className="story pt-[40px] sm:pt-[60px] md:pt-[120px] pb-[30px] sm:pb-[50px] md:pb-[96px]"
+        style={{
+          willChange: "transform, opacity",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+          perspective: 1000,
+        }}
+        layoutId="storySection" // Helps Framer Motion track this component uniquely
       >
         <motion.h2
           variants={childVariants}
