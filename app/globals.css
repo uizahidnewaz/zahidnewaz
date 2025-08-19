@@ -182,7 +182,11 @@ html.lenis body {
   @apply font-semibold text-[40px] leading-[88%] tracking-[-0.03em] uppercase text-[var(--color-white-solid)];
 }
 .wholesale_pragraph{
-  @apply font-normal text-[20px] leading-[150%] text-[var(--color-white-solid)] max-w-[1218px];
+  @apply font-normal text-[20px] leading-[150%] text-[var(--color-white-solid)];
+}
+.wholesale_role_pragraph{
+  @apply font-normal text-[20px] leading-[150%] text-[#f0f0f0];
+
 }
 /* 1920px screens typhography end*/
 
