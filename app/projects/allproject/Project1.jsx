@@ -139,17 +139,36 @@ const Project1 = () => {
           </h3>
           <div className="defining_table mt-6">
             <div className="flex justify-between">
-              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4">
-                aa
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
+                WHO
               </div>
-              <div className="w-full py-[10px] px-4">aa</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">Sales managers and wholesale staff</div>
             </div>
             <div className="flex justify-between border-t border-[#B8FF346B]">
-              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4">
-                aa
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
+                WHAT
               </div>
-              <div className="w-full py-[10px] px-4">aa</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">Struggle to navigate, interpret, and act on data quickly</div>
             </div>
+            <div className="flex justify-between border-t border-[#B8FF346B]">
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
+                WHEN
+              </div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">During daily reporting, inventory checks, and order management</div>
+            </div>
+            <div className="flex justify-between border-t border-[#B8FF346B]">
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
+                WHERE
+              </div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">Inside modules like Customer Ledger, Inventory Report, and Sales Report, etc.</div>
+            </div>
+            <div className="flex justify-between border-t border-[#B8FF346B]">
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
+                WHY
+              </div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">The UI lacked modern patterns, clear grouping, and intuitive form flows</div>
+            </div>
+  
           </div>
         </div>
       </Container>

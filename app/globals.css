@@ -190,6 +190,13 @@ html.lenis body {
 .defining_table {
   @apply bg-[#363636] rounded-[8px] border border-[#a6ff00]
 }
+.defining_text {
+  @apply font-semibold text-[18px] leading-[130%] text-[#f0f0f0] uppercase;
+}
+.defining_pragraph{
+  @apply font-normal text-[20px] leading-[150%] text-[#f0f0f0];
+
+}
 /* 1920px screens typhography end*/
 
 @media (max-width: 1080px) {
