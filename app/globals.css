@@ -72,6 +72,12 @@ html.lenis body {
 .navigation_text {
   @apply font-medium text-base text-[var(--color-white-solid)] leading-[16px] tracking-[0%];
 }
+
+/* Active link styles */
+.active-link .navigation_text {
+  @apply text-[var(--color-chartreuse-green-60)];
+}
+
 .hero_title {
   @apply font-semibold text-[18px] leading-[100%] tracking-[0.02em] uppercase text-[var(--color-white-solid)];
 }
@@ -188,18 +194,16 @@ html.lenis body {
   @apply font-normal text-[20px] leading-[150%] text-[#f0f0f0];
 }
 .defining_table {
-  @apply bg-[#363636] rounded-[8px] border border-[#a6ff00]
+  @apply bg-[#363636] rounded-[8px] border border-[#a6ff00];
 }
 .defining_text {
   @apply font-semibold text-[18px] leading-[130%] text-[#f0f0f0] uppercase;
 }
-.defining_pragraph{
+.defining_pragraph {
   @apply font-normal text-[20px] leading-[150%] text-[#f0f0f0];
-  
 }
-.wholesale_thanks{
+.wholesale_thanks {
   @apply font-medium text-[32px] leading-[94%] tracking-[-0.03em] text-[var(--color-white-solid)];
-
 }
 /* 1920px screens typhography end*/
 
