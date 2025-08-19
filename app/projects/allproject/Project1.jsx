@@ -87,7 +87,7 @@ const Project1 = () => {
         </div>
         <div className="old_design mb-[96px]">
           <h3 className="wholesale_subheading">old Design</h3>
-          <div className="relative">
+          <div className="relative h-[568px]">
             <div className="mt-6 h-[344px] flex justify-between w-full overflow-hidden">
               <Image
                 className="w-full h-full"
@@ -100,13 +100,20 @@ const Project1 = () => {
                 alt={Project1Pic}
               />
             </div>
-            <div className="absolute h-[340px] w-[718px] left-1/2 -translate-x-1/2 top-[218px]">
+            <div className="absolute h-[340px] w-[718px] left-1/2 -translate-x-1/2 top-[218px] block">
               <Image
                 className="w-full h-full"
                 src={Project1Pic}
                 alt={Project1Pic}
               />
             </div>
+          </div>
+          <div className="mt-6 h-[410px] w-full overflow-hidden">
+            <Image
+              className="w-full h-full"
+              src={Project1Pic}
+              alt={Project1Pic}
+            />
           </div>
         </div>
       </Container>
