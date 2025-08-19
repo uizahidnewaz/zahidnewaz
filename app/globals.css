@@ -195,6 +195,10 @@ html.lenis body {
 }
 .defining_pragraph{
   @apply font-normal text-[20px] leading-[150%] text-[#f0f0f0];
+  
+}
+.wholesale_thanks{
+  @apply font-medium text-[32px] leading-[94%] tracking-[-0.03em] text-[var(--color-white-solid)];
 
 }
 /* 1920px screens typhography end*/

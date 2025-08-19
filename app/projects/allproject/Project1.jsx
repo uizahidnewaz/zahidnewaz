@@ -307,6 +307,7 @@ const Project1 = () => {
             them, but to gain fresh insights, spot emerging trends, and identify
             opportunities to make the product stand out.
           </p>
+          <h4 className="wholesale_thanks mt-[48px]">Thank you!</h4>
         </div>
       </Container>
       <ExperienceGallery />
