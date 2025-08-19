@@ -278,6 +278,35 @@ const Project1 = () => {
         </div>
         <div className="key ">
           <h3 className="wholesale_subheading">Key Takeaways</h3>
+          <p className="mt-4 wholesale_pragraph">
+            When working on this project, I realized that putting the user first
+            is always the most important step, even in business software.
+            Designing around real user needs naturally improves efficiency and
+            satisfaction. I also saw how small visual changes like improving
+            spacing, refining typography, and grouping elements with a clear
+            visual hierarchy, can greatly reduce cognitive load and help users
+            focus on what matters most. Consistency across the system became
+            another key lesson; using the same patterns, colors, and button
+            styles reduced friction and created stronger affordance, so users
+            always knew what to expect. Simplicity proved to be especially
+            powerful. By prioritizing high-frequency actions such as product
+            search, add, and edit, sales managers and staff could complete their
+            tasks with less effort and more speed. Lastly, this project reminded
+            me that research is never done. By continuously testing and
+            validating ideas, I was able to avoid feature bloat and ensure the
+            redesign solved real business problems instead of just looking
+            modern. <br />
+            If you’re the sole designer working on a product that is still in
+            its early stages, it’s essential to revisit and refine the user
+            journey again and again. Early design decisions often need
+            revalidation as the product evolves. When the platform deals with
+            large amounts of data, it becomes even more important to understand
+            how users interact with that data and what patterns they rely on.
+            Competitor research should also never be a one-time activity.
+            Designers need to continuously monitor competitors, not to copy
+            them, but to gain fresh insights, spot emerging trends, and identify
+            opportunities to make the product stand out.
+          </p>
         </div>
       </Container>
       <ExperienceGallery />
