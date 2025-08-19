@@ -32,13 +32,29 @@ const Project1 = () => {
         <div className="role my-[96px]">
           <h3 className="wholesale_subheading">My role</h3>
           <div className="mt-4">
-            <p className="wholesale_role_pragraph">I worked as the sole designer and researcher. Responsibilities included:</p>
-            <ul className="ml-3 list-disc">
-              <li className="wholesale_role_pragraph">Home</li>
-              <li className="wholesale_role_pragraph">Home</li>
-              <li className="wholesale_role_pragraph">Home</li>
-              <li className="wholesale_role_pragraph">Home</li>
-              <li className="wholesale_role_pragraph">Home</li>
+            <p className="wholesale_role_pragraph">
+              I worked as the sole designer and researcher. Responsibilities
+              included :
+            </p>
+            <ul className="ml-3">
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Conducting user research with sales managers and staff.
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Analyzing pain points in the existing software.{" "}
+              </li>
+              <li className="wholesale_role_pragraph flex items-start">
+                <div className="mr-2 mt-[10px] h-[10px] w-[10px] bg-[#fff] rounded-full flex-shrink-0"></div>
+                Chose a temporary color palette that aligned well with clothing
+                items, ensuring visual harmony even though the platform didn’t
+                yet have finalized brand colors.
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Creating wireframes, prototypes, and high-fidelity UI designs.{" "}
+              </li>
             </ul>
           </div>
         </div>
