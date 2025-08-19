@@ -72,13 +72,13 @@ const SellectedWork = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <div className="w-full aspect-[1.46/1] lg:h-[398px] overflow-hidden rounded-[3px] work_img">
+            <Link href="/projects/hospital" className="block w-full aspect-[1.46/1] lg:h-[398px] overflow-hidden rounded-[3px] work_img">
               <Image
                 className="w-full h-full object-contain lg:object-cover"
                 src={Work2}
                 alt="Hospital management system"
               />
-            </div>
+            </Link>
             <div className="mt-2 xs:mt-2.5 sm:mt-3 lg:mt-4 flex justify-between items-center w-full">
               <h3 className="work_subtitle">Hospital management system</h3>
               <p className="work_number">02</p>
