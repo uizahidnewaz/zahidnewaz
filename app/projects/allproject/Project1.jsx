@@ -1,6 +1,10 @@
 import Container from "@/app/components/Container";
 import ExperienceGallery from "@/app/layers/ExperienceGallery";
 import Project1Pic from "@/public/project1.webp";
+import Old1 from "@/public/old1.webp";
+import Old2 from "@/public/old2.webp";
+import Old3 from "@/public/old3.webp";
+import Old4 from "@/public/old4.webp";
 import Image from "next/image";
 const Project1 = () => {
   return (
@@ -91,28 +95,28 @@ const Project1 = () => {
             <div className="mt-6 h-[344px] flex justify-between w-full overflow-hidden">
               <Image
                 className="w-full h-full"
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Old1}
+                alt={Old1}
               />
               <Image
                 className="w-full h-full"
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Old2}
+                alt={Old2}
               />
             </div>
             <div className="absolute h-[340px] w-[718px] left-1/2 -translate-x-1/2 top-[218px] block">
               <Image
                 className="w-full h-full"
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Old3}
+                alt={Old3}
               />
             </div>
           </div>
           <div className="mt-6 h-[410px] w-full overflow-hidden">
             <Image
               className="w-full h-full"
-              src={Project1Pic}
-              alt={Project1Pic}
+              src={Old4}
+              alt={Old4}
             />
           </div>
         </div>
