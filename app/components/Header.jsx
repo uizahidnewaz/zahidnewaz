@@ -42,10 +42,10 @@ const Header = () => {
               </Link>
             </li> */}
             <li>
-              <AnimatedLink href="#about">About</AnimatedLink>
+              <AnimatedLink href="/#about">About</AnimatedLink>
             </li>
             <li>
-              <AnimatedLink href="/projects/1">Projects</AnimatedLink>
+              <AnimatedLink href="/projects/wholesale">Projects</AnimatedLink>
             </li>
           </ul>
 

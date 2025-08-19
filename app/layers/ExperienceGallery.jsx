@@ -24,7 +24,7 @@ const images2 = [
   "/img14.webp",
 ];
 
-const ScrollTriggeredDoubleSlider = () => {
+const ExperienceGallery = () => {
   const topRef = useRef(null);
   const bottomRef = useRef(null);
 
@@ -150,4 +150,4 @@ const ScrollTriggeredDoubleSlider = () => {
   );
 };
 
-export default ScrollTriggeredDoubleSlider;
+export default ExperienceGallery;
