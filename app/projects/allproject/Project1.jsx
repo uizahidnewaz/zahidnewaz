@@ -133,6 +133,25 @@ const Project1 = () => {
             </ul>
           </div>
         </div>
+        <div className="defining mb-[96px]">
+          <h3 className="wholesale_subheading">
+            Defining the Problem — 5W Method
+          </h3>
+          <div className="defining_table mt-6">
+            <div className="flex justify-between">
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4">
+                aa
+              </div>
+              <div className="w-full py-[10px] px-4">aa</div>
+            </div>
+            <div className="flex justify-between border-t border-[#B8FF346B]">
+              <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4">
+                aa
+              </div>
+              <div className="w-full py-[10px] px-4">aa</div>
+            </div>
+          </div>
+        </div>
       </Container>
       <ExperienceGallery />
     </>
