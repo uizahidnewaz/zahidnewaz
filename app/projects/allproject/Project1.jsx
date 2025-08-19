@@ -233,7 +233,7 @@ const Project1 = () => {
             </ul>
           </div>
         </div>
-        <div className="redesign">
+        <div className="redesign mb-[96px]">
           <h3 className="wholesale_subheading">redesign</h3>
           <div
             className="mt-6 flex flex-col gap-y-6
@@ -275,6 +275,10 @@ const Project1 = () => {
               />
             </div>
           </div>
+        </div>
+        <div className="key ">
+                    <h3 className="wholesale_subheading">Key Takeaways</h3>
+
         </div>
       </Container>
       <ExperienceGallery />
