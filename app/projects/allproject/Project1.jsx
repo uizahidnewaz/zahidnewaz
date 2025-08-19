@@ -142,33 +142,87 @@ const Project1 = () => {
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHO
               </div>
-              <div className="w-full py-[10px] px-4 defining_pragraph">Sales managers and wholesale staff</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">
+                Sales managers and wholesale staff
+              </div>
             </div>
             <div className="flex justify-between border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHAT
               </div>
-              <div className="w-full py-[10px] px-4 defining_pragraph">Struggle to navigate, interpret, and act on data quickly</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">
+                Struggle to navigate, interpret, and act on data quickly
+              </div>
             </div>
             <div className="flex justify-between border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHEN
               </div>
-              <div className="w-full py-[10px] px-4 defining_pragraph">During daily reporting, inventory checks, and order management</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">
+                During daily reporting, inventory checks, and order management
+              </div>
             </div>
             <div className="flex justify-between border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHERE
               </div>
-              <div className="w-full py-[10px] px-4 defining_pragraph">Inside modules like Customer Ledger, Inventory Report, and Sales Report, etc.</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">
+                Inside modules like Customer Ledger, Inventory Report, and Sales
+                Report, etc.
+              </div>
             </div>
             <div className="flex justify-between border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHY
               </div>
-              <div className="w-full py-[10px] px-4 defining_pragraph">The UI lacked modern patterns, clear grouping, and intuitive form flows</div>
+              <div className="w-full py-[10px] px-4 defining_pragraph">
+                The UI lacked modern patterns, clear grouping, and intuitive
+                form flows
+              </div>
             </div>
-  
+          </div>
+        </div>
+        <div className="role my-[96px]">
+          <h3 className="wholesale_subheading">Ideation</h3>
+          <div className="mt-4">
+            <p className="wholesale_role_pragraph">
+              I explored multiple approaches :
+            </p>
+            <ul className="ml-3">
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Used clear section headings and proper spacing for better
+                readability.{" "}
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Grouped related inputs visually to reduce clutter and improve
+                clarity.{" "}
+              </li>
+              <li className="wholesale_role_pragraph flex items-start">
+                <div className="mr-2 mt-[10px] h-[10px] w-[10px] bg-[#fff] rounded-full flex-shrink-0"></div>
+                Designed a dashboard that highlights valuable insights,
+                mandatory metrics, and frequent actions, enabling users to act
+                faster and more confidently.
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+     Added filters and search options to help users find information quickly.
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+             Applied consistent button styles and standardized action placement across modules.
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+         Created product summaries for easier visualization and quicker understanding.
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+               Introduced a cleaner, modern visual design for faster scanning of information.
+              </li>
+             
+            </ul>
           </div>
         </div>
       </Container>
