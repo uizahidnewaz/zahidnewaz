@@ -176,7 +176,7 @@ html.lenis body {
 }
 /* whoolesale Projects */
 .wholesale_heading{
-  @apply font-bold text-[48px] leading-[135%] uppercase text-[var(--color-white-solid)];
+  @apply font-bold text-[46px] leading-[135%] uppercase text-[var(--color-white-solid)];
 }
 .wholesale_subheading {
   @apply font-semibold text-[40px] leading-[88%] tracking-[-0.03em] uppercase text-[var(--color-white-solid)];

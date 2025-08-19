@@ -45,7 +45,7 @@ const Header = () => {
               <AnimatedLink href="#about">About</AnimatedLink>
             </li>
             <li>
-              <AnimatedLink href="#projects">Projects</AnimatedLink>
+              <AnimatedLink href="/projects/1">Projects</AnimatedLink>
             </li>
           </ul>
 
