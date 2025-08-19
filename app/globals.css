@@ -188,8 +188,7 @@ html.lenis body {
   @apply font-normal text-[20px] leading-[150%] text-[#f0f0f0];
 }
 .defining_table {
-  background: rgba(255, 255, 255, 0);
-  @apply rounded-[8px] border border-[#a6ff00]
+  @apply bg-[#363636] rounded-[8px] border border-[#a6ff00]
 }
 /* 1920px screens typhography end*/
 
