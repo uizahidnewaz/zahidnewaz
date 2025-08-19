@@ -58,6 +58,29 @@ const Project1 = () => {
             </ul>
           </div>
         </div>
+        <div className="problem mb-[96px]">
+          <h3 className="wholesale_subheading">Finding Problems</h3>
+          <div className="mt-4">
+            <p className="wholesale_role_pragraph">
+              Before making design decisions, I worked with stakeholders to
+              answer two critical questions :
+            </p>
+            <ul className="ml-3">
+              <li className="wholesale_role_pragraph flex items-start">
+                <div className="mr-2 mt-[10px] h-[10px] w-[10px] bg-[#fff] rounded-full flex-shrink-0"></div>
+                What problem are we solving? – The current UI was visually
+                outdated, lacked intuitive navigation, and caused delays in
+                daily operations.
+              </li>
+              <li className="wholesale_role_pragraph flex items-start">
+                <div className="mr-2 mt-[10px] h-[10px] w-[10px] bg-[#fff] rounded-full flex-shrink-0"></div>
+                What’s holding users back? – Poor layout, inconsistent styles,
+                confusing forms, and no visual hierarchy for important data.
+              </li>
+            </ul>
+            <p className="wholesale_role_pragraph">Example metric-based insight: <br /> If only 10 out of 100 users could find the correct report on the first try, that’s a 90% navigation failure rate, a major usability problem.</p>
+          </div>
+        </div>
       </Container>
       <ExperienceGallery />
     </>
