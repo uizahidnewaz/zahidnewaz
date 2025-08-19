@@ -277,8 +277,7 @@ const Project1 = () => {
           </div>
         </div>
         <div className="key ">
-                    <h3 className="wholesale_subheading">Key Takeaways</h3>
-
+          <h3 className="wholesale_subheading">Key Takeaways</h3>
         </div>
       </Container>
       <ExperienceGallery />
