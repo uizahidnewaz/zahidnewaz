@@ -1,10 +1,10 @@
 import Container from "@/app/components/Container";
 import ExperienceGallery from "@/app/layers/ExperienceGallery";
-import Project1Pic from "@/public/project1.webp";
 import Old1 from "@/public/old1.webp";
 import Old2 from "@/public/old2.webp";
 import Old3 from "@/public/old3.webp";
 import Old4 from "@/public/old4.webp";
+import Project1Pic from "@/public/project1.webp";
 import Image from "next/image";
 const Project1 = () => {
   return (
@@ -93,31 +93,44 @@ const Project1 = () => {
           <h3 className="wholesale_subheading">old Design</h3>
           <div className="relative h-[568px]">
             <div className="mt-6 h-[344px] flex justify-between w-full overflow-hidden">
-              <Image
-                className="w-full h-full"
-                src={Old1}
-                alt={Old1}
-              />
-              <Image
-                className="w-full h-full"
-                src={Old2}
-                alt={Old2}
-              />
+              <Image className="w-full h-full" src={Old1} alt={Old1} />
+              <Image className="w-full h-full" src={Old2} alt={Old2} />
             </div>
             <div className="absolute h-[340px] w-[718px] left-1/2 -translate-x-1/2 top-[218px] block">
-              <Image
-                className="w-full h-full"
-                src={Old3}
-                alt={Old3}
-              />
+              <Image className="w-full h-full" src={Old3} alt={Old3} />
             </div>
           </div>
           <div className="mt-6 h-[410px] w-full overflow-hidden">
-            <Image
-              className="w-full h-full"
-              src={Old4}
-              alt={Old4}
-            />
+            <Image className="w-full h-full" src={Old4} alt={Old4} />
+          </div>
+        </div>
+        <div className="research mb-[96px]">
+          <h3 className="wholesale_subheading">Research</h3>
+          <div className="mt-4">
+            <p className="wholesale_role_pragraph">
+              To understand both user needs and business requirements, I
+              conducted :
+            </p>
+            <ul className="ml-3">
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Secondary Research – Reviewed competitor software to identify
+                modern patterns and industry trends.
+              </li>
+            </ul>
+            <p className="wholesale_role_pragraph">I focused on both :</p>
+            <ul className="ml-3">
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Qualitative insights – Why users found the system confusing (“I
+                don’t know where to click next”).
+              </li>
+              <li className="wholesale_role_pragraph flex items-center">
+                <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
+                Quantitative data – Frequency of errors, average time to
+                generate a report, etc.{" "}
+              </li>
+            </ul>
           </div>
         </div>
       </Container>
