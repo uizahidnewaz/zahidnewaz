@@ -5,6 +5,11 @@ import Old2 from "@/public/old2.webp";
 import Old3 from "@/public/old3.webp";
 import Old4 from "@/public/old4.webp";
 import Project1Pic from "@/public/project1.webp";
+import Redesign1 from "@/public/redesign1.webp";
+import Redesign2 from "@/public/redesign2.webp";
+import Redesign3 from "@/public/redesign3.webp";
+import Redesign4 from "@/public/redesign4.webp";
+import Redesign5 from "@/public/redesign5.webp";
 import Image from "next/image";
 const Project1 = () => {
   return (
@@ -236,36 +241,36 @@ const Project1 = () => {
           >
             <div className="h-[907px] w-full overflow-hidden">
               <Image
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Redesign1}
+                alt={Redesign1}
                 className="w-full h-full"
               />
             </div>
             <div className="h-[918px] w-full overflow-hidden">
               <Image
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Redesign2}
+                alt={Redesign2}
                 className="w-full h-full"
               />
             </div>
             <div className="h-[918px] w-full overflow-hidden">
               <Image
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Redesign3}
+                alt={Redesign3}
                 className="w-full h-full"
               />
             </div>
             <div className="h-[868px] w-full overflow-hidden">
               <Image
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Redesign4}
+                alt={Redesign4}
                 className="w-full h-full"
               />
             </div>
             <div className="h-[866px] w-full overflow-hidden">
               <Image
-                src={Project1Pic}
-                alt={Project1Pic}
+                src={Redesign5}
+                alt={Redesign5}
                 className="w-full h-full"
               />
             </div>
