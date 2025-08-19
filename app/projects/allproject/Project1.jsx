@@ -78,7 +78,18 @@ const Project1 = () => {
                 confusing forms, and no visual hierarchy for important data.
               </li>
             </ul>
-            <p className="wholesale_role_pragraph">Example metric-based insight: <br /> If only 10 out of 100 users could find the correct report on the first try, that’s a 90% navigation failure rate, a major usability problem.</p>
+            <p className="wholesale_role_pragraph">
+              Example metric-based insight: <br /> If only 10 out of 100 users
+              could find the correct report on the first try, that’s a 90%
+              navigation failure rate, a major usability problem.
+            </p>
+          </div>
+        </div>
+        <div className="old_design mb-[96px]">
+          <h3 className="wholesale_subheading">old Design</h3>
+          <div className="mt-6 h-[344px] flex justify-between w-full overflow-hidden">
+            <Image className="w-full h-full" src={Project1Pic} alt={Project1Pic} />
+            <Image className="w-full h-full" src={Project1Pic} alt={Project1Pic} />
           </div>
         </div>
       </Container>
