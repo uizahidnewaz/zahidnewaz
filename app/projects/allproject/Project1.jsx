@@ -207,22 +207,68 @@ const Project1 = () => {
               </li>
               <li className="wholesale_role_pragraph flex items-center">
                 <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
-     Added filters and search options to help users find information quickly.
+                Added filters and search options to help users find information
+                quickly.
               </li>
               <li className="wholesale_role_pragraph flex items-center">
                 <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
-             Applied consistent button styles and standardized action placement across modules.
+                Applied consistent button styles and standardized action
+                placement across modules.
               </li>
               <li className="wholesale_role_pragraph flex items-center">
                 <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
-         Created product summaries for easier visualization and quicker understanding.
+                Created product summaries for easier visualization and quicker
+                understanding.
               </li>
               <li className="wholesale_role_pragraph flex items-center">
                 <div className="mr-2 h-[10px] w-[10px] bg-[#fff] rounded-full"></div>
-               Introduced a cleaner, modern visual design for faster scanning of information.
+                Introduced a cleaner, modern visual design for faster scanning
+                of information.
               </li>
-             
             </ul>
+          </div>
+        </div>
+        <div className="redesign">
+          <h3 className="wholesale_subheading">redesign</h3>
+          <div
+            className="mt-6 flex flex-col gap-y-6
+          "
+          >
+            <div className="h-[907px] w-full overflow-hidden">
+              <Image
+                src={Project1Pic}
+                alt={Project1Pic}
+                className="w-full h-full"
+              />
+            </div>
+            <div className="h-[918px] w-full overflow-hidden">
+              <Image
+                src={Project1Pic}
+                alt={Project1Pic}
+                className="w-full h-full"
+              />
+            </div>
+            <div className="h-[918px] w-full overflow-hidden">
+              <Image
+                src={Project1Pic}
+                alt={Project1Pic}
+                className="w-full h-full"
+              />
+            </div>
+            <div className="h-[868px] w-full overflow-hidden">
+              <Image
+                src={Project1Pic}
+                alt={Project1Pic}
+                className="w-full h-full"
+              />
+            </div>
+            <div className="h-[866px] w-full overflow-hidden">
+              <Image
+                src={Project1Pic}
+                alt={Project1Pic}
+                className="w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </Container>
