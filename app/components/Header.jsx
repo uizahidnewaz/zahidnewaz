@@ -21,9 +21,10 @@ const Header = () => {
         {/* Left Side */}
         <ul className="flex sm:space-x-[56px] items-center">
           <li>
-            <Link className="navigation_text uppercase" href="/">
+            {/* <Link className="navigation_text uppercase" href="/">
               ZAHID NEWAZ
-            </Link>
+            </Link> */}
+            <AnimatedLink href="/">Zahid Newaz</AnimatedLink>
           </li>
           <li className="hidden md:block">
             <p className="navigation_text uppercase cursor-default">
@@ -42,7 +43,7 @@ const Header = () => {
               </Link>
             </li> */}
             <li>
-              <AnimatedLink href="/#about">About</AnimatedLink>
+              <AnimatedLink href="//#about">About</AnimatedLink>
             </li>
             <li>
               <AnimatedLink href="/projects/wholesale">Projects</AnimatedLink>
