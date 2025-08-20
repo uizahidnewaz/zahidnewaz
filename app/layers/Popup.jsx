@@ -11,17 +11,21 @@ const Popup = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show popup after page load
-    setIsVisible(true);
+    // Check if popup has been shown before using localStorage
+    const hasPopupBeenShown = localStorage.getItem("popupShown");
 
-    // No automatic timeout, only close on click
+    if (!hasPopupBeenShown) {
+      // If popup hasn't been shown yet, show it
+      setIsVisible(true);
+    }
 
-    // No timer cleanup needed
     return () => {};
   }, []);
 
   const handleClose = () => {
     setIsVisible(false);
+    // Set flag in localStorage to remember popup has been shown
+    localStorage.setItem("popupShown", "true");
   };
 
   return (
