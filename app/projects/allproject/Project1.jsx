@@ -14,13 +14,13 @@ import Image from "next/image";
 const Project1 = () => {
   return (
     <>
-      <Container className="mt-[96px]">
+      <Container className="mt-[96px] lg:mt-[72px] md:mt-[56px] sm:mt-[40px]">
         <h2 className="wholesale_heading">
           Wholesale Business Management Software – UI/UX Redesign Case Study
         </h2>
-        <div className="mt-[64px] mb-[96px] h-[914px] overflow-hidden">
+        <div className="mt-[64px] mb-[96px] lg:mt-[48px] lg:mb-[72px] md:mt-[36px] md:mb-[56px] sm:mt-[28px] sm:mb-[40px] xl:h-[914px] lg:h-[700px] md:h-[500px] sm:h-[400px] overflow-hidden">
           <Image
-            className="w-full h-full"
+            className="w-full h-full object-fit-cover"
             src={Project1Pic}
             alt={Project1Pic}
           />
@@ -38,7 +38,7 @@ const Project1 = () => {
           which meant I had to put in extra effort and focus to deliver the
           redesign on time without compromising quality.
         </p>
-        <div className="role my-[96px]">
+        <div className="role my-[96px] lg:my-[72px] md:my-[56px] sm:my-[40px]">
           <h3 className="wholesale_subheading">My role</h3>
           <div className="mt-4">
             <p className="wholesale_role_pragraph">
@@ -67,7 +67,7 @@ const Project1 = () => {
             </ul>
           </div>
         </div>
-        <div className="problem mb-[96px]">
+        <div className="problem mb-[96px] lg:mb-[72px] md:mb-[56px] sm:mb-[40px]">
           <h3 className="wholesale_subheading">Finding Problems</h3>
           <div className="mt-4">
             <p className="wholesale_role_pragraph">
@@ -94,22 +94,38 @@ const Project1 = () => {
             </p>
           </div>
         </div>
-        <div className="old_design mb-[96px]">
+        <div className="old_design mb-[96px] lg:mb-[72px] md:mb-[56px] sm:mb-[40px]">
           <h3 className="wholesale_subheading">old Design</h3>
-          <div className="relative h-[568px]">
-            <div className="mt-6 h-[344px] flex justify-between w-full overflow-hidden">
-              <Image className="w-full h-full" src={Old1} alt={Old1} />
-              <Image className="w-full h-full" src={Old2} alt={Old2} />
+          <div className="relative h-[568px] lg:h-[480px] md:h-[400px] sm:h-[320px]">
+            <div className="mt-6 xl:h-[344px] lg:h-[280px] md:h-[220px] sm:h-[180px] flex justify-between w-full overflow-hidden">
+              <Image
+                className="w-full h-full object-fit-cover"
+                src={Old1}
+                alt={Old1}
+              />
+              <Image
+                className="w-full h-full object-fit-cover"
+                src={Old2}
+                alt={Old2}
+              />
             </div>
-            <div className="absolute h-[340px] w-[718px] left-1/2 -translate-x-1/2 top-[218px] block">
-              <Image className="w-full h-full" src={Old3} alt={Old3} />
+            <div className="absolute xl:h-[340px] lg:h-[280px] md:h-[220px] sm:h-[180px] w-[718px] lg:w-[80%] md:w-[90%] sm:w-[95%] left-1/2 -translate-x-1/2 top-[218px] lg:top-[200px] md:top-[180px] sm:top-[140px] block">
+              <Image
+                className="w-full h-full object-fit-cover"
+                src={Old3}
+                alt={Old3}
+              />
             </div>
           </div>
-          <div className="mt-6 h-[410px] w-full overflow-hidden">
-            <Image className="w-full h-full" src={Old4} alt={Old4} />
+          <div className="mt-6 xl:h-[410px] lg:h-[350px] md:h-[300px] sm:h-[250px] w-full overflow-hidden">
+            <Image
+              className="w-full h-full object-fit-cover"
+              src={Old4}
+              alt={Old4}
+            />
           </div>
         </div>
-        <div className="research mb-[96px]">
+        <div className="research mb-[96px] lg:mb-[72px] md:mb-[56px] sm:mb-[40px]">
           <h3 className="wholesale_subheading">Research</h3>
           <div className="mt-4">
             <p className="wholesale_role_pragraph">
@@ -138,12 +154,12 @@ const Project1 = () => {
             </ul>
           </div>
         </div>
-        <div className="defining mb-[96px]">
+        <div className="defining mb-[96px] lg:mb-[72px] md:mb-[56px] sm:mb-[40px]">
           <h3 className="wholesale_subheading">
             Defining the Problem — 5W Method
           </h3>
           <div className="defining_table mt-6">
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-wrap sm:flex-nowrap">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHO
               </div>
@@ -151,7 +167,7 @@ const Project1 = () => {
                 Sales managers and wholesale staff
               </div>
             </div>
-            <div className="flex justify-between border-t border-[#B8FF346B]">
+            <div className="flex justify-between flex-wrap sm:flex-nowrap border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHAT
               </div>
@@ -159,7 +175,7 @@ const Project1 = () => {
                 Struggle to navigate, interpret, and act on data quickly
               </div>
             </div>
-            <div className="flex justify-between border-t border-[#B8FF346B]">
+            <div className="flex justify-between flex-wrap sm:flex-nowrap border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHEN
               </div>
@@ -167,7 +183,7 @@ const Project1 = () => {
                 During daily reporting, inventory checks, and order management
               </div>
             </div>
-            <div className="flex justify-between border-t border-[#B8FF346B]">
+            <div className="flex justify-between flex-wrap sm:flex-nowrap border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHERE
               </div>
@@ -176,7 +192,7 @@ const Project1 = () => {
                 Report, etc.
               </div>
             </div>
-            <div className="flex justify-between border-t border-[#B8FF346B]">
+            <div className="flex justify-between flex-wrap sm:flex-nowrap border-t border-[#B8FF346B]">
               <div className="w-full border-r border-[#B8FF346B] py-[10px] px-4 defining_text">
                 WHY
               </div>
@@ -187,7 +203,7 @@ const Project1 = () => {
             </div>
           </div>
         </div>
-        <div className="role my-[96px]">
+        <div className="role my-[96px] lg:my-[72px] md:my-[56px] sm:my-[40px]">
           <h3 className="wholesale_subheading">Ideation</h3>
           <div className="mt-4">
             <p className="wholesale_role_pragraph">
@@ -233,45 +249,45 @@ const Project1 = () => {
             </ul>
           </div>
         </div>
-        <div className="redesign mb-[96px]">
+        <div className="redesign mb-[96px] lg:mb-[72px] md:mb-[56px] sm:mb-[40px]">
           <h3 className="wholesale_subheading">redesign</h3>
           <div
             className="mt-6 flex flex-col gap-y-6
           "
           >
-            <div className="h-[907px] w-full overflow-hidden">
+            <div className="xl:h-[907px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign1}
                 alt={Redesign1}
-                className="w-full h-full"
+                className="w-full h-full object-fit-cover"
               />
             </div>
-            <div className="h-[918px] w-full overflow-hidden">
+            <div className="xl:h-[918px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign2}
                 alt={Redesign2}
-                className="w-full h-full"
+                className="w-full h-full object-fit-cover"
               />
             </div>
-            <div className="h-[918px] w-full overflow-hidden">
+            <div className="xl:h-[918px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign3}
                 alt={Redesign3}
-                className="w-full h-full"
+                className="w-full h-full object-fit-cover"
               />
             </div>
-            <div className="h-[868px] w-full overflow-hidden">
+            <div className="xl:h-[868px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign4}
                 alt={Redesign4}
-                className="w-full h-full"
+                className="w-full h-full object-fit-cover"
               />
             </div>
-            <div className="h-[866px] w-full overflow-hidden">
+            <div className="xl:h-[866px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign5}
                 alt={Redesign5}
-                className="w-full h-full"
+                className="w-full h-full object-fit-cover"
               />
             </div>
           </div>
@@ -307,7 +323,9 @@ const Project1 = () => {
             them, but to gain fresh insights, spot emerging trends, and identify
             opportunities to make the product stand out.
           </p>
-          <h4 className="wholesale_thanks mt-[48px]">Thank you!</h4>
+          <h4 className="wholesale_thanks mt-[48px] lg:mt-[36px] md:mt-[28px] sm:mt-[20px]">
+            Thank you!
+          </h4>
         </div>
       </Container>
       <ExperienceGallery />
