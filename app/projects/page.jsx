@@ -111,7 +111,7 @@ const page = () => {
                   className="block w-full aspect-[1.46/1] lg:h-[398px] md:h-[350px] sm:h-[300px] xs:h-[240px] overflow-hidden rounded-[3px] work_img"
                 >
                   <Image
-                    className="w-full h-full object-contain lg:object-cover"
+                    className="w-full h-full object-fit-contain"
                     src={project.image}
                     alt={project.alt}
                     quality={100}
