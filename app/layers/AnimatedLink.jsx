@@ -41,7 +41,9 @@ const AnimatedLink = ({ href, children }) => {
   const isActive =
     pathname === href ||
     (href !== "/" && pathname.startsWith(href)) ||
-    (href.includes("#") && pathname === "/" && href.startsWith("/#"));
+    (href.includes("#") && pathname === "/" && href.startsWith("/#")) ||
+    // Special case for projects navigation
+    (href.includes("/projects/") && pathname === "/projects");
 
   const handleMouseEnter = () => {
     setDirection(1);

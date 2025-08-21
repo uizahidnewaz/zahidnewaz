@@ -46,7 +46,7 @@ const Header = () => {
               <AnimatedLink href="//#about">About</AnimatedLink>
             </li>
             <li>
-              <AnimatedLink href="/projects/wholesale">Projects</AnimatedLink>
+              <AnimatedLink href="/projects">Projects</AnimatedLink>
             </li>
           </ul>
 
@@ -109,7 +109,7 @@ const Header = () => {
                 >
                   <Link
                     className="navigation_text uppercase block !text-[var(--primary)]"
-                    href="/projects/wholesale"
+                    href="/projects"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Projects
