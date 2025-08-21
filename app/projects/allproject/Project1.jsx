@@ -20,7 +20,7 @@ const Project1 = () => {
         </h2>
         <div className="mt-[64px] mb-[96px] lg:mt-[48px] lg:mb-[72px] md:mt-[36px] md:mb-[56px] sm:mt-[28px] sm:mb-[40px] xl:h-[914px] lg:h-[700px] md:h-[500px] sm:h-[400px] overflow-hidden">
           <Image
-            className="w-full h-full object-fit-cover"
+            className="w-full h-full object-fit-contain"
             src={Project1Pic}
             alt={Project1Pic}
           />
@@ -99,19 +99,19 @@ const Project1 = () => {
           <div className="relative h-[568px] lg:h-[480px] md:h-[400px] sm:h-[320px]">
             <div className="mt-6 xl:h-[344px] lg:h-[280px] md:h-[220px] sm:h-[180px] flex justify-between w-full overflow-hidden">
               <Image
-                className="w-full h-full object-fit-cover"
+                className="w-1/2 h-full object-fit-contain"
                 src={Old1}
                 alt={Old1}
               />
               <Image
-                className="w-full h-full object-fit-cover"
+                className="w-1/2 h-full object-fit-contain"
                 src={Old2}
                 alt={Old2}
               />
             </div>
             <div className="absolute xl:h-[340px] lg:h-[280px] md:h-[220px] sm:h-[180px] w-[718px] lg:w-[80%] md:w-[90%] sm:w-[95%] left-1/2 -translate-x-1/2 top-[218px] lg:top-[200px] md:top-[180px] sm:top-[140px] block">
               <Image
-                className="w-full h-full object-fit-cover"
+                className="w-full h-full object-fit-contain"
                 src={Old3}
                 alt={Old3}
               />
@@ -119,7 +119,7 @@ const Project1 = () => {
           </div>
           <div className="mt-6 xl:h-[410px] lg:h-[350px] md:h-[300px] sm:h-[250px] w-full overflow-hidden">
             <Image
-              className="w-full h-full object-fit-cover"
+              className="w-full h-full object-fit-contain"
               src={Old4}
               alt={Old4}
             />
@@ -259,35 +259,35 @@ const Project1 = () => {
               <Image
                 src={Redesign1}
                 alt={Redesign1}
-                className="w-full h-full object-fit-cover"
+                className="w-full h-full object-fit-contain"
               />
             </div>
             <div className="xl:h-[918px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign2}
                 alt={Redesign2}
-                className="w-full h-full object-fit-cover"
+                className="w-full h-full object-fit-contain"
               />
             </div>
             <div className="xl:h-[918px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign3}
                 alt={Redesign3}
-                className="w-full h-full object-fit-cover"
+                className="w-full h-full object-fit-contain"
               />
             </div>
             <div className="xl:h-[868px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign4}
                 alt={Redesign4}
-                className="w-full h-full object-fit-cover"
+                className="w-full h-full object-fit-contain"
               />
             </div>
             <div className="xl:h-[866px] lg:h-[700px] md:h-[500px] sm:h-[350px] w-full overflow-hidden">
               <Image
                 src={Redesign5}
                 alt={Redesign5}
-                className="w-full h-full object-fit-cover"
+                className="w-full h-full object-fit-contain"
               />
             </div>
           </div>
