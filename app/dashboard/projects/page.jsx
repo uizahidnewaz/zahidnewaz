@@ -211,7 +211,7 @@ const ProjectsPage = () => {
 
   return (
     <div
-  className="min-h-screen flex flex-col items-start justify-start py-10 px-0"
+      className="min-h-screen flex flex-col items-center justify-start py-10 px-4"
       style={{ background: "var(--primary)" }}
     >
       <Modal
@@ -313,7 +313,6 @@ const ProjectsPage = () => {
         </form>
       </Modal>
       <div className="w-full max-w-lg bg-[var(--color-grey-14)] rounded-2xl shadow-xl p-8 border border-[var(--color-blue-24)]">
-  <div className="w-full bg-[var(--color-grey-14)] rounded-2xl shadow-xl p-8 border border-[var(--color-blue-24)] mb-8" style={{ maxWidth: '100%' }}>
         <h1
           className="text-3xl font-extrabold mb-6 text-center tracking-tight drop-shadow"
           style={{ color: "var(--color-chartreuse-green-60)" }}
@@ -430,7 +429,6 @@ const ProjectsPage = () => {
         </form>{" "}
       </div>
       <div className="w-full max-w-lg mt-10 bg-[var(--color-grey-14)] rounded-2xl shadow-xl p-8 border border-[var(--color-blue-24)]">
-  <div className="w-full mt-10 bg-[var(--color-grey-14)] rounded-2xl shadow-xl p-8 border border-[var(--color-blue-24)]" style={{ maxWidth: '100%' }}>
         <h2
           className="text-2xl font-bold mb-4 text-center"
           style={{ color: "var(--color-chartreuse-green-60)" }}
@@ -440,24 +438,7 @@ const ProjectsPage = () => {
         {projectsLoading ? (
           <Spin />
         ) : (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', width: '100%' }}>
-            {projects.map(item => (
-              <div key={item._id || item.id} style={{ background: 'var(--color-grey-13)', borderRadius: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.12)', padding: '24px', flex: '1 1 320px', minWidth: '320px', maxWidth: '100%', color: '#fff', display: 'flex', alignItems: 'center', gap: '24px' }}>
-                {item.image ? <Image src={item.image} width={80} style={{ borderRadius: '8px' }} /> : null}
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: '1.25rem', fontWeight: 700 }}>{item.name}</div>
-                  <div style={{ fontSize: '1rem', marginTop: 4 }}>{`Status: ${item.status}, Priority: ${item.priority}`}</div>
-                </div>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <Button icon={<EditOutlined />} type="primary" ghost onClick={() => handleEdit(item)} style={{ color: '#fff', borderColor: '#fff' }} />
-                  <Popconfirm title="Are you sure to delete this project?" onConfirm={() => handleDelete(item._id || item.id)} okText="Yes" cancelText="No">
-                    <Button icon={<DeleteOutlined />} type="primary" danger ghost style={{ color: '#fff', borderColor: '#fff' }} />
-                  </Popconfirm>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+          <List
             dataSource={projects}
             renderItem={(item) => (
               <List.Item
