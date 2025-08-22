@@ -667,15 +667,16 @@ const ProjectsPage = () => {
             />
 
             <Card
-              className="bg-[var(--color-grey-14)]"
+              className="!bg-[var(--primary)]"
               style={{ overflow: "hidden" }}
             >
               <Title
                 level={2}
                 style={{
-                  color: "var(--color-chartreuse-green-60)",
-                  textAlign: "center",
+                  color: "var(--color-white-solid)",
+                  textAlign: "left",
                   marginBottom: "24px",
+                  textTransform: "uppercase",
                 }}
               >
                 All Projects
