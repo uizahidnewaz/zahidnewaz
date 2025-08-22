@@ -455,7 +455,8 @@ const ProjectsPage = () => {
                 >
                   <Input
                     placeholder="Enter project name"
-                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ background: "transparent" }}
                   />
                 </Form.Item>
 
@@ -502,7 +503,10 @@ const ProjectsPage = () => {
                   label={<Text style={{ color: "#fff" }}>Status</Text>}
                   rules={[{ required: true, message: "Please select status" }]}
                 >
-                  <Select className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]">
+                  <Select
+                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ background: "transparent" }}
+                  >
                     <Option value="active">Active</Option>
                     <Option value="inactive">Inactive</Option>
                   </Select>
@@ -515,8 +519,8 @@ const ProjectsPage = () => {
                 >
                   <InputNumber
                     min={1}
-                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ width: "100%" }}
+                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ width: "100%", background: "transparent" }}
                   />
                 </Form.Item>
 
@@ -572,7 +576,8 @@ const ProjectsPage = () => {
                   <Input
                     placeholder="Enter project name"
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ background: "transparent" }}
                   />
                 </Form.Item>
 
@@ -621,7 +626,8 @@ const ProjectsPage = () => {
                 >
                   <Select
                     onChange={(value) => setForm({ ...form, status: value })}
-                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ background: "transparent" }}
                   >
                     <Option value="active">Active</Option>
                     <Option value="inactive">Inactive</Option>
@@ -636,8 +642,8 @@ const ProjectsPage = () => {
                   <InputNumber
                     min={1}
                     onChange={(value) => setForm({ ...form, priority: value })}
-                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ width: "100%" }}
+                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ width: "100%", background: "transparent" }}
                   />
                 </Form.Item>
 
