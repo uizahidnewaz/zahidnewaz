@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
+import AppShell from "./components/AppShell";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,14 +33,15 @@ I'm Shah Md. Zahid Newaz. I studied at Rajuk Uttara Model College, then went on 
   };
 }
 
-
 export default function RootLayout({ children }) {
+  // Use client-side hook to get current path
+  const pathname =
+    typeof window !== "undefined" ? window.location.pathname : "";
+  const isDashboard = pathname.startsWith("/dashboard");
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

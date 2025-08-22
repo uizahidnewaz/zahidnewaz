@@ -15,6 +15,12 @@ const nextConfig = {
     config.resolve.alias["framer-motion"] = require.resolve("framer-motion");
     return config;
   },
+  images: {
+    domains: [
+      "res.cloudinary.com",
+      // add other domains if needed
+    ],
+  },
 };
 
 export default nextConfig;
