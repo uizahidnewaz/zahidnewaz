@@ -1,4 +1,5 @@
 "use client";
+
 import {
   DeleteOutlined,
   EditOutlined,
@@ -32,6 +33,15 @@ const ProjectsPage = () => {
     content: "",
     error: false,
   });
+  const [editModal, setEditModal] = useState({ open: false, project: null });
+  const [editForm, setEditForm] = useState({
+    name: "",
+    status: "active",
+    priority: 1,
+    image: null,
+  });
+  const [editFileList, setEditFileList] = useState([]);
+  const [editPreview, setEditPreview] = useState(null);
   const [projects, setProjects] = useState([]);
   const [projectsLoading, setProjectsLoading] = useState(false);
 
@@ -66,26 +76,81 @@ const ProjectsPage = () => {
     return isImage || Upload.LIST_IGNORE;
   };
 
-  const fetchProjects = async () => {
-    const handleDelete = async (id) => {
-      try {
-        await fetch(
-          `https://zahidnewazbackend.onrender.com/api/projects/${id}`,
-          {
-            method: "DELETE",
-          }
-        );
-        message.success("Project deleted");
-        fetchProjects();
-      } catch (err) {
-        message.error("Failed to delete project");
-      }
-    };
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`https://zahidnewazbackend.onrender.com/api/projects/${id}`, {
+        method: "DELETE",
+      });
+      message.success("Project deleted");
+      fetchProjects();
+    } catch (err) {
+      message.error("Failed to delete project");
+    }
+  };
 
-    const handleEdit = (item) => {
-      // Placeholder for edit logic (e.g., open modal with form)
-      message.info(`Edit project: ${item.name}`);
-    };
+  const handleEdit = (item) => {
+    setEditForm({
+      name: item.name,
+      status: item.status,
+      priority: item.priority,
+      image: null,
+    });
+    setEditFileList([]);
+    setEditPreview(item.image || null);
+    setEditModal({ open: true, project: item });
+  };
+
+  const handleEditImageChange = ({ fileList: newFileList }) => {
+    setEditFileList(newFileList);
+    if (newFileList.length > 0) {
+      const file = newFileList[0].originFileObj;
+      setEditForm((prev) => ({ ...prev, image: file }));
+      const reader = new FileReader();
+      reader.onload = (e) => setEditPreview(e.target.result);
+      reader.readAsDataURL(file);
+    } else {
+      setEditForm((prev) => ({ ...prev, image: null }));
+      setEditPreview(editModal.project?.image || null);
+    }
+  };
+
+  const handleEditChange = (e) => {
+    const { name, value } = e.target;
+    setEditForm((prev) => ({
+      ...prev,
+      [name]: name === "priority" ? Number(value) : value,
+    }));
+  };
+
+  const handleEditSubmit = async (e) => {
+    e.preventDefault();
+    if (!editModal.project) return;
+    try {
+      const formData = new FormData();
+      formData.append("name", editForm.name);
+      formData.append("status", editForm.status);
+      formData.append("priority", editForm.priority);
+      if (editForm.image) {
+        formData.append("image", editForm.image);
+      }
+      await fetch(
+        `https://zahidnewazbackend.onrender.com/api/projects/${
+          editModal.project._id || editModal.project.id
+        }`,
+        {
+          method: "PUT",
+          body: formData,
+        }
+      );
+      message.success("Project updated");
+      setEditModal({ open: false, project: null });
+      fetchProjects();
+    } catch (err) {
+      message.error("Failed to update project");
+    }
+  };
+
+  const fetchProjects = async () => {
     setProjectsLoading(true);
     try {
       const res = await fetch(
@@ -140,7 +205,6 @@ const ProjectsPage = () => {
     setLoading(false);
   };
 
-  // Fetch projects on mount
   React.useEffect(() => {
     fetchProjects();
   }, []);
@@ -158,6 +222,95 @@ const ProjectsPage = () => {
         title={modal.error ? "Error" : "Success"}
       >
         <p>{modal.content}</p>
+      </Modal>
+      <Modal
+        open={editModal.open}
+        onCancel={() => setEditModal({ open: false, project: null })}
+        footer={null}
+        centered
+        title="Edit Project"
+      >
+        <form onSubmit={handleEditSubmit} className="space-y-6">
+          <div>
+            <label
+              className="block mb-2 text-sm font-semibold"
+              style={{ color: "#fff" }}
+            >
+              Name
+            </label>
+            <input
+              name="name"
+              value={editForm.name}
+              onChange={handleEditChange}
+              className="w-full px-4 py-2 border border-[var(--color-blue-24)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-chartreuse-green-60)] bg-[var(--color-grey-13)] text-[var(--color-white-solid)]"
+              placeholder="Enter project name"
+              required
+            />
+          </div>
+          <div>
+            <label
+              className="block mb-2 text-sm font-semibold"
+              style={{ color: "#fff" }}
+            >
+              Image Upload
+            </label>
+            <Upload
+              listType="picture"
+              fileList={editFileList}
+              beforeUpload={beforeUpload}
+              onChange={handleEditImageChange}
+              maxCount={1}
+              showUploadList={{ showPreviewIcon: false }}
+            >
+              <Button icon={<UploadOutlined />}>Upload Image</Button>
+            </Upload>
+            {editPreview && (
+              <div style={{ marginTop: 16 }}>
+                <Image src={editPreview} alt="Preview" width={200} />
+              </div>
+            )}
+          </div>
+          <div>
+            <label
+              className="block mb-2 text-sm font-semibold"
+              style={{ color: "#fff" }}
+            >
+              Status
+            </label>
+            <select
+              name="status"
+              value={editForm.status}
+              onChange={handleEditChange}
+              className="w-full px-4 py-2 border border-[var(--color-blue-24)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-chartreuse-green-60)] bg-[var(--color-grey-13)] text-[var(--color-white-solid)]"
+            >
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <div>
+            <label
+              className="block mb-2 text-sm font-semibold"
+              style={{ color: "#fff" }}
+            >
+              Priority
+            </label>
+            <input
+              name="priority"
+              type="number"
+              value={editForm.priority}
+              onChange={handleEditChange}
+              className="w-full px-4 py-2 border border-[var(--color-blue-24)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-chartreuse-green-60)] bg-[var(--color-grey-13)] text-[var(--color-white-solid)]"
+              min={1}
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-3 bg-[var(--color-chartreuse-green-60)] text-[var(--color-black-solid)] font-bold rounded-lg shadow hover:scale-105 transition-transform duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            Update Project
+          </button>
+        </form>
       </Modal>
       <div className="w-full max-w-lg bg-[var(--color-grey-14)] rounded-2xl shadow-xl p-8 border border-[var(--color-blue-24)]">
         <h1
@@ -273,7 +426,8 @@ const ProjectsPage = () => {
               "Create Project"
             )}
           </button>
-        </form>
+        </form>{" "}
+        npm install antd-compat-react19
       </div>
       <div className="w-full max-w-lg mt-10 bg-[var(--color-grey-14)] rounded-2xl shadow-xl p-8 border border-[var(--color-blue-24)]">
         <h2
