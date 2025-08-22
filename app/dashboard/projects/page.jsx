@@ -22,7 +22,8 @@ import {
   Typography,
   Upload,
 } from "antd";
-import React, { useState } from "react";
+import debounce from "lodash/debounce";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
@@ -59,152 +60,8 @@ const ProjectsPage = () => {
   const [createForm] = Form.useForm();
   const [editFormInstance] = Form.useForm();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: name === "priority" ? Number(value) : value,
-    }));
-  };
-
-  // Ant Design Upload handlers
-  const handleImageChange = ({ fileList: newFileList }) => {
-    setFileList(newFileList);
-    if (newFileList.length > 0) {
-      const file = newFileList[0].originFileObj;
-      setForm((prev) => ({ ...prev, image: file }));
-      const reader = new FileReader();
-      reader.onload = (e) => setPreview(e.target.result);
-      reader.readAsDataURL(file);
-    } else {
-      setForm((prev) => ({ ...prev, image: null }));
-      setPreview(null);
-    }
-  };
-
-  const beforeUpload = (file) => {
-    const isImage = file.type.startsWith("image/");
-    if (!isImage) {
-      message.error("You can only upload image files!");
-    }
-    return isImage || Upload.LIST_IGNORE;
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await fetch(`https://zahidnewazbackend.onrender.com/api/projects/${id}`, {
-        method: "DELETE",
-      });
-      message.success("Project deleted");
-      fetchProjects();
-    } catch (err) {
-      message.error("Failed to delete project");
-    }
-  };
-
-  const handleEdit = (item) => {
-    setEditForm({
-      name: item.name,
-      status: item.status,
-      priority: item.priority,
-      image: null,
-    });
-    setEditFileList([]);
-    setEditPreview(item.image || null);
-    setEditModal({ open: true, project: item });
-  };
-
-  const handleEditImageChange = ({ fileList: newFileList }) => {
-    setEditFileList(newFileList);
-    if (newFileList.length > 0) {
-      const file = newFileList[0].originFileObj;
-      setEditForm((prev) => ({ ...prev, image: file }));
-      const reader = new FileReader();
-      reader.onload = (e) => setEditPreview(e.target.result);
-      reader.readAsDataURL(file);
-    } else {
-      setEditForm((prev) => ({ ...prev, image: null }));
-      setEditPreview(editModal.project?.image || null);
-    }
-  };
-
-  const handleEditChange = (e) => {
-    const { name, value } = e.target;
-    setEditForm((prev) => ({
-      ...prev,
-      [name]: name === "priority" ? Number(value) : value,
-    }));
-  };
-
-  const handleSubmit = async (values) => {
-    setLoading(true);
-    setResult(null);
-    try {
-      const formData = new FormData();
-      formData.append("name", values.name);
-      formData.append("status", values.status);
-      formData.append("priority", values.priority);
-      if (form.image) {
-        formData.append("image", form.image);
-      }
-      const res = await fetch(
-        "https://zahidnewazbackend.onrender.com/api/projects",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-      const data = await res.json();
-      setResult(data);
-      setModal({
-        open: true,
-        content: "Project created successfully!",
-        error: false,
-      });
-      setForm({ name: "", image: null, status: "active", priority: 1 });
-      setFileList([]);
-      setPreview(null);
-      createForm.resetFields();
-      fetchProjects();
-    } catch (err) {
-      setResult({ error: "Failed to create project" });
-      setModal({
-        open: true,
-        content: "Failed to create project",
-        error: true,
-      });
-    }
-    setLoading(false);
-  };
-
-  const handleEditSubmit = async (values) => {
-    if (!editModal.project) return;
-    try {
-      const formData = new FormData();
-      formData.append("name", values.name);
-      formData.append("status", values.status);
-      formData.append("priority", values.priority);
-      if (editForm.image) {
-        formData.append("image", editForm.image);
-      }
-      await fetch(
-        `https://zahidnewazbackend.onrender.com/api/projects/${
-          editModal.project._id || editModal.project.id
-        }`,
-        {
-          method: "PUT",
-          body: formData,
-        }
-      );
-      message.success("Project updated");
-      setEditModal({ open: false, project: null });
-      fetchProjects();
-    } catch (err) {
-      message.error("Failed to update project");
-    }
-  };
-
-  const fetchProjects = async () => {
+  // Define fetchProjects first, before any functions that reference it
+  const fetchProjects = useCallback(async () => {
     setProjectsLoading(true);
     try {
       const res = await fetch(
@@ -216,18 +73,318 @@ const ProjectsPage = () => {
       setProjects([]);
     }
     setProjectsLoading(false);
-  };
-
-  React.useEffect(() => {
-    fetchProjects();
   }, []);
 
-  const normFile = (e) => {
+  // Debounced version for expensive operations
+  const debouncedFetchProjects = useMemo(
+    () => debounce(fetchProjects, 300),
+    [fetchProjects]
+  );
+
+  // Memoize handleChange function
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: name === "priority" ? Number(value) : value,
+    }));
+  }, []);
+
+  // Memoize and optimize handleImageChange
+  const handleImageChange = useCallback(({ fileList: newFileList }) => {
+    setFileList(newFileList);
+    if (newFileList.length > 0) {
+      const file = newFileList[0].originFileObj;
+      setForm((prev) => ({ ...prev, image: file }));
+
+      // Create FileReader outside component to avoid recreation
+      const reader = new FileReader();
+      reader.onload = (e) => setPreview(e.target.result);
+      reader.readAsDataURL(file);
+    } else {
+      setForm((prev) => ({ ...prev, image: null }));
+      setPreview(null);
+    }
+  }, []);
+
+  // Memoize beforeUpload function
+  const beforeUpload = useCallback((file) => {
+    const isImage = file.type.startsWith("image/");
+    if (!isImage) {
+      message.error("You can only upload image files!");
+    }
+    return isImage || Upload.LIST_IGNORE;
+  }, []);
+
+  // Memoize handleDelete function
+  const handleDelete = useCallback(
+    async (id) => {
+      try {
+        await fetch(
+          `https://zahidnewazbackend.onrender.com/api/projects/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
+        message.success("Project deleted");
+        fetchProjects();
+      } catch (err) {
+        message.error("Failed to delete project");
+      }
+    },
+    [fetchProjects]
+  );
+
+  // Memoize handleEdit function
+  const handleEdit = useCallback(
+    (item) => {
+      setEditForm({
+        name: item.name,
+        status: item.status,
+        priority: item.priority,
+        image: null,
+      });
+      setEditFileList([]);
+      setEditPreview(item.image || null);
+      setEditModal({ open: true, project: item });
+
+      // Update form values
+      editFormInstance.setFieldsValue({
+        name: item.name,
+        status: item.status,
+        priority: item.priority,
+      });
+    },
+    [editFormInstance]
+  );
+
+  // Memoize handleEditImageChange
+  const handleEditImageChange = useCallback(
+    ({ fileList: newFileList }) => {
+      setEditFileList(newFileList);
+      if (newFileList.length > 0) {
+        const file = newFileList[0].originFileObj;
+        setEditForm((prev) => ({ ...prev, image: file }));
+
+        const reader = new FileReader();
+        reader.onload = (e) => setEditPreview(e.target.result);
+        reader.readAsDataURL(file);
+      } else {
+        setEditForm((prev) => ({ ...prev, image: null }));
+        setEditPreview((prev) => editModal.project?.image || prev);
+      }
+    },
+    [editModal.project]
+  );
+
+  // Memoize handleEditChange
+  const handleEditChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setEditForm((prev) => ({
+      ...prev,
+      [name]: name === "priority" ? Number(value) : value,
+    }));
+  }, []);
+
+  // Memoize handleSubmit
+  const handleSubmit = useCallback(
+    async (values) => {
+      setLoading(true);
+      setResult(null);
+      try {
+        const formData = new FormData();
+        formData.append("name", values.name);
+        formData.append("status", values.status);
+        formData.append("priority", values.priority);
+        if (form.image) {
+          formData.append("image", form.image);
+        }
+        const res = await fetch(
+          "https://zahidnewazbackend.onrender.com/api/projects",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+        const data = await res.json();
+        setResult(data);
+        setModal({
+          open: true,
+          content: "Project created successfully!",
+          error: false,
+        });
+        setForm({ name: "", image: null, status: "active", priority: 1 });
+        setFileList([]);
+        setPreview(null);
+        createForm.resetFields();
+        fetchProjects();
+      } catch (err) {
+        setResult({ error: "Failed to create project" });
+        setModal({
+          open: true,
+          content: "Failed to create project",
+          error: true,
+        });
+      }
+      setLoading(false);
+    },
+    [form.image, createForm, fetchProjects]
+  );
+
+  // Memoize handleEditSubmit
+  const handleEditSubmit = useCallback(
+    async (values) => {
+      if (!editModal.project) return;
+      try {
+        const formData = new FormData();
+        formData.append("name", values.name);
+        formData.append("status", values.status);
+        formData.append("priority", values.priority);
+        if (editForm.image) {
+          formData.append("image", editForm.image);
+        }
+        await fetch(
+          `https://zahidnewazbackend.onrender.com/api/projects/${
+            editModal.project._id || editModal.project.id
+          }`,
+          {
+            method: "PUT",
+            body: formData,
+          }
+        );
+        message.success("Project updated");
+        setEditModal({ open: false, project: null });
+        fetchProjects();
+      } catch (err) {
+        message.error("Failed to update project");
+      }
+    },
+    [editModal.project, editForm.image, fetchProjects]
+  );
+
+  // Optimize useEffect with proper dependencies
+  useEffect(() => {
+    fetchProjects();
+
+    // Cleanup function for debounced operations
+    return () => {
+      debouncedFetchProjects.cancel();
+    };
+  }, [fetchProjects, debouncedFetchProjects]);
+
+  // Memoize normFile function
+  const normFile = useCallback((e) => {
     if (Array.isArray(e)) {
       return e;
     }
     return e?.fileList;
-  };
+  }, []);
+
+  // Memoize projects list rendering
+  const projectsList = useMemo(() => {
+    return (
+      <List
+        dataSource={projects}
+        itemLayout="horizontal"
+        renderItem={(item) => (
+          <List.Item
+            actions={[
+              <Button
+                icon={<EditOutlined />}
+                type="primary"
+                ghost
+                onClick={() => handleEdit(item)}
+                key="edit"
+                style={{
+                  borderColor: "#1890ff",
+                  color: "#1890ff",
+                }}
+              />,
+              <Popconfirm
+                title="Are you sure to delete this project?"
+                onConfirm={() => handleDelete(item._id || item.id)}
+                okText="Yes"
+                cancelText="No"
+                key="delete"
+              >
+                <Button icon={<DeleteOutlined />} type="primary" danger ghost />
+              </Popconfirm>,
+            ]}
+            style={{
+              borderBottom: "1px solid var(--color-blue-24)",
+            }}
+          >
+            <List.Item.Meta
+              avatar={
+                item.image ? (
+                  <Image
+                    src={item.image}
+                    width={64}
+                    height={64}
+                    style={{
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                    }}
+                    preview={true}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: 64,
+                      height: 64,
+                      background: "var(--color-grey-13)",
+                      borderRadius: "8px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Text style={{ color: "#fff" }}>No Image</Text>
+                  </div>
+                )
+              }
+              title={
+                <Text
+                  style={{
+                    color: "#fff",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {item.name}
+                </Text>
+              }
+              description={
+                <Space direction="vertical">
+                  <Text style={{ color: "rgba(255, 255, 255, 0.65)" }}>
+                    Status:{" "}
+                    <Text
+                      style={{
+                        color: item.status === "active" ? "#52c41a" : "#ff4d4f",
+                      }}
+                    >
+                      {item.status}
+                    </Text>
+                  </Text>
+                  <Text style={{ color: "rgba(255, 255, 255, 0.65)" }}>
+                    Priority:{" "}
+                    <Text style={{ color: "#fff" }}>{item.priority}</Text>
+                  </Text>
+                </Space>
+              }
+            />
+          </List.Item>
+        )}
+        locale={{
+          emptyText: (
+            <div style={{ textAlign: "center", padding: "24px" }}>
+              <Text style={{ color: "#fff" }}>No projects found</Text>
+            </div>
+          ),
+        }}
+      />
+    );
+  }, [projects, handleEdit, handleDelete]);
 
   return (
     <Layout style={{ minHeight: "100vh", background: "var(--primary)" }}>
@@ -500,120 +657,7 @@ const ProjectsPage = () => {
                   <Spin size="large" />
                 </div>
               ) : (
-                <List
-                  dataSource={projects}
-                  itemLayout="horizontal"
-                  renderItem={(item) => (
-                    <List.Item
-                      actions={[
-                        <Button
-                          icon={<EditOutlined />}
-                          type="primary"
-                          ghost
-                          onClick={() => handleEdit(item)}
-                          key="edit"
-                          style={{
-                            borderColor: "#1890ff",
-                            color: "#1890ff",
-                          }}
-                        />,
-                        <Popconfirm
-                          title="Are you sure to delete this project?"
-                          onConfirm={() => handleDelete(item._id || item.id)}
-                          okText="Yes"
-                          cancelText="No"
-                          key="delete"
-                        >
-                          <Button
-                            icon={<DeleteOutlined />}
-                            type="primary"
-                            danger
-                            ghost
-                          />
-                        </Popconfirm>,
-                      ]}
-                      style={{
-                        borderBottom: "1px solid var(--color-blue-24)",
-                      }}
-                    >
-                      <List.Item.Meta
-                        avatar={
-                          item.image ? (
-                            <Image
-                              src={item.image}
-                              width={64}
-                              height={64}
-                              style={{
-                                objectFit: "cover",
-                                borderRadius: "8px",
-                              }}
-                              preview={true}
-                            />
-                          ) : (
-                            <div
-                              style={{
-                                width: 64,
-                                height: 64,
-                                background: "var(--color-grey-13)",
-                                borderRadius: "8px",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                              }}
-                            >
-                              <Text style={{ color: "#fff" }}>No Image</Text>
-                            </div>
-                          )
-                        }
-                        title={
-                          <Text
-                            style={{
-                              color: "#fff",
-                              fontSize: "16px",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            {item.name}
-                          </Text>
-                        }
-                        description={
-                          <Space direction="vertical">
-                            <Text
-                              style={{ color: "rgba(255, 255, 255, 0.65)" }}
-                            >
-                              Status:{" "}
-                              <Text
-                                style={{
-                                  color:
-                                    item.status === "active"
-                                      ? "#52c41a"
-                                      : "#ff4d4f",
-                                }}
-                              >
-                                {item.status}
-                              </Text>
-                            </Text>
-                            <Text
-                              style={{ color: "rgba(255, 255, 255, 0.65)" }}
-                            >
-                              Priority:{" "}
-                              <Text style={{ color: "#fff" }}>
-                                {item.priority}
-                              </Text>
-                            </Text>
-                          </Space>
-                        }
-                      />
-                    </List.Item>
-                  )}
-                  locale={{
-                    emptyText: (
-                      <div style={{ textAlign: "center", padding: "24px" }}>
-                        <Text style={{ color: "#fff" }}>No projects found</Text>
-                      </div>
-                    ),
-                  }}
-                />
+                projectsList
               )}
             </Card>
           </Col>
