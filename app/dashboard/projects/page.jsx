@@ -3,7 +3,6 @@
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import {
   Button,
-  Card,
   Col,
   Divider,
   Form,
@@ -537,7 +536,7 @@ const ProjectsPage = () => {
               </Form>
             </Modal>
 
-            <Card
+            <div
               className="!bg-[var(--primary)]"
               style={{ overflow: "hidden" }}
             >
@@ -657,7 +656,7 @@ const ProjectsPage = () => {
                   </Button>
                 </Form.Item>
               </Form>
-            </Card>
+            </div>
 
             <Divider
               style={{
@@ -666,7 +665,7 @@ const ProjectsPage = () => {
               }}
             />
 
-            <Card
+            <div
               className="!bg-[var(--primary)]"
               style={{ overflow: "hidden" }}
             >
@@ -689,7 +688,7 @@ const ProjectsPage = () => {
               ) : (
                 projectsList
               )}
-            </Card>
+            </div>
           </Col>
         </Row>
       </Content>
