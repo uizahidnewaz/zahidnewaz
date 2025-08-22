@@ -20,6 +20,7 @@ import {
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import debounce from "lodash/debounce";
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const { Title, Text } = Typography;
@@ -352,19 +353,21 @@ const ProjectDetailsPage = () => {
 
                   <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
                     <Space>
-                      <Button
-                        icon={<EditOutlined />}
-                        type="primary"
-                        ghost
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleEdit(item);
-                        }}
-                        style={{
-                          borderColor: "#fff",
-                          color: "#fff",
-                        }}
-                      />
+                      <Link
+                        href={`/dashboard/projectdetails/${item._id || item.id}`}
+                        passHref
+                      >
+                        <Button
+                          icon={<EditOutlined />}
+                          type="primary"
+                          ghost
+                          onClick={(e) => e.stopPropagation()}
+                          style={{
+                            borderColor: "#fff",
+                            color: "#fff",
+                          }}
+                        />
+                      </Link>
                       <Popconfirm
                         title="Are you sure to delete this project?"
                         onConfirm={(e) => {
@@ -403,7 +406,7 @@ const ProjectDetailsPage = () => {
         </motion.div>
       </div>
     );
-  }, [projects, handleEdit, handleDelete, opacity]);
+  }, [projects, handleDelete, opacity]);
 
   return (
     <Layout style={{ minHeight: "100vh", background: "var(--primary)" }}>
