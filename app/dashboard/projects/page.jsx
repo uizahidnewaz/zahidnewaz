@@ -538,19 +538,19 @@ const ProjectsPage = () => {
             </Modal>
 
             <Card
-              bordered={true}
-              className="bg-[var(--color-grey-14)] border-[var(--color-blue-24)]"
+              className="!bg-[var(--primary)]"
               style={{ overflow: "hidden" }}
             >
               <Title
                 level={2}
                 style={{
-                  color: "var(--color-chartreuse-green-60)",
-                  textAlign: "center",
+                  color: "var(--color-white-solid)",
+                  textAlign: "left",
                   marginBottom: "24px",
+                  textTransform: "uppercase",
                 }}
               >
-                Create New Project
+                Create Project
               </Title>
 
               <Form
@@ -667,8 +667,7 @@ const ProjectsPage = () => {
             />
 
             <Card
-              bordered={true}
-              className="bg-[var(--color-grey-14)] border-[var(--color-blue-24)]"
+              className="bg-[var(--color-grey-14)]"
               style={{ overflow: "hidden" }}
             >
               <Title
