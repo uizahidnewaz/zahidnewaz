@@ -112,7 +112,7 @@ const page = () => {
                   variants={childVariants}
                 >
                   <Link
-                    href={"/"}
+                    href={`/projects/${project.id}`}
                     className="block w-full aspect-[1.46/1] lg:h-[398px] md:h-[350px] sm:h-[300px] xs:h-[240px] overflow-hidden rounded-[3px] work_img"
                   >
                     <Image

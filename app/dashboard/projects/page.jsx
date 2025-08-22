@@ -397,8 +397,22 @@ const ProjectsPage = () => {
               footer={null}
               centered
               title={modal.error ? "Error" : "Success"}
+              styles={{
+                content: {
+                  backgroundColor: "var(--color-grey-14)",
+                  color: "#fff",
+                },
+                header: {
+                  backgroundColor: "var(--color-grey-14)",
+                  color: "#fff",
+                },
+                body: {
+                  backgroundColor: "var(--color-grey-14)",
+                  color: "#fff",
+                },
+              }}
             >
-              <p>{modal.content}</p>
+              <p style={{ color: "#fff" }}>{modal.content}</p>
             </Modal>
 
             <Modal
@@ -408,6 +422,20 @@ const ProjectsPage = () => {
               centered
               title="Edit Project"
               width={600}
+              styles={{
+                content: {
+                  backgroundColor: "var(--color-grey-14)",
+                  color: "#fff",
+                },
+                header: {
+                  backgroundColor: "var(--color-grey-14)",
+                  color: "#fff",
+                },
+                body: {
+                  backgroundColor: "var(--color-grey-14)",
+                  color: "#fff",
+                },
+              }}
             >
               <Form
                 form={editFormInstance}
