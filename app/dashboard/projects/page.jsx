@@ -390,7 +390,7 @@ const ProjectsPage = () => {
     <Layout style={{ minHeight: "100vh", background: "var(--primary)" }}>
       <Content style={{ padding: "24px" }}>
         <Row gutter={[24, 24]} justify="center">
-          <Col xs={24} sm={24} md={20} lg={16} xl={14}>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
             <Modal
               open={modal.open}
               onCancel={() => setModal({ ...modal, open: false })}
@@ -516,7 +516,8 @@ const ProjectsPage = () => {
                 >
                   <InputNumber
                     min={1}
-                    className="w-full bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ width: "100%" }}
                   />
                 </Form.Item>
 
@@ -539,7 +540,7 @@ const ProjectsPage = () => {
             <Card
               bordered={true}
               className="bg-[var(--color-grey-14)] border-[var(--color-blue-24)]"
-              style={{ borderRadius: "16px", overflow: "hidden" }}
+              style={{ overflow: "hidden" }}
             >
               <Title
                 level={2}
@@ -636,7 +637,8 @@ const ProjectsPage = () => {
                   <InputNumber
                     min={1}
                     onChange={(value) => setForm({ ...form, priority: value })}
-                    className="w-full bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    className="bg-[var(--color-grey-13)] text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
+                    style={{ width: "100%" }}
                   />
                 </Form.Item>
 
@@ -667,7 +669,7 @@ const ProjectsPage = () => {
             <Card
               bordered={true}
               className="bg-[var(--color-grey-14)] border-[var(--color-blue-24)]"
-              style={{ borderRadius: "16px", overflow: "hidden" }}
+              style={{ overflow: "hidden" }}
             >
               <Title
                 level={2}
