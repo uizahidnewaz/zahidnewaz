@@ -57,9 +57,9 @@ export default function Sidebar() {
             </svg>
           </div>
           <h2 className="text-lg font-bold text-[var(--color-white-solid)]">
-            Admin{" "}
+            Zahid{" "}
             <span className="text-[var(--color-chartreuse-green-60)]">
-              Dashboard
+              Newaz
             </span>
           </h2>
         </div>
@@ -153,14 +153,18 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      {/* Logout button at the bottom */}
-      <div className="p-4 mt-auto border-t border-[var(--color-grey-13)]">
+      {/* Footer with copyright and logout button */}
+      <div className="flex items-center justify-between px-4 py-3 border-t border-[var(--color-grey-13)] bg-[var(--color-grey-13)] bg-opacity-30">
+        <div className="text-xs text-[var(--color-grey-64-400)]">
+          © 2024 Zahid Newaz
+        </div>
         <button
           onClick={handleLogout}
-          className="flex items-center w-full px-4 py-3 text-[var(--color-white--800)] hover:bg-[var(--color-grey-13)] hover:text-[var(--color-red-55)] transition-all rounded-md"
+          className="flex items-center text-[var(--color-white--800)] hover:text-[var(--color-red-55)] transition-all rounded-md p-1"
+          title="Logout"
         >
           <svg
-            className="w-5 h-5 mr-3 text-[var(--color-red-55)]"
+            className="w-5 h-5 text-[var(--color-red-55)]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -173,11 +177,7 @@ export default function Sidebar() {
               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
             />
           </svg>
-          <span className="navigation_text">Logout</span>
         </button>
-      </div>
-      <div className="px-6 py-3 text-xs text-[var(--color-grey-64-400)]">
-        © 2024 Zahid Newaz
       </div>
     </div>
   );
