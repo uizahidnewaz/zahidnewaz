@@ -2,15 +2,15 @@
 
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import {
+  Badge,
   Button,
+  Card,
   Col,
-  Divider,
   Form,
   Image,
   Input,
   InputNumber,
   Layout,
-  List,
   message,
   Modal,
   Popconfirm,
@@ -282,421 +282,714 @@ const ProjectsPage = () => {
   // Memoize projects list rendering
   const projectsList = useMemo(() => {
     return (
-      <List
-        dataSource={projects}
-        itemLayout="horizontal"
-        renderItem={(item) => (
-          <List.Item
+      <div style={{ display: "grid", gap: "16px" }}>
+        {projects.map((item) => (
+          <Card
+            key={item._id || item.id}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "12px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+              transition: "all 0.3s ease",
+            }}
+            bodyStyle={{ padding: "20px" }}
+            hoverable
             actions={[
               <Button
                 icon={<EditOutlined />}
-                type="primary"
-                ghost
+                type="text"
                 onClick={() => handleEdit(item)}
                 key="edit"
                 style={{
-                  borderColor: "#1890ff",
-                  color: "#1890ff",
+                  color: "var(--color-chartreuse-green-60)",
+                  border: "none",
                 }}
-              />,
+              >
+                Edit
+              </Button>,
               <Popconfirm
-                title="Are you sure to delete this project?"
+                title="Delete Project"
+                description="Are you sure to delete this project?"
                 onConfirm={() => handleDelete(item._id || item.id)}
                 okText="Yes"
                 cancelText="No"
                 key="delete"
               >
-                <Button icon={<DeleteOutlined />} type="primary" danger ghost />
+                <Button
+                  icon={<DeleteOutlined />}
+                  type="text"
+                  danger
+                  style={{ border: "none" }}
+                >
+                  Delete
+                </Button>
               </Popconfirm>,
             ]}
-            style={{
-              borderBottom: "1px solid var(--color-blue-24)",
-            }}
           >
-            <List.Item.Meta
-              avatar={
-                item.image ? (
-                  <Image
-                    src={item.image}
-                    width={64}
-                    height={64}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "16px",
+              }}
+            >
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  width={80}
+                  height={80}
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    border: "2px solid rgba(255, 255, 255, 0.1)",
+                  }}
+                  preview={true}
+                />
+              ) : (
+                <div
+                  style={{
+                    width: 80,
+                    height: 80,
+                    background:
+                      "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))",
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "2px solid rgba(255, 255, 255, 0.1)",
+                  }}
+                >
+                  <Text
                     style={{
-                      objectFit: "cover",
-                      borderRadius: "8px",
-                    }}
-                    preview={true}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      width: 64,
-                      height: 64,
-                      background: "var(--color-grey-13)",
-                      borderRadius: "8px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
+                      color: "rgba(255, 255, 255, 0.6)",
+                      fontSize: "12px",
                     }}
                   >
-                    <Text style={{ color: "#fff" }}>No Image</Text>
-                  </div>
-                )
-              }
-              title={
-                <Text
+                    No Image
+                  </Text>
+                </div>
+              )}
+              <div style={{ flex: 1 }}>
+                <Title
+                  level={4}
                   style={{
-                    color: "#fff",
-                    fontSize: "16px",
-                    fontWeight: "bold",
+                    color: "var(--color-white-solid)",
+                    margin: "0 0 8px 0",
+                    fontWeight: "600",
                   }}
                 >
                   {item.name}
-                </Text>
-              }
-              description={
-                <Space direction="vertical">
-                  <Text style={{ color: "rgba(255, 255, 255, 0.65)" }}>
-                    Status:{" "}
+                </Title>
+                <Space direction="horizontal" size="large">
+                  <div>
                     <Text
                       style={{
-                        color: item.status === "active" ? "#52c41a" : "#ff4d4f",
+                        color: "rgba(255, 255, 255, 0.6)",
+                        fontSize: "12px",
+                        display: "block",
                       }}
                     >
-                      {item.status}
+                      Status
                     </Text>
-                  </Text>
-                  <Text style={{ color: "rgba(255, 255, 255, 0.65)" }}>
-                    Priority:{" "}
-                    <Text style={{ color: "#fff" }}>{item.priority}</Text>
-                  </Text>
+                    <Badge
+                      status={item.status === "active" ? "success" : "error"}
+                      text={
+                        <Text
+                          style={{
+                            color:
+                              item.status === "active" ? "#52c41a" : "#ff4d4f",
+                            fontWeight: "500",
+                            textTransform: "capitalize",
+                          }}
+                        >
+                          {item.status}
+                        </Text>
+                      }
+                    />
+                  </div>
+                  <div>
+                    <Text
+                      style={{
+                        color: "rgba(255, 255, 255, 0.6)",
+                        fontSize: "12px",
+                        display: "block",
+                      }}
+                    >
+                      Priority
+                    </Text>
+                    <Badge
+                      count={item.priority}
+                      style={{
+                        backgroundColor: "var(--color-chartreuse-green-60)",
+                        color: "var(--color-black-solid)",
+                        fontWeight: "600",
+                      }}
+                    />
+                  </div>
                 </Space>
-              }
-            />
-          </List.Item>
-        )}
-        locale={{
-          emptyText: (
-            <div style={{ textAlign: "center", padding: "24px" }}>
-              <Text style={{ color: "#fff" }}>No projects found</Text>
+              </div>
             </div>
-          ),
-        }}
-      />
+          </Card>
+        ))}
+        {projects.length === 0 && (
+          <Card
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "12px",
+              textAlign: "center",
+              padding: "40px 20px",
+            }}
+          >
+            <Text style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+              No projects found. Create your first project above.
+            </Text>
+          </Card>
+        )}
+      </div>
     );
   }, [projects, handleEdit, handleDelete]);
 
   return (
-    <Layout style={{ minHeight: "100vh", background: "var(--primary)" }}>
-      <Content style={{ padding: "24px" }}>
-        <Row gutter={[24, 24]} justify="center">
-          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-            <Modal
-              open={modal.open}
-              onCancel={() => setModal({ ...modal, open: false })}
-              footer={null}
-              centered
-              title={modal.error ? "Error" : "Success"}
-              styles={{
-                content: {
-                  backgroundColor: "var(--color-grey-14)",
-                  color: "#fff",
-                },
-                header: {
-                  backgroundColor: "var(--color-grey-14)",
-                  color: "#fff",
-                },
-                body: {
-                  backgroundColor: "var(--color-grey-14)",
-                  color: "#fff",
-                },
-              }}
-            >
-              <p style={{ color: "#fff" }}>{modal.content}</p>
-            </Modal>
-
-            <Modal
-              open={editModal.open}
-              onCancel={() => setEditModal({ open: false, project: null })}
-              footer={null}
-              centered
-              title="Edit Project"
-              width={600}
-              styles={{
-                content: {
-                  backgroundColor: "var(--color-grey-14)",
-                  color: "#fff",
-                },
-                header: {
-                  backgroundColor: "var(--color-grey-14)",
-                  color: "#fff",
-                },
-                body: {
-                  backgroundColor: "var(--color-grey-14)",
-                  color: "#fff",
-                },
-              }}
-            >
-              <Form
-                form={editFormInstance}
-                layout="vertical"
-                onFinish={handleEditSubmit}
-                initialValues={{
-                  name: editForm.name,
-                  status: editForm.status,
-                  priority: editForm.priority,
+    <Layout
+      style={{
+        minHeight: "100vh",
+        background: "var(--primary)",
+      }}
+    >
+      <Content style={{ padding: "32px 24px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <Row gutter={[32, 32]}>
+            <Col span={24}>
+              {/* Enhanced Modals */}
+              <Modal
+                open={modal.open}
+                onCancel={() => setModal({ ...modal, open: false })}
+                footer={null}
+                centered
+                title={modal.error ? "Error" : "Success"}
+                styles={{
+                  content: {
+                    backgroundColor: "var(--color-grey-14)",
+                    color: "var(--color-white-solid)",
+                    borderRadius: "12px",
+                  },
+                  header: {
+                    backgroundColor: "var(--color-grey-14)",
+                    color: "var(--color-white-solid)",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+                  },
+                  body: {
+                    backgroundColor: "var(--color-grey-14)",
+                    color: "var(--color-white-solid)",
+                    padding: "24px",
+                  },
                 }}
               >
-                <Form.Item
-                  name="name"
-                  label={<Text style={{ color: "#fff" }}>Project Name</Text>}
-                  rules={[
-                    { required: true, message: "Please enter project name" },
-                  ]}
-                >
-                  <Input
-                    placeholder="Enter project name"
-                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ background: "transparent" }}
-                  />
-                </Form.Item>
+                <p style={{ color: "var(--color-white-solid)", margin: 0 }}>
+                  {modal.content}
+                </p>
+              </Modal>
 
-                <Form.Item
-                  label={<Text style={{ color: "#fff" }}>Project Image</Text>}
-                  name="image"
-                  valuePropName="fileList"
-                  getValueFromEvent={normFile}
-                >
-                  <Upload
-                    listType="picture-card"
-                    fileList={editFileList}
-                    beforeUpload={beforeUpload}
-                    onChange={handleEditImageChange}
-                    maxCount={1}
-                    showUploadList={{ showPreviewIcon: false }}
-                  >
-                    {editFileList.length >= 1 ? null : (
-                      <div>
-                        <PlusOutlined />
-                        <div style={{ marginTop: 8 }}>Upload</div>
-                      </div>
-                    )}
-                  </Upload>
-                </Form.Item>
-
-                {editPreview && (
-                  <div style={{ marginBottom: 16 }}>
-                    <Text
-                      style={{
-                        color: "#fff",
-                        display: "block",
-                        marginBottom: 8,
-                      }}
-                    >
-                      Preview:
-                    </Text>
-                    <Image src={editPreview} alt="Preview" width={200} />
-                  </div>
-                )}
-
-                <Form.Item
-                  name="status"
-                  label={<Text style={{ color: "#fff" }}>Status</Text>}
-                  rules={[{ required: true, message: "Please select status" }]}
-                >
-                  <Select
-                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ background: "transparent" }}
-                  >
-                    <Option value="active">Active</Option>
-                    <Option value="inactive">Inactive</Option>
-                  </Select>
-                </Form.Item>
-
-                <Form.Item
-                  name="priority"
-                  label={<Text style={{ color: "#fff" }}>Priority</Text>}
-                  rules={[{ required: true, message: "Please enter priority" }]}
-                >
-                  <InputNumber
-                    min={1}
-                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ width: "100%", background: "transparent" }}
-                  />
-                </Form.Item>
-
-                <Form.Item>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
+              <Modal
+                open={editModal.open}
+                onCancel={() => setEditModal({ open: false, project: null })}
+                footer={null}
+                centered
+                title={
+                  <Text
                     style={{
-                      width: "100%",
-                      backgroundColor: "var(--color-chartreuse-green-60)",
-                      color: "var(--color-black-solid)",
+                      color: "var(--color-white-solid)",
+                      fontSize: "18px",
+                      fontWeight: "600",
                     }}
                   >
-                    Update Project
-                  </Button>
-                </Form.Item>
-              </Form>
-            </Modal>
-
-            <div
-              className="!bg-[var(--primary)]"
-              style={{ overflow: "hidden" }}
-            >
-              <Title
-                level={2}
-                style={{
-                  color: "var(--color-white-solid)",
-                  textAlign: "left",
-                  marginBottom: "24px",
-                  textTransform: "uppercase",
+                    Edit Project
+                  </Text>
+                }
+                width={700}
+                styles={{
+                  content: {
+                    backgroundColor: "var(--color-grey-14)",
+                    color: "var(--color-white-solid)",
+                    borderRadius: "12px",
+                  },
+                  header: {
+                    backgroundColor: "var(--color-grey-14)",
+                    color: "var(--color-white-solid)",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+                    padding: "20px 24px",
+                  },
+                  body: {
+                    backgroundColor: "var(--color-grey-14)",
+                    color: "var(--color-white-solid)",
+                    padding: "24px",
+                  },
                 }}
               >
-                Create Project
-              </Title>
-
-              <Form
-                form={createForm}
-                layout="vertical"
-                onFinish={handleSubmit}
-                initialValues={{
-                  name: form.name,
-                  status: form.status,
-                  priority: form.priority,
-                }}
-              >
-                <Form.Item
-                  name="name"
-                  label={<Text style={{ color: "#fff" }}>Project Name</Text>}
-                  rules={[
-                    { required: true, message: "Please enter project name" },
-                  ]}
+                <Form
+                  form={editFormInstance}
+                  layout="vertical"
+                  onFinish={handleEditSubmit}
+                  initialValues={{
+                    name: editForm.name,
+                    status: editForm.status,
+                    priority: editForm.priority,
+                  }}
                 >
-                  <Input
-                    placeholder="Enter project name"
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ background: "transparent" }}
-                  />
-                </Form.Item>
+                  <Row gutter={[24, 0]}>
+                    <Col xs={24} sm={12}>
+                      <Form.Item
+                        name="name"
+                        label={
+                          <Text
+                            style={{
+                              color: "var(--color-white-solid)",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Project Name
+                          </Text>
+                        }
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter project name",
+                          },
+                        ]}
+                      >
+                        <Input
+                          placeholder="Enter project name"
+                          style={{
+                            background: "rgba(255, 255, 255, 0.05)",
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
+                            borderRadius: "8px",
+                            color: "var(--color-white-solid)",
+                            padding: "12px 16px",
+                            fontSize: "14px",
+                          }}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={6}>
+                      <Form.Item
+                        name="status"
+                        label={
+                          <Text
+                            style={{
+                              color: "var(--color-white-solid)",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Status
+                          </Text>
+                        }
+                        rules={[
+                          { required: true, message: "Please select status" },
+                        ]}
+                      >
+                        <Select
+                          style={{
+                            background: "rgba(255, 255, 255, 0.05)",
+                            borderRadius: "8px",
+                          }}
+                        >
+                          <Option value="active">Active</Option>
+                          <Option value="inactive">Inactive</Option>
+                        </Select>
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={6}>
+                      <Form.Item
+                        name="priority"
+                        label={
+                          <Text
+                            style={{
+                              color: "var(--color-white-solid)",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Priority
+                          </Text>
+                        }
+                        rules={[
+                          { required: true, message: "Please enter priority" },
+                        ]}
+                      >
+                        <InputNumber
+                          min={1}
+                          style={{
+                            width: "100%",
+                            background: "rgba(255, 255, 255, 0.05)",
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
+                            borderRadius: "8px",
+                            color: "var(--color-white-solid)",
+                            padding: "4px 8px",
+                          }}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
 
-                <Form.Item
-                  label={<Text style={{ color: "#fff" }}>Project Image</Text>}
-                  name="image"
-                  valuePropName="fileList"
-                  getValueFromEvent={normFile}
-                >
-                  <Upload
-                    listType="picture-card"
-                    fileList={fileList}
-                    beforeUpload={beforeUpload}
-                    onChange={handleImageChange}
-                    maxCount={1}
-                    showUploadList={{ showPreviewIcon: false }}
+                  <Form.Item
+                    label={
+                      <Text
+                        style={{
+                          color: "var(--color-white-solid)",
+                          fontWeight: "500",
+                        }}
+                      >
+                        Project Image
+                      </Text>
+                    }
+                    name="image"
+                    valuePropName="fileList"
+                    getValueFromEvent={normFile}
                   >
-                    {fileList.length >= 1 ? null : (
-                      <div>
-                        <PlusOutlined />
-                        <div style={{ marginTop: 8 }}>Upload</div>
-                      </div>
-                    )}
-                  </Upload>
-                </Form.Item>
-
-                {preview && (
-                  <div style={{ marginBottom: 16 }}>
-                    <Text
+                    <Upload
+                      listType="picture-card"
+                      fileList={editFileList}
+                      beforeUpload={beforeUpload}
+                      onChange={handleEditImageChange}
+                      maxCount={1}
+                      showUploadList={{ showPreviewIcon: false }}
                       style={{
-                        color: "#fff",
-                        display: "block",
-                        marginBottom: 8,
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        border: "2px dashed rgba(255, 255, 255, 0.2)",
+                        borderRadius: "8px",
                       }}
                     >
-                      Preview:
-                    </Text>
-                    <Image src={preview} alt="Preview" width={200} />
-                  </div>
-                )}
+                      {editFileList.length >= 1 ? null : (
+                        <div style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+                          <PlusOutlined
+                            style={{ fontSize: "20px", marginBottom: "8px" }}
+                          />
+                          <div>Upload Image</div>
+                        </div>
+                      )}
+                    </Upload>
+                  </Form.Item>
 
-                <Form.Item
-                  name="status"
-                  label={<Text style={{ color: "#fff" }}>Status</Text>}
-                  rules={[{ required: true, message: "Please select status" }]}
-                >
-                  <Select
-                    onChange={(value) => setForm({ ...form, status: value })}
-                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ background: "transparent" }}
-                  >
-                    <Option value="active">Active</Option>
-                    <Option value="inactive">Inactive</Option>
-                  </Select>
-                </Form.Item>
+                  {editPreview && (
+                    <div style={{ marginBottom: "24px", textAlign: "center" }}>
+                      <Text
+                        style={{
+                          color: "var(--color-white-solid)",
+                          display: "block",
+                          marginBottom: "12px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        Preview:
+                      </Text>
+                      <Image
+                        src={editPreview}
+                        alt="Preview"
+                        width={200}
+                        style={{
+                          borderRadius: "8px",
+                          border: "2px solid rgba(255, 255, 255, 0.1)",
+                        }}
+                      />
+                    </div>
+                  )}
 
-                <Form.Item
-                  name="priority"
-                  label={<Text style={{ color: "#fff" }}>Priority</Text>}
-                  rules={[{ required: true, message: "Please enter priority" }]}
-                >
-                  <InputNumber
-                    min={1}
-                    onChange={(value) => setForm({ ...form, priority: value })}
-                    className="text-[var(--color-white-solid)] border-[var(--color-blue-24)]"
-                    style={{ width: "100%", background: "transparent" }}
-                  />
-                </Form.Item>
-
-                <Form.Item>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    loading={loading}
+                  <Form.Item
                     style={{
-                      width: "100%",
-                      backgroundColor: "var(--color-chartreuse-green-60)",
-                      color: "var(--color-black-solid)",
+                      marginBottom: 0,
+                      textAlign: "center",
+                      marginTop: "24px",
                     }}
                   >
-                    Create Project
-                  </Button>
-                </Form.Item>
-              </Form>
-            </div>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      size="large"
+                      style={{
+                        background: "var(--color-chartreuse-green-60)",
+                        border: "none",
+                        borderRadius: "8px",
+                        height: "48px",
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        minWidth: "200px",
+                        color: "var(--color-black-solid)",
+                        boxShadow: "0 4px 15px rgba(184, 255, 52, 0.4)",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      Update Project
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </Modal>
 
-            <Divider
-              style={{
-                borderColor: "var(--color-blue-24)",
-                margin: "32px 0",
-              }}
-            />
-
-            <div
-              className="!bg-[var(--primary)]"
-              style={{ overflow: "hidden" }}
-            >
-              <Title
-                level={2}
+              {/* Create Project Section */}
+              <Card
                 style={{
-                  color: "var(--color-white-solid)",
-                  textAlign: "left",
-                  marginBottom: "24px",
-                  textTransform: "uppercase",
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "16px",
+                  marginBottom: "32px",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
                 }}
+                bodyStyle={{ padding: "32px" }}
               >
-                All Projects
-              </Title>
+                <Title
+                  level={2}
+                  style={{
+                    color: "var(--color-white-solid)",
+                    textAlign: "center",
+                    marginBottom: "32px",
+                    fontWeight: "700",
+                  }}
+                >
+                  Create New Project
+                </Title>
 
-              {projectsLoading ? (
-                <div style={{ textAlign: "center", padding: "24px" }}>
-                  <Spin size="large" />
-                </div>
-              ) : (
-                projectsList
-              )}
-            </div>
-          </Col>
-        </Row>
+                <Form
+                  form={createForm}
+                  layout="vertical"
+                  onFinish={handleSubmit}
+                  initialValues={{
+                    name: form.name,
+                    status: form.status,
+                    priority: form.priority,
+                  }}
+                >
+                  <Row gutter={[24, 0]}>
+                    <Col xs={24} sm={12}>
+                      <Form.Item
+                        name="name"
+                        label={
+                          <Text
+                            style={{
+                              color: "var(--color-white-solid)",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Project Name
+                          </Text>
+                        }
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter project name",
+                          },
+                        ]}
+                      >
+                        <Input
+                          placeholder="Enter project name"
+                          onChange={(e) =>
+                            setForm({ ...form, name: e.target.value })
+                          }
+                          style={{
+                            background: "rgba(255, 255, 255, 0.05)",
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
+                            borderRadius: "8px",
+                            color: "var(--color-white-solid)",
+                            padding: "12px 16px",
+                            fontSize: "14px",
+                          }}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={6}>
+                      <Form.Item
+                        name="status"
+                        label={
+                          <Text
+                            style={{
+                              color: "var(--color-white-solid)",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Status
+                          </Text>
+                        }
+                        rules={[
+                          { required: true, message: "Please select status" },
+                        ]}
+                      >
+                        <Select
+                          onChange={(value) =>
+                            setForm({ ...form, status: value })
+                          }
+                          style={{
+                            background: "rgba(255, 255, 255, 0.05)",
+                            borderRadius: "8px",
+                          }}
+                        >
+                          <Option value="active">Active</Option>
+                          <Option value="inactive">Inactive</Option>
+                        </Select>
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={6}>
+                      <Form.Item
+                        name="priority"
+                        label={
+                          <Text
+                            style={{
+                              color: "var(--color-white-solid)",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Priority
+                          </Text>
+                        }
+                        rules={[
+                          { required: true, message: "Please enter priority" },
+                        ]}
+                      >
+                        <InputNumber
+                          min={1}
+                          onChange={(value) =>
+                            setForm({ ...form, priority: value })
+                          }
+                          style={{
+                            width: "100%",
+                            background: "rgba(255, 255, 255, 0.05)",
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
+                            borderRadius: "8px",
+                            color: "var(--color-white-solid)",
+                            padding: "4px 8px",
+                          }}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+
+                  <Form.Item
+                    label={
+                      <Text
+                        style={{
+                          color: "var(--color-white-solid)",
+                          fontWeight: "500",
+                        }}
+                      >
+                        Project Image
+                      </Text>
+                    }
+                    name="image"
+                    valuePropName="fileList"
+                    getValueFromEvent={normFile}
+                  >
+                    <Upload
+                      listType="picture-card"
+                      fileList={fileList}
+                      beforeUpload={beforeUpload}
+                      onChange={handleImageChange}
+                      maxCount={1}
+                      showUploadList={{ showPreviewIcon: false }}
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        border: "2px dashed rgba(255, 255, 255, 0.2)",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      {fileList.length >= 1 ? null : (
+                        <div style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+                          <PlusOutlined
+                            style={{ fontSize: "20px", marginBottom: "8px" }}
+                          />
+                          <div>Upload Image</div>
+                        </div>
+                      )}
+                    </Upload>
+                  </Form.Item>
+
+                  {preview && (
+                    <div style={{ marginBottom: "24px", textAlign: "center" }}>
+                      <Text
+                        style={{
+                          color: "var(--color-white-solid)",
+                          display: "block",
+                          marginBottom: "12px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        Preview:
+                      </Text>
+                      <Image
+                        src={preview}
+                        alt="Preview"
+                        width={200}
+                        style={{
+                          borderRadius: "8px",
+                          border: "2px solid rgba(255, 255, 255, 0.1)",
+                        }}
+                      />
+                    </div>
+                  )}
+
+                  <Form.Item style={{ marginBottom: 0, textAlign: "center" }}>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      loading={loading}
+                      size="large"
+                      style={{
+                        background: "var(--color-chartreuse-green-60)",
+                        border: "none",
+                        borderRadius: "8px",
+                        height: "48px",
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        minWidth: "200px",
+                        color: "var(--color-black-solid)",
+                        boxShadow: "0 4px 15px rgba(184, 255, 52, 0.4)",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      Create Project
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </Card>
+
+              {/* Projects List Section */}
+              <Card
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "16px",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+                }}
+                bodyStyle={{ padding: "32px" }}
+              >
+                <Title
+                  level={2}
+                  style={{
+                    color: "var(--color-white-solid)",
+                    textAlign: "center",
+                    marginBottom: "32px",
+                    fontWeight: "700",
+                  }}
+                >
+                  All Projects ({projects.length})
+                </Title>
+
+                {projectsLoading ? (
+                  <div style={{ textAlign: "center", padding: "60px 20px" }}>
+                    <Spin
+                      size="large"
+                      style={{ color: "var(--color-chartreuse-green-60)" }}
+                    />
+                    <div style={{ marginTop: "16px" }}>
+                      <Text style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+                        Loading projects...
+                      </Text>
+                    </div>
+                  </div>
+                ) : (
+                  projectsList
+                )}
+              </Card>
+            </Col>
+          </Row>
+        </div>
       </Content>
     </Layout>
   );
