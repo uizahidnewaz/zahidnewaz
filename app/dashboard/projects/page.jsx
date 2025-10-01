@@ -293,7 +293,7 @@ const ProjectsPage = () => {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               transition: "all 0.3s ease",
             }}
-            bodyStyle={{ padding: "20px" }}
+            styles={{ body: { padding: "20px" } }}
             hoverable
             actions={[
               <Button
@@ -734,7 +734,7 @@ const ProjectsPage = () => {
                   marginBottom: "32px",
                   boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
                 }}
-                bodyStyle={{ padding: "32px" }}
+                styles={{ body: { padding: "32px" } }}
               >
                 <Title
                   level={2}
@@ -957,7 +957,7 @@ const ProjectsPage = () => {
                   borderRadius: "16px",
                   boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
                 }}
-                bodyStyle={{ padding: "32px" }}
+                styles={{ body: { padding: "32px" } }}
               >
                 <Title
                   level={2}
