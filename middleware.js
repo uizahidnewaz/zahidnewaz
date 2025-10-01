@@ -6,7 +6,6 @@ export function middleware(request) {
 
   // Check if this is a dashboard route
   const isDashboardRoute = pathname.startsWith("/dashboard");
-  const isLoginRoute = pathname === "/login";
 
   // Get the authentication cookie
   const isAuthenticated =
@@ -17,22 +16,10 @@ export function middleware(request) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  // Redirect to dashboard if already authenticated and trying to access login
-  if (isLoginRoute && isAuthenticated) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-
-  // If at root, redirect based on auth status
-  if (pathname === "/") {
-    return isAuthenticated
-      ? NextResponse.redirect(new URL("/dashboard", request.url))
-      : NextResponse.redirect(new URL("/login", request.url));
-  }
-
   return NextResponse.next();
 }
 
 // Configure which routes the middleware runs on
 export const config = {
-  matcher: ["/", "/login", "/dashboard/:path*"],
+  matcher: ["/dashboard/:path*"],
 };
